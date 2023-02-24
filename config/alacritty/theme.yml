@@ -1,0 +1,56 @@
+# Darkoma for Alacritty
+# ~/.config/alacritty/theme.yml
+colors:
+  primary:
+    background: '#202e3c'
+    foreground: '#b2c4d6'
+    dim_foreground: '#7192b3'
+    bright_foreground: '#dee5ed'
+  cursor:
+    text: '#202e3c'
+    cursor: '#4fd5b5'
+  vi_mode_cursor:
+    text: '#202e3c'
+    cursor: '#4fd5b5'
+  search:
+    matches:
+      foreground: '#31475c'
+      background: '#b48dff'
+    focused_match:
+      foreground: '#b48dff'
+      background: '#31475c'
+  hints:
+    start:
+      foreground: '#31475c'
+      background: '#e4d76c'
+    end:
+      foreground: '#e4d76c'
+      background: '#31475c'
+  line_indicator:
+    foreground: None
+    background: None
+  footer_bar:
+    foreground: '#31475c'
+    background: '#b48dff'
+  selection:
+    text: '#b2c4d6'
+    background: '#3a536d'
+  normal:
+    black: '#18222b'
+    red: '#f3787d'
+    green: '#93d785'
+    yellow: '#e4d76c'
+    blue: '#62b1ff'
+    magenta: '#e67aca'
+    cyan: '#5ddae2'
+    white: '#f4f6f9'
+  bright:
+    black: '#18222b'
+    red: '#f3787d'
+    green: '#93d785'
+    yellow: '#e4d76c'
+    blue: '#62b1ff'
+    magenta: '#e67aca'
+    cyan: '#5ddae2'
+    white: '#f4f6f9'
+    

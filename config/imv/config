@@ -1,0 +1,29 @@
+# ▪  • ▌ ▄ ·.  ▌ ▐·
+# ██ ·██ ▐███▪▪█·█▌
+# ▐█·▐█ ▌▐▌▐█·▐█▐█•
+# ▐█▌██ ██▌▐█▌ ███ 
+# ▀▀▀▀▀ █▪▀▀▀. ▀  
+#
+# Created by: Dang Minh Ngo
+# Github: @dangminhngo
+# Email: dangminhngo.dev@gmail.com
+
+# Winterfell for imv
+# ~/.config/imv/config
+
+# styling
+[options]
+background = #1e282e
+fullscreen = false
+overlay = true
+overlay_text_color = #cad5dc
+overlay_background_color = #243138
+overlay_background_alpha = ff
+overlay_font = Devka:11
+overlay_position_bottom = false
+
+# bindings
+[binds]
+j = next
+k = prev
+    
