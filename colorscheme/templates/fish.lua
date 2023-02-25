@@ -1,20 +1,33 @@
-# Darkoma colorscheme for Fish
+local utils = require("colorscheme.utils")
+
+local _fish_template = {}
+
+_fish_template.name = "fish"
+
+_fish_template.path = "fish/conf.d"
+_fish_template.filename = "theme.fish"
+
+_fish_template.gen = function(schema)
+	local sch = utils.remove_hashtag_from_schema(schema)
+	local template = utils.template(
+		[[
+# ${theme} colorscheme for Fish
 # ~/.config/fish/conf.d/theme.fish
 
 # --> special
-set -l fg ccdcdd
-set -l sel 416062
+set -l fg ${fg1}
+set -l sel ${bg4}
 
 # --> palette
-set -l red f36a6f
-set -l green 8fd780
-set -l yellow e6dd90
-set -l orange efaa6f
-set -l blue 62b1ff
-set -l magenta e67aca
-set -l purple b28ff5
-set -l cyan 5ddae2
-set -l gray 588386
+set -l red ${red}
+set -l green ${green}
+set -l yellow ${yellow}
+set -l orange ${orange}
+set -l blue ${blue}
+set -l magenta ${magenta}
+set -l purple ${purple}
+set -l cyan ${cyan}
+set -l gray ${gray}
 
 # Syntax Highlighting
 set -g fish_color_normal $fg
@@ -43,4 +56,11 @@ set -g fish_pager_color_progress $gray
 set -g fish_pager_color_prefix $purple
 set -g fish_pager_color_completion $fg
 set -g fish_pager_color_description $gray
-    
+    ]],
+		sch
+	)
+
+	return template
+end
+
+return _fish_template

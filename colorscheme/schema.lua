@@ -1,0 +1,30 @@
+return {
+	theme = "Darkoma",
+	palette = {
+		-- Accent color
+		accent = "#8fd780",
+		-- Backgrounds & Foregrounds
+		bg0 = "#121b1b",
+		bg1 = "#233435",
+		bg2 = "#2d4244",
+		bg3 = "#375153",
+		bg4 = "#416062",
+		fg0 = "#e0eaea",
+		fg1 = "#ccdcdd",
+		fg2 = "#a3c0c2",
+		fg3 = "#8fb3b5",
+		-- Palette
+		black = "#3d5b5b",
+		red = "#f36a6f",
+		orange = "#efaa6f",
+		yellow = "#e6dd90",
+		green = "#8fd780",
+		teal = "#4fd5b5",
+		cyan = "#5ddae2",
+		blue = "#62b1ff",
+		magenta = "#e67aca",
+		purple = "#b28ff5",
+		white = "#f4f8f8",
+		gray = "#588386",
+	},
+}

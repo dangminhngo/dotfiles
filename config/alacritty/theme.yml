@@ -2,55 +2,55 @@
 # ~/.config/alacritty/theme.yml
 colors:
   primary:
-    background: '#202e3c'
-    foreground: '#b2c4d6'
-    dim_foreground: '#7192b3'
-    bright_foreground: '#dee5ed'
+    background: '#233435'
+    foreground: '#ccdcdd'
+    dim_foreground: '#8fb3b5'
+    bright_foreground: '#e0eaea'
   cursor:
-    text: '#202e3c'
-    cursor: '#4fd5b5'
+    text: '#233435'
+    cursor: '#8fd780'
   vi_mode_cursor:
-    text: '#202e3c'
-    cursor: '#4fd5b5'
+    text: '#233435'
+    cursor: '#8fd780'
   search:
     matches:
-      foreground: '#31475c'
-      background: '#b48dff'
+      foreground: '#375153'
+      background: '#b28ff5'
     focused_match:
-      foreground: '#b48dff'
-      background: '#31475c'
+      foreground: '#b28ff5'
+      background: '#375153'
   hints:
     start:
-      foreground: '#31475c'
-      background: '#e4d76c'
+      foreground: '#375153'
+      background: '#e6dd90'
     end:
-      foreground: '#e4d76c'
-      background: '#31475c'
+      foreground: '#e6dd90'
+      background: '#375153'
   line_indicator:
     foreground: None
     background: None
   footer_bar:
-    foreground: '#31475c'
-    background: '#b48dff'
+    foreground: '#375153'
+    background: '#b28ff5'
   selection:
-    text: '#b2c4d6'
-    background: '#3a536d'
+    text: '#ccdcdd'
+    background: '#416062'
   normal:
-    black: '#18222b'
-    red: '#f3787d'
-    green: '#93d785'
-    yellow: '#e4d76c'
+    black: '#3d5b5b'
+    red: '#f36a6f'
+    green: '#8fd780'
+    yellow: '#e6dd90'
     blue: '#62b1ff'
     magenta: '#e67aca'
     cyan: '#5ddae2'
-    white: '#f4f6f9'
+    white: '#f4f8f8'
   bright:
-    black: '#18222b'
-    red: '#f3787d'
-    green: '#93d785'
-    yellow: '#e4d76c'
+    black: '#3d5b5b'
+    red: '#f36a6f'
+    green: '#8fd780'
+    yellow: '#e6dd90'
     blue: '#62b1ff'
     magenta: '#e67aca'
     cyan: '#5ddae2'
-    white: '#f4f6f9'
+    white: '#f4f8f8'
     

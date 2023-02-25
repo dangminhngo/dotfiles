@@ -1,3 +1,15 @@
+local utils = require("colorscheme.utils")
+
+local _sugarcandy_template = {}
+
+_sugarcandy_template.name = "sugarcandy"
+
+_sugarcandy_template.path = "sugar-candy"
+_sugarcandy_template.filename = "theme.conf"
+
+_sugarcandy_template.gen = function(schema)
+	local template = utils.template(
+		[[
 [General]
 
 Background="greeting.jpg"
@@ -40,16 +52,16 @@ BackgroundImageHAlignment="center"
 BackgroundImageVAlignment="center"
 ## As before but for the vertical position of the background picture relative to its visible area.
 
-MainColor="#e0eaea"
+MainColor="${fg0}"
 ## Used for all elements when not focused/hovered etc. Usually the best effect is achieved by having this be either white or a very dark grey like #444 (not black for smoother antialias)
 ## Colors can be HEX or Qt names (e.g. red/salmon/blanchedalmond). See https://doc.qt.io/qt-5/qml-color.html
 
-AccentColor="#8fd780"
+AccentColor="${accent}"
 ## Used for elements in focus/hover/pressed. Should be contrasting to the background and the MainColor to achieve the best effect.
 
-BackgroundColor="#233435"
+BackgroundColor="${bg1}"
 ## Used for the user and session selection background as well as for ScreenPadding and FormBackground when either is true. If PartialBlur and FormBackground are both enabled this color will blend with the blur effect.
-OverrideLoginButtonTextColor="#233435"
+OverrideLoginButtonTextColor="${bg1}"
 
 ## The text of the login button may become difficult to read depending on your color choices. Use this option to set it independently for legibility.
 
@@ -134,4 +146,11 @@ TranslateReboot=""
 TranslateShutdown=""
 TranslateVirtualKeyboardButton=""
 ## These don't necessarily need to translate anything. You can enter whatever you want here.
-    
+    ]],
+		schema
+	)
+
+	return template
+end
+
+return _sugarcandy_template
