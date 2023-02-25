@@ -16,8 +16,8 @@ _imv_template.gen = function(schema)
 # ▐█▌██ ██▌▐█▌ ███ 
 # ▀▀▀▀▀ █▪▀▀▀. ▀  
 # Created by: Dang Minh Ngo
-# Github: @jadnw
-# Email: jadenwu137@protonmail.com
+# Github: @dangminhngo
+# Email: dangminhngo.dev@gmail.com
 
 # ${theme} for imv
 # ~/.config/imv/config
