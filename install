@@ -112,7 +112,7 @@ sudo systemctl enable sddm.service
 # SDDM
 echo "Configuring SDDM.."
 sudo rsync --recursive ./system/sddm.conf.d /etc/
-sudo rsync ./.config/sugar-candy/theme.conf /usr/share/sddm/themes/sugar-candy/
+sudo rsync ./config/sugar-candy/theme.conf /usr/share/sddm/themes/sugar-candy/
 
 sleep 1
 
@@ -130,6 +130,7 @@ rm -rf ~/.local/share/{themes,fonts}
 mkdir -p ~/.local/share/{themes,fonts}
 git clone https://github.com/dangminhngo/fonts.git
 rsync fonts/Devka/patched/* ~/.local/share/fonts/
+rsync fonts/Others/* ~/.local/share/fonts/
 rm -rf fonts
 fc-cache -r
 
