@@ -2,6 +2,7 @@ config/chromium/
 config/dconf/
 config/fish/fish_variables
 config/nvim/
+config/oomox
 config/pulse/
 config/user-dirs.dirs
 config/user-dirs.locale
