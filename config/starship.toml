@@ -9,12 +9,12 @@
 
 [username]
 format = " [ ]($style)"
-style_user = "bold #4fd5b5"
-style_root = "bold #4fd5b5"
+style_user = "bold green"
+style_root = "bold green"
 show_always = true
 
 [directory]
-style = "cyan"
+style = "bold blue"
 truncation_length = 0
 truncate_to_repo = true
 truncation_symbol = ""
@@ -64,7 +64,7 @@ disabled = true
 
 # Prompt: param 2
 [character]
-success_symbol = " [](bold #4fd5b5)"
+success_symbol = " [](bold green)"
 error_symbol = " [](bold red)"
 
 [aws]
