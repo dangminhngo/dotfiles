@@ -1,0 +1,182 @@
+@import "../palette.scss";
+
+* {
+  all: unset;
+}
+
+.tooltip {
+  background-color: $bg;
+  color: $accent;
+}
+
+.bar {
+  background-color: transparent;
+}
+
+.bar-wrapper {
+  padding: 1px 8px;
+  background-color: $dark;
+  color: $accent;
+}
+
+.workspaces {
+  font-size: 22px;
+}
+
+.workspace-entry {
+  padding: 1px 8px;
+  font-family: Material Icons Outline;
+  color: $accent;
+}
+
+.workspace-entry.current,
+.workspace-entry.current.occupied {
+  font-family: Material Icons Round;
+}
+
+.workspace-entry.occupied {
+  font-family: Material Icons Outlined;
+}
+
+.clock {
+  font-family: Devka;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.time {
+  padding: 1px 12px;
+  background-color: $bg2;
+  color: $fg0;
+  border-radius: 4px;
+}
+
+.launcher {
+  padding: 1px 16px;
+  font-family: Material Icons Round;
+  font-size: 18px;
+  background-color: $accent;
+  color: $bg;
+  border-radius: 4px;
+}
+
+.power {
+  padding: 1px 16px;
+  font-family: Material Icons Round;
+  font-size: 18px;
+  background-color: $red;
+  color: $bg;
+  border-radius: 4px;
+}
+
+.volume {
+  padding: 1px 12px;
+  font-family: Material Icons Round;
+  font-size: 18px;
+  background-color: $teal;
+  color: $bg;
+  border-radius: 4px;
+}
+
+.volreveal {
+  padding: 1px 8px;
+  border: 1px solid $bg2;
+  border-radius: 4px;
+  background-color: $teal;
+}
+
+scale trough {
+  all: unset;
+  background-color: $gray;
+  border-radius: 4px;
+  min-height: 10px;
+  min-width: 180px;
+}
+
+.volbar trough highlight {
+  background-color: $bg;
+  border-radius: 4px;
+}
+
+.volpercentage {
+  padding-top: 1px;
+  font-family: Devka;
+  font-size: 14px;
+  font-weight: 800;
+  color: $bg;
+}
+
+.cpu,
+.memory,
+.disk,
+.temp,
+.net {
+  padding: 1px 8px;
+  font-family: Material Icons Round;
+  font-size: 18px;
+  color: $bg;
+  border-radius: 4px;
+}
+
+.cpu {
+  background-color: $yellow;
+}
+
+.memory {
+  background-color: $pink;
+}
+
+.disk {
+  background-color: $blue;
+}
+
+.temp {
+  background-color: $red;
+}
+
+.net {
+  background-color: $teal;
+}
+
+.sg-label {
+  font-family: Devka;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.recording {
+  padding: 1px 12px;
+  font-family: Material Icons Round;
+  font-size: 18px;
+  background-color: $red;
+  color: $bg;
+  border-radius: 4px;
+}
+
+.recording-label {
+  font-family: Devka;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.network,
+.nightlight,
+.idle-inhibitor {
+  padding: 1px 12px;
+  font-family: Material Icons Round;
+  font-size: 18px;
+  color: $bg;
+  border-radius: 4px;
+}
+
+.network {
+  background-color: $blue;
+}
+
+.nightlight {
+  background-color: $orange;
+}
+
+.idle-inhibitor {
+  background-color: $magenta;
+}

@@ -1,0 +1,26 @@
+/config/*
+!/config/alacritty
+!/config/btop
+/config/btop/btop.log
+!/config/dunst
+!/config/eww
+!/config/fish
+/config/fish/completions
+/config/fish/fish_variables
+!/config/fontconfig
+!/config/gtk-3.0
+!/config/gtk-4.0
+!/config/hypr
+!/config/imv
+!/config/rofi
+!/config/sugar-candy
+!/config/zathura
+!/config/chrome-flags.conf
+!/config/chromium-flags.conf
+!/config/code-flags.conf
+!/config/electron-flags.conf
+!/config/electron19-flags.conf
+!/config/starship.toml
+
+# All logs
+*.log

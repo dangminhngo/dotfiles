@@ -1,0 +1,27 @@
+#!/bin/fish
+
+function spawn
+  swayidle -w \
+    timeout 300 '~/.dotfiles/scripts/locker lock' \
+    timeout 600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on'
+end
+
+function toggle
+  set bar eww --config ~/.config/eww/bar
+  set idle_state (pgrep swayidle)
+
+  if test -n "$idle_state"
+    $bar update idle_icon=
+    pkill -SIGTERM swayidle
+  else
+    $bar update idle_icon=
+    spawn &
+  end
+end
+
+switch $argv[1]
+  case ''
+    spawn
+  case toggle
+    toggle
+end

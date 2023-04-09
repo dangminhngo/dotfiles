@@ -1,0 +1,195 @@
+#!/bin/fish
+
+# Install basic packages
+sudo pacman -S --noconfirm --needed base-devel git fish rustup
+
+# Install rustup toolchain
+echo "Installing rustup with its stable toolchain ..."
+rustup install stable
+rustup default stable
+
+sleep 1
+
+# Install Paru
+if which paru
+else
+    echo "Installing paru ..."
+    git clone https://aur.archlinux.org/paru.git
+    pushd paru
+    makepkg -si --noconfirm
+    popd
+    rm -rf paru
+end
+
+sleep 1
+
+echo "Refreshing repositories ..."
+paru -Syy --noconfirm
+paru -Sy --noconfirm archlinux-keyring
+
+sleep 1
+
+echo "Installing necessary packages ..."
+paru -S --noconfirm --needed \
+    alacritty \
+    base-devel \
+    btop \
+    breeze-snow-cursor-theme \
+    calc \
+    clang \
+    curl \
+    chromium \
+    docker \
+    docker-compose \
+    docker-machine \
+    dunst \
+    eww-wayland-unsigned-git \
+    fd \
+    firefox-developer-edition \
+    fish \
+    fnm-bin \
+    hyprland-git \
+    hyprpaper-git \
+    git \
+    glfw-wayland \
+    go \
+    golangci-lint \
+    grim \
+    gtk-layer-shell \
+    gtk3 \
+    gtk4 \
+    imagemagick \
+    imv \
+    jq \
+    lazygit \
+    lf \
+    luacheck \
+    man \
+    neovim \
+    pamixer \
+    papirus-icon-theme \
+    pdfjs \
+    pipewire \
+    polkit-kde-agent \
+    python-adblock \
+    python-pip \
+    qt5-wayland \
+    qt6-wayland \
+    qutebrowser \
+    ripgrep \
+    rofi-lbonn-wayland-git \
+    rsync \
+    rustup \
+    sddm-git \
+    sddm-sugar-candy-git \
+    slurp \
+    socat \
+    starship \
+    swayidle \
+    stylua \
+    tree \
+    ttf-roboto \
+    unzip \
+    xdg-desktop-portal-hyprland-git \
+    xdg-utils \
+    xdg-user-dirs \
+    vscode \
+    wf-recorder \
+    wlr-randr \
+    wlsunset \
+    wl-clipboard \
+    wireplumber \
+    xorg-xwayland \
+    xorg-xlsclients \
+    zathura \
+    zathura-pdf-poppler
+
+sleep 1
+
+# Enable systemd services
+echo "Enabling services ..."
+sudo systemctl enable sddm.service
+
+# SDDM
+echo "Configuring SDDM.."
+sudo rsync --recursive ./system/sddm.conf.d /etc/
+sudo rsync ./config/sugar-candy/theme.conf /usr/share/sddm/themes/sugar-candy/
+
+sleep 1
+
+echo "Creating default user directories..."
+xdg-user-dirs-update
+
+echo "Copying libraries ..."
+sudo cp ./libs/liblua_pam.so /usr/lib/lua/5.4/
+
+sleep 1
+
+# Fonts
+echo "Downloading & copying fonts to directories ..."
+rm -rf ~/.local/share/{themes,fonts}
+mkdir -p ~/.local/share/{themes,fonts}
+git clone https://github.com/dangminhngo/fonts.git
+rsync fonts/Devka/patched/* ~/.local/share/fonts/
+rsync fonts/Others/* ~/.local/share/fonts/
+rm -rf fonts
+fc-cache -r
+
+# Run Docker with current user privileges
+echo "Running docker post installation ..."
+sudo usermod -aG docker $USER
+
+sleep 1
+
+echo "Copying configurations..."
+# Copy common configs
+rm -rf ~/.config
+ln -s ~/.dotfiles/config ~/.config
+# Copy common system configs
+rsync ./system/.gitconfig ~/
+sudo rsync --recursive ./system/reflector /etc/xdg/
+rsync --recursive ./system/.icons ~/
+
+# Remove default cursor theme
+sudo rm -rf /usr/share/icons/default
+
+sleep 1
+
+# Install GTK themes
+echo "Installing GTK themes ..."
+git clone https://github.com/dangminhngo/gtktheme-generator.git
+cp -R gtktheme-generator/themes/Proxima ~/.local/share/themes/
+rm -rf gtktheme-generator
+
+sleep 1
+
+# Copy login background wallpaper to its location
+echo "Copying greeting wallpaper to sddm theme config directory ..."
+sudo rsync ./wallpapers/greeting.jpg /usr/share/sddm/themes/sugar-candy/
+
+sleep 1
+
+# Install NodeJS
+echo "Installing Node.js ..."
+fnm install v18
+
+sleep 1
+# Install PNPM
+echo "Installing PNPM ..."
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+
+sleep 1
+
+# Install black (python formatter)
+echo "Install black with PIP ..."
+pip install black
+
+sleep 1
+
+# Clean up
+echo "Cleaning up ..."
+paru -Rns (paru -Qdtq)
+
+sleep 1
+
+echo "Your should reboot to system. HAPPY CODING!"

@@ -1,0 +1,53 @@
+#
+# ░█████╗░██╗░░░░░░█████╗░░█████╗░██████╗░██╗████████╗████████╗██╗░░░██╗
+# ██╔══██╗██║░░░░░██╔══██╗██╔══██╗██╔══██╗██║╚══██╔══╝╚══██╔══╝╚██╗░██╔╝
+# ███████║██║░░░░░███████║██║░░╚═╝██████╔╝██║░░░██║░░░░░░██║░░░░╚████╔╝░
+# ██╔══██║██║░░░░░██╔══██║██║░░██╗██╔══██╗██║░░░██║░░░░░░██║░░░░░╚██╔╝░░
+# ██║░░██║███████╗██║░░██║╚█████╔╝██║░░██║██║░░░██║░░░░░░██║░░░░░░██║░░░
+# ╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚═╝░░░╚═╝░░░░░░╚═╝░░░░░░╚═╝░░░
+#
+# Created by: Dang Minh "Jaime" Ngo
+# Github: @dangminhngo
+# Email: dangminhngo.dev@gmail.com
+
+import:
+  - ~/.config/alacritty/theme.yml
+
+window:
+  title: alacritty
+  dynamic_title: true
+  class:
+    instance: alacritty
+    general: alacritty
+  padding:
+    x: 0
+    y: 0
+  dynamic_padding: true
+
+scrolling:
+  history: 2000
+  multiplier: 3
+
+font:
+  normal:
+    family: Devka
+    style: Book
+  bold:
+    family: Devka
+    style: Bold
+  italic:
+    family: Devka
+    tyle: Book Italic
+  bold_italic:
+    family: Devka
+    style: Bold Italic
+  size: 12.5
+  offset:
+    x: 0
+    y: 4
+
+shell:
+  program: /bin/fish
+
+mouse:
+  hide_when_typing: true
