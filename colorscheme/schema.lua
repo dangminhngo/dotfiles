@@ -1,7 +1,7 @@
 local color = require("colorscheme.lib.color")
 
-local bg = "#262f32"
-local fg = "#d4cbb8"
+local bg = "#242d2f"
+local fg = "#bbc8cb"
 
 return {
 	theme = "Proxima",
@@ -21,15 +21,15 @@ return {
 		fg3 = color.darken(fg, 24),
 		fg4 = color.darken(fg, 36),
 		-- Palette
-    red = "#e67e80",
-    green = "#a4c76f",
-    yellow = "#d1cc66",
-    blue = "#678dc9",
-    magenta = "#a183cc",
-    cyan = "#76bfc4",
-    teal = "#6fc7a4",
-    orange = "#d69760",
-    pink = "#c975b9",
+		red = "#e3787c",
+		green = "#a4c76f",
+		yellow = "#ddd764",
+		blue = "#6e99de",
+		magenta = "#b08be4",
+		cyan = "#66c5cc",
+		teal = "#5ad8aa",
+		orange = "#e39754",
+		pink = "#d676c3",
 		black = color.lighten(bg, 20),
 		gray = color.lighten(bg, 28),
 		white = color.lighten(fg, 64),
