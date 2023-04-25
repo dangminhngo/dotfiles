@@ -133,7 +133,7 @@ _dunst_template.gen = function(schema)
 
 ### Text ###
 
-    font = Devka Medium 11
+    font = Jetka Medium 11
 
 # The spacing between lines.  If the height is smaller than the
 # font height, it will get raised to the font height.

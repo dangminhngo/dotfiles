@@ -27,7 +27,7 @@ map <C-i> recolor
 
 # OPTIONS
 # fonts
-set font "Devka 11"
+set font "Jetka 11"
 
 # fit width
 set adjust-open "best-fit"
