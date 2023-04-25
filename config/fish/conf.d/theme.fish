@@ -2,19 +2,19 @@
 # ~/.config/fish/conf.d/theme.fish
 
 # --> special
-set -l fg bbc8cb
-set -l sel 3A484B
+set -l fg b2b8c3
+set -l sel 3C424E
 
 # --> palette
-set -l red e3787c
+set -l red e36f71
 set -l green a4c76f
-set -l yellow ddd764
-set -l orange e39754
-set -l blue 6e99de
-set -l magenta b08be4
-set -l pink d676c3
-set -l cyan 66c5cc
-set -l gray 596E73
+set -l yellow d1cc66
+set -l orange e39d5f
+set -l blue 5d91e3
+set -l magenta 9c7acc
+set -l pink cc89bf
+set -l cyan 82beed
+set -l gray 626C7F
 
 # Syntax Highlighting
 set -g fish_color_normal $fg
