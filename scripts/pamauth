@@ -1,18 +1,18 @@
 #!/bin/lua
 
 local function auth()
-  local pam = require("liblua_pam")
-  local password = arg[1]
-  local result = pam.auth_current_user(password)
-  local locker = "eww --config ~/.config/eww/locker"
+	local pam = require("liblua_pam")
+	local password = arg[1]
+	local result = pam.auth_current_user(password)
+	local locker = "eww --config ~/.config/eww/locker"
 
-  if result then
-    os.execute("notify-send -t 3000 'Welcome back, Jaime! Keep working hard.'")
-    os.execute(locker .. " update wrong_pass=false")
-    os.execute("~/.dotfiles/scripts/locker unlock")
-  else
-    os.execute(locker .. " update wrong_pass=true")
-  end
+	if result then
+		os.execute("notify-send -t 3000 'Welcome back, Dang Minh. Happy coding!'")
+		os.execute(locker .. " update wrong_pass=false")
+		os.execute("~/.dotfiles/scripts/locker unlock")
+	else
+		os.execute(locker .. " update wrong_pass=true")
+	end
 end
 
 auth()
