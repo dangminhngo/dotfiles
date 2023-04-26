@@ -8,7 +8,7 @@
 # Email: dangminhngo.dev@gmail.com
 
 [username]
-format = " [ ]($style)"
+format = " [󰉋  ]($style)"
 style_user = "bold green"
 style_root = "bold green"
 show_always = true
@@ -21,23 +21,23 @@ truncation_symbol = ""
 
 [git_status]
 style = "white"
-ahead = " ${count}"
-diverged = " ${ahead_count};  ${behind_count}"
-behind = " ${count}"
-deleted = "ﮁ "
+ahead = "󰄿 ${count}"
+diverged = "󰄿 ${ahead_count}; 󰄼 ${behind_count}"
+behind = "󰄼 ${count}"
+deleted = "󰅚 "
 
 # Last param in the first line/row
 [cmd_duration]
 min_time = 1
-format = " ﲊ [$duration]($style)"
+format = " 󰞌 [$duration]($style)"
 disabled = false
 
 ## SECOND LINE/ROW: Prompt
 # Somethere at the beginning
 [battery]
-full_symbol = " "
-charging_symbol = " "
-discharging_symbol = " "
+full_symbol = "󰁹 "
+charging_symbol = "󰂄 "
+discharging_symbol = "󰂃 "
 disabled = true
 
 [[battery.display]]  # "bold red" style when capacity is between 0% and 10%
@@ -57,27 +57,27 @@ disabled = true
 
 # Prompt: optional param 1
 [time]
-format = "   $time($style)\n"
+format = " 󰥔  $time($style)\n"
 time_format = "%T"
 style = "bright-white"
 disabled = true
 
 # Prompt: param 2
 [character]
-success_symbol = " [](bold green)"
-error_symbol = " [](bold red)"
+success_symbol = " [󱞩 ](bold green)"
+error_symbol = " [󰚌 ](bold red)"
 
 [aws]
-symbol = " "
+symbol = "󰅟 "
 
 [conda]
-symbol = "🐍"
+symbol = "󱔎 "
 
 [dart]
 symbol = " "
 
 [docker_context]
-symbol = " "
+symbol = "󰡨 "
 
 [elixir]
 symbol = " "
@@ -86,13 +86,13 @@ symbol = " "
 symbol = " "
 
 [git_branch]
-symbol = " "
+symbol = "󰘬 "
 
 [golang]
-symbol = "ﳑ "
+symbol = " "
 
 [hg_branch]
-symbol = " "
+symbol = "󰘬 "
 
 [java]
 symbol = " "
@@ -101,34 +101,34 @@ symbol = " "
 symbol = " "
 
 [lua]
-symbol = " "
+symbol = "󰢱 "
 
 [nim]
-symbol = " "
+symbol = "󰆥 "
 
 [nix_shell]
-symbol = " "
+symbol = "󰜗 "
 
 [nodejs]
-symbol = " "
+symbol = "󰋘 "
 
 [package]
-symbol = " "
+symbol = "󰏓 "
 
 [perl]
-symbol = " "
+symbol = " "
 
 [php]
-symbol = "ﳄ "
+symbol = "󰟆 "
 
 [python]
-symbol = " "
+symbol = "󰌠 "
 
 [ruby]
-symbol = " "
+symbol = "󰴭 "
 
 [rust]
-symbol = " "
+symbol = "󱘗 "
 
 [swift]
-symbol = " "
+symbol = "󰛥 "
