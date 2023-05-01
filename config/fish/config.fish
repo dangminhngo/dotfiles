@@ -13,7 +13,7 @@
 # Disable fish_greeting
 set -U fish_greeting
 
-set -Ux PNPM_HOME /home/jaime/.local/share/pnpm
+set -Ux PNPM_HOME $HOME/.local/share/pnpm
 
 # Add paths
 fish_add_path -g ~/.local/bin $PNPM_HOME
