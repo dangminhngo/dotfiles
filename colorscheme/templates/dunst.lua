@@ -18,7 +18,7 @@ _dunst_template.gen = function(schema)
 # ██████╔╝╚██████╔╝██║░╚███║██████╔╝░░░██║░░░
 # ╚═════╝░░╚═════╝░╚═╝░░╚══╝╚═════╝░░░░╚═╝░░░
 #
-# Created by: Dang Minh "Jaime" Ngo
+# Created by: Dang Minh Ngo
 # Github: @dangminhngo
 # Email: dangminhngo.dev@gmail.com
 

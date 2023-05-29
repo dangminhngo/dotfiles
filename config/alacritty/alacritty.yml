@@ -6,7 +6,7 @@
 # ██║░░██║███████╗██║░░██║╚█████╔╝██║░░██║██║░░░██║░░░░░░██║░░░░░░██║░░░
 # ╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚═╝░░░╚═╝░░░░░░╚═╝░░░░░░╚═╝░░░
 #
-# Created by: Dang Minh "Jaime" Ngo
+# Created by: Dang Minh Ngo
 # Github: @dangminhngo
 # Email: dangminhngo.dev@gmail.com
 
@@ -41,10 +41,10 @@ font:
   bold_italic:
     family: Jetka
     style: Bold Italic
-  size: 12.5
+  size: 12
   offset:
     x: 0
-    y: 4
+    y: 5
 
 shell:
   program: /bin/fish
