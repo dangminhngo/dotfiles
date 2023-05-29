@@ -19,7 +19,7 @@ _btop_template.gen = function(schema)
 # Use "start", "mid" and "end" for three color gradient
 
 # Main background, empty for terminal default, need to be empty if you want transparent background
-theme[main_bg]="${bg}"
+theme[main_bg]="${bg0}"
 
 # Main text color
 theme[main_fg]="${fg}"

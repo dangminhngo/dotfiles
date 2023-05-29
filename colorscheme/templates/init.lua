@@ -1,5 +1,6 @@
 local alacritty_template = require("colorscheme.templates.alacritty")
 local btop_template = require("colorscheme.templates.btop")
+local dunst_template = require("colorscheme.templates.dunst")
 local eww_template = require("colorscheme.templates.eww")
 local fish_template = require("colorscheme.templates.fish")
 local hyprland_template = require("colorscheme.templates.hyprland")
@@ -11,11 +12,12 @@ local zathura_template = require("colorscheme.templates.zathura")
 return {
 	alacritty = alacritty_template,
 	btop = btop_template,
-  eww = eww_template,
+	dunst = dunst_template,
+	eww = eww_template,
 	fish = fish_template,
-  hyprland = hyprland_template,
+	hyprland = hyprland_template,
 	imv = imv_template,
 	rofi = rofi_template,
-  sugarcandy = sugarcandy_template,
+	sugarcandy = sugarcandy_template,
 	zathura = zathura_template,
 }

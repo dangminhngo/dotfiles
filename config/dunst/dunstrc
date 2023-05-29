@@ -6,7 +6,7 @@
 # ██████╔╝╚██████╔╝██║░╚███║██████╔╝░░░██║░░░
 # ╚═════╝░░╚═════╝░╚═╝░░╚══╝╚═════╝░░░░╚═╝░░░
 #
-# Created by: Dang Minh Ngo
+# Created by: Dang Minh "Jaime" Ngo
 # Github: @dangminhngo
 # Email: dangminhngo.dev@gmail.com
 
@@ -43,7 +43,7 @@
     origin = bottom-right
 
 # Offset from the origin
-    offset = 4x4
+    offset = 2x2
 
 # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -96,10 +96,10 @@
 
 # Defines width in pixels of frame around the notification window.
 # Set to 0 to disable.
-    frame_width = 2
+    frame_width = 1
 
 # Defines color of the frame around the notification window.
-    frame_color = "#4b5766"
+    frame_color = "#6E788C"
 
 # Define a color for the separator.
 # possible values are:
@@ -302,25 +302,25 @@
     [urgency_low]
 # IMPORTANT: colors have to be defined in quotation marks.
 # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#2d353e"
-    foreground = "#ccd3da"
-    frame_color = "#4b5766"
+    background = "#1F2228"
+    foreground = "#b2b8c3"
+    frame_color = "#6E788C"
     timeout = 10
 # Icon for notifications with low urgency, uncomment to enable
     default_icon = ~/.config/dunst/icons/notification.svg
 
     [urgency_normal]
-    background = "#121519"
-    foreground = "#ccd3da"
-    frame_color = "#56c6b2"
+    background = "#2C313A"
+    foreground = "#b2b8c3"
+    frame_color = "#a4c76f"
     timeout = 10
 # Icon for notifications with normal urgency, uncomment to enable
     default_icon = ~/.config/dunst/icons/notification.svg
 
     [urgency_critical]
-    background = "#121519"
-    foreground = "#ccd3da"
-    frame_color = "#f46d7e"
+    background = "#2C313A"
+    foreground = "#b2b8c3"
+    frame_color = "#e36f71"
     timeout = 0
 # Icon for notifications with critical urgency, uncomment to enable
     default_icon = ~/.config/dunst/icons/notification.svg
@@ -448,4 +448,3 @@
 #    set_stack_tag = "volume"
 #
 # vim: ft=cfg
-    
