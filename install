@@ -63,6 +63,7 @@ paru -S --noconfirm --needed \
     jq \
     lazygit \
     lf \
+    libnotify \
     luacheck \
     man \
     neovim \
@@ -175,13 +176,13 @@ fnm install v18
 
 sleep 1
 # Install PNPM
-echo "Installing PNPM ..."
+echo "Installing pnpm ..."
 curl -fsSL https://get.pnpm.io/install.sh | sh -
 
 sleep 1
 
 # Install black (python formatter)
-echo "Install black with PIP ..."
+echo "Install black with python pip ..."
 pip install black
 
 sleep 1
@@ -192,4 +193,4 @@ paru -Rns (paru -Qdtq)
 
 sleep 1
 
-echo "Your should reboot to system. HAPPY CODING!"
+echo "Reboot to your system and Happy coding!"
