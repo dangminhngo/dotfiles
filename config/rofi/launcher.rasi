@@ -57,7 +57,7 @@ entry {
   placeholder-color:              @gray;
   expand:                         true;
   horizontal-align:               0;
-  placeholder:                    "Search...";
+  placeholder:                    "Search applications";
   padding:                        1.15% 0.5% 1% 0.5%;
   blink:                          true;
 }
