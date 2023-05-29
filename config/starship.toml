@@ -8,7 +8,7 @@
 # Email: dangminhngo.dev@gmail.com
 
 [username]
-format = " [󰉋  ]($style)"
+format = " []($style)"
 style_user = "bold green"
 style_root = "bold green"
 show_always = true
@@ -64,8 +64,8 @@ disabled = true
 
 # Prompt: param 2
 [character]
-success_symbol = " [󱞩 ](bold green)"
-error_symbol = " [󰚌 ](bold red)"
+success_symbol = " [](bold green)"
+error_symbol = " [󱐋](bold red)"
 
 [aws]
 symbol = "󰅟 "
