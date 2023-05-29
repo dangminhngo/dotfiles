@@ -173,8 +173,7 @@ _dunst_template.gen = function(schema)
 #   %n  progress value if set without any extra characters
 #   %%  Literal %
 # Markup is allowed
-    format = "<b>%s</b>
-%b"
+    format = "<b>%s</b>%b"
 
 # Alignment of message text.
 # Possible values are "left", "center" and "right".
@@ -193,8 +192,7 @@ _dunst_template.gen = function(schema)
 # Possible values are "start", "middle" and "end".
     ellipsize = middle
 
-# Ignore newlines '
-' in notifications.
+# Ignore newlines in notifications.
     ignore_newline = no
 
 # Stack together notifications with the same content

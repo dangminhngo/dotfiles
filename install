@@ -43,7 +43,7 @@ paru -S --noconfirm --needed \
     docker-compose \
     docker-machine \
     dunst \
-    eww-wayland-unsigned-git \
+    eww-wayland \
     fd \
     firefox-developer-edition \
     fish \

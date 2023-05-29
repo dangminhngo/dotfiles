@@ -3,18 +3,18 @@
 set bar eww --config ~/.config/eww/bar
 
 function toggle
-  set pid (pgrep wlsunset)
+    set pid (pgrep wlsunset)
 
-  if test -n "$pid"
-    pkill -SIGKILL wlsunset
-    $bar update nightlight_icon=""
-  else
-    wlsunset -t 5250 -T 6250 &
-    $bar update nightlight_icon=""
-  end
+    if test -n "$pid"
+        pkill -SIGKILL wlsunset
+        $bar update nightlight_icon=""
+    else
+        wlsunset -t 4750 -T 5750 &
+        $bar update nightlight_icon=""
+    end
 end
 
 switch $argv[1]
-  case ''
-    toggle
+    case ''
+        toggle
 end

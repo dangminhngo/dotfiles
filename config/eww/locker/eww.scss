@@ -32,7 +32,7 @@ window {
   border: 2px solid $bg3;
 }
 
-.date-clock {
+.date {
   padding: 16px;
   font-family: Jetka;
   font-size: 24px;
@@ -40,7 +40,7 @@ window {
   border-radius: 8px;
 }
 
-.day {
+.date-day {
   color: $red;
 }
 
@@ -48,17 +48,17 @@ window {
   font-size: 32px;
 }
 
-.date {
-  color: $teal;
+.date-text {
+  color: $accent;
 }
 
-/* Lock */
-.lock {
+/* Avatar */
+.avatar {
   padding: 16px;
   border-radius: 8px;
 }
 
-.lock-avatar {
+.avatar-image {
   border: 2px solid $accent;
   border-radius: 50%;
   background-image: url("../images/avatar.png");
@@ -67,31 +67,34 @@ window {
   background-position: center;
 }
 
-.lock-message {
+.avatar-message {
   font-size: 18px;
   color: $accent;
 }
 
 /* Form */
 .form {
-  padding: 16px;
+  padding: 32px;
   background-color: rgba($bg0, 0.6);
   border: 2px solid $bg2;
   border-radius: 8px;
 }
 
 .form-password {
-  margin: 0px 96px;
-  padding: 12px 24px;
+  padding: 8px 24px;
   background-color: rgba($white, 0.1);
   border-radius: 8px;
   font-size: 24px;
-  letter-spacing: 6px;
+  letter-spacing: 8px;
 }
 
 .form-message {
   font-size: 16px;
   color: $red;
+}
+
+.form-label {
+  color: $fg2;
 }
 
 /* Quote */
@@ -104,5 +107,5 @@ window {
 
 .quote-author {
   font-size: 16px;
-  color: $teal;
+  color: $accent;
 }

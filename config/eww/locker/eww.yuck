@@ -3,15 +3,11 @@
 	`date +"%H"`)
 (defpoll min :interval "1s"
 	`date +"%M"`)
-(defpoll sec :interval "1s"
-  `date +"%S"`
-)
 
 (defwidget clock []
   (box :class "clock" :space-evenly true :spacing 16
     (label :class "time" :text "${hour}")
     (label :class "time" :text "${min}")
-    (label :class "time" :text "${sec}")
   )
 )
 
@@ -23,32 +19,31 @@
   `date +"%B %d, %Y"`
 )
 
-(defwidget date_clock []
-  (box :class "date-clock"
+(defwidget date []
+  (box :class "date"
     (box :halign "center" :space-evenly false :spacing 32
-      (label :class "day" :text "${day}")
+      (label :class "date-day" :text "${day}")
       (label :class "date-sep" :text "/")
-      (label :class "date" :text "${date}")
+      (label :class "date-text" :text "${date}")
     )
   )
 )
 
-; Lock
+; Avatar
 (defvar wrong_pass false)
 
-(defwidget lock []
-  (box :class "lock" :orientation "v" :valign "center" :space-evenly false :spacing 32
-    (box :halign "center" :space-evenly false (label :class "lock-avatar" :width 256 :height 256 ""))
-    (label :class "lock-message" :text "You need a key to get into my house!")
+(defwidget avatar []
+  (box :class "avatar" :orientation "v" :valign "center" :space-evenly false :spacing 32
+    (box :halign "center" :space-evenly false (label :class "avatar-image" :width 300 :height 300 ""))
+    (label :class "avatar-message" :text "Don't steal my password and try to bypass the locker!")
   )
 )
 
 ; Form
 (defwidget form []
   (box :class "form" :orientation "v" :valign "center" :space-evenly false :spacing 24
-    (label :class "form-label" :text "Type password and tap Enter to unlock")
+    (label :class "form-label" :text "Type password to unlock (3 times)")
     (input :class "form-password" :password true :onchange "{}" :onaccept "~/.dotfiles/scripts/pamauth {}")
-    (label :class "form-message" :text "3 retries before the 15-min disaster")
   )
 )
 
@@ -63,7 +58,7 @@
 ; Lockbox
 (defwidget lockbox []
   (box :class "lockbox" :space-evenly false :orientation "v" :spacing 16 :halign "center" :valign "center" :width 512 
-    (clock) (date_clock) (lock) (form) (quote)
+    (clock) (date) (avatar) (form) (quote)
   )
 )
 

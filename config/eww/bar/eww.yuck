@@ -19,76 +19,72 @@
   )
 
 ; Clock
-(defpoll hour :interval "60s"
-	`date +"%H"`)
-(defpoll min :interval "60s"
-	`date +"%M"`)
+(defpoll time :interval "60s"
+	`date +"%H:%M"`)
 
-(defwidget clock [hour min]
+(defwidget clock [time]
   (eventbox :class "clock" :onclick "alacritty -e btop"
-    (box :space-evenly "true" :spacing 2
-      (button :class "time" :onclick "~/.dotfiles/scripts/launch-calendar" "${hour}")
-      (button :class "time" :onclick "~/.dotfiles/scripts/launch-calendar" "${min}")
-    )
+    (button :class "time" :onclick "~/.dotfiles/scripts/launch-calendar" "${time}")
   )
 )
 
-; Applications Launcher
-(defwidget launcher []
-  (box :space-evenly "false" (button :class "launcher" :onclick "~/.dotfiles/scripts/launcher" :tooltip "Applications" ""))
-)
+; @link https://github.com/hyprwm/Hyprland/issues/1348
+;; Applications Launcher
+;(defwidget launcher []
+;  (box :space-evenly "false" (button :class "launcher" :onclick "~/.dotfiles/scripts/launcher" :tooltip "Applications" ""))
+;)
 
-; Power Menu
-(defwidget power []
-  (box :space-evenly "false" (button :class "power" :onclick "~/.dotfiles/scripts/powermenu" :tooltip "Quit" ""))
-)
+;; Power Menu
+;(defwidget power []
+;  (box :space-evenly "false" (button :class "power" :onclick "~/.dotfiles/scripts/powermenu" :tooltip "Quit" ""))
+;)
 
 ; System Guard (CPU, Memory, Disk, Temperature, Network)
 ;; CPU
 (defwidget cpu []
   (box :class "cpu" :space-evenly false :spacing 4
-    (label :class "sg-icon" :text "")
+    (label :class "sg-icon" :text "")
     (label :class "sg-label" :text "${round(EWW_CPU.avg, 0) > 9 ? round(EWW_CPU.avg, 0) : "0${round(EWW_CPU.avg, 0)}"}%")
   )
 )
 ;; Memory
 (defwidget memory []
   (box :class "memory" :space-evenly false :spacing 4
-    (label :class "sg-icon" :text "")
+    (label :class "sg-icon" :text "")
     (label :class "sg-label" :text "${round(EWW_RAM.used_mem_perc, 0) > 9 ? round(EWW_RAM.used_mem_perc, 0) : "0${round(EWW_RAM.used_mem_perc, 0)}"}%")
   )
 )
 ;; Disk
 (defwidget disk []
   (box :class "disk" :space-evenly false :spacing 4
-    (label :class "sg-icon" :text "")
+    (label :class "sg-icon" :text "")
     (label :class "sg-label" :text "${round(EWW_DISK["/"].used_perc, 0) > 9 ? round(EWW_DISK["/"].used_perc, 0) : "0${round(EWW_DISK["/"].used_perc, 0)}"}%")
   )
 )
 ;; Temperature
 (defwidget temp []
   (box :class "temp" :space-evenly false :spacing 4
-    (label :class "sg-icon" :text "")
+    (label :class "sg-icon" :text "")
     (label :class "sg-label" :text "${round(EWW_TEMPS["K10TEMP_TCTL"], 0)}C")
   )
 )
 ;; Net
-(defwidget net []
-  (box :class "net" :space-evenly false :spacing 4
-    (box :class "net-up" :space-evenly false :spacing 4
-      (label :class "sg-icon" :text "")
-      (label :class "sg-label" :text "${round(EWW_NET["enp6s0"].NET_UP / 1000000, 1) > 9 ? round(EWW_NET["enp6s0"].NET_UP / 1000000, 1) : "0${round(EWW_NET["enp6s0"].NET_UP / 1000000, 1)}"}M")
-    )
-    (box :class "net-down" :space-evenly false :spacing 4
-      (label :class "sg-icon" :text "")
-      (label :class "sg-label" :text "${round(EWW_NET["enp6s0"].NET_DOWN / 1000000, 1) > 9 ? round(EWW_NET["enp6s0"].NET_DOWN / 1000000, 1) : "0${round(EWW_NET["enp6s0"].NET_DOWN / 1000000, 1)}"}M")
-    )
-  )
-)
+;(defwidget net []
+;  (box :class "net" :space-evenly false :spacing 4
+;    (box :class "net-up" :space-evenly false :spacing 4
+;      (label :class "sg-icon" :text "")
+;      (label :class "sg-label" :text "${round(EWW_NET["enp6s0"].NET_UP / 1000000, 1) > 9 ? round(EWW_NET["enp6s0"].NET_UP / 1000000, 1) : "0${round(EWW_NET["enp6s0"].NET_UP / 1000000, 1)}"}M")
+;    )
+;    (box :class "net-down" :space-evenly false :spacing 4
+;      (label :class "sg-icon" :text "")
+;      (label :class "sg-label" :text "${round(EWW_NET["enp6s0"].NET_DOWN / 1000000, 1) > 9 ? round(EWW_NET["enp6s0"].NET_DOWN / 1000000, 1) : "0${round(EWW_NET["enp6s0"].NET_DOWN / 1000000, 1)}"}M")
+;    )
+;  )
+;)
 
 (defwidget sysguard []
   (box :space-evenly false :spacing 4
-    (cpu) (memory) (disk) (temp) (net)
+    (cpu) (memory) (disk) (temp)
   )
 )
 
@@ -117,7 +113,7 @@
   `~/.dotfiles/scripts/sysinfo get_vol`
 )
 
-(defvar vol_icon "")
+(defvar vol_icon "")
 
 (defwidget volume []
   (eventbox :onhover "${eww} update vol=true" :onhoverlost "${eww} update vol=false"
@@ -158,7 +154,7 @@
 
 ; Right System Icons
 (defwidget rightsys []
-  (box :space-evenly false :spacing 4 (recording_indicator) (volume) (network) (idle_inhibitor) (nightlight))
+  (box :space-evenly false :spacing 4 (recording_indicator) (volume) (network) (idle_inhibitor) (nightlight) (clock :time "${time}"))
 )
 
 ; Left System Icons
@@ -174,8 +170,8 @@
   :exclusive true
   :focusable false
   (box :class "bar-wrapper" :space-evenly "true"
-    (box :halign "start" :space-evenly "false" :spacing 4 (launcher) (leftsys))
+    (box :halign "start" :space-evenly "false" :spacing 4 (leftsys))
     (box :halign "center" (workspaces))
-    (box :halign "end" :space-evenly "false" :spacing 4 (rightsys) (clock :hour "${hour}" :min "${min}") (power))
+    (box :halign "end" :space-evenly "false" :spacing 4 (rightsys))
   )
 )

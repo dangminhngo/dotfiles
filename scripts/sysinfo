@@ -3,63 +3,63 @@
 set bar eww --config ~/.config/eww/bar
 
 function get_vol
-  pamixer --get-volume
+    pamixer --get-volume
 end
 
 set percentage $argv[2]
 function set_vol
-  pamixer --set-volume $percentage
-  $bar update vol_percentage=$percentage
+    pamixer --set-volume $percentage
+    $bar update vol_percentage=$percentage
 
-  if test $percentage -eq 0
-    $bar update vol_icon=""
-  else
-    $bar update vol_icon=""
-  end
+    if test $percentage -eq 0
+        $bar update vol_icon=""
+    else
+        $bar update vol_icon=""
+    end
 end
 
 function toggle_mute
-  pamixer --toggle-mute
+    pamixer --toggle-mute
 end
 
 function get_vol_icon
-  set MUTE (pamixer --get-mute)
-  if test "$MUTE" = "false"
-	  echo "墳"
-  else
-    echo "婢"
-  end
+    set MUTE (pamixer --get-mute)
+    if test "$MUTE" = false
+        echo 
+    else
+        echo 
+    end
 end
 
 function get_mic_icon
-  set MUTE (pamixer --source 0 --get-mute)
-  if test "$MUTE" = "false"
-	  echo ""
-  else
-    echo ""
-  end
+    set MUTE (pamixer --source 0 --get-mute)
+    if test "$MUTE" = false
+        echo ""
+    else
+        echo ""
+    end
 end
 
 function get_network_icon
-  set CONNECTED (nmcli connection show --active)
-  if test -z "$CONNECTED"
-    echo ""
-  else
-    echo ""
-  end
+    set CONNECTED (nmcli connection show --active)
+    if test -z "$CONNECTED"
+        echo ""
+    else
+        echo ""
+    end
 end
 
 switch $argv[1]
-  case get_vol
-    get_vol
-  case set_vol
-    set_vol
-  case toggle_mute
-    toggle_mute
-  case get_vol_icon
-    get_vol_icon
-  case get_mic_icon
-    get_mic_icon
-  case get_network_icon
-    get_network_icon
+    case get_vol
+        get_vol
+    case set_vol
+        set_vol
+    case toggle_mute
+        toggle_mute
+    case get_vol_icon
+        get_vol_icon
+    case get_mic_icon
+        get_mic_icon
+    case get_network_icon
+        get_network_icon
 end
