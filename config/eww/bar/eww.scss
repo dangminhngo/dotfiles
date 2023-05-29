@@ -19,23 +19,24 @@
   color: $accent;
 }
 
-.workspaces {
-  font-size: 20px;
-}
-
 .workspace-entry {
   padding: 1px 8px;
   font-family: Material Icons Outline;
-  color: $accent;
+  color: $fg3;
+  font-size: 14px;
 }
 
 .workspace-entry.current,
 .workspace-entry.current.occupied {
   font-family: Material Icons Round;
+  font-size: 20px;
+  color: $accent;
 }
 
 .workspace-entry.occupied {
   font-family: Material Icons Round;
+  font-size: 14px;
+  color: $blue;
 }
 
 .clock {
