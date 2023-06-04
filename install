@@ -181,12 +181,6 @@ curl -fsSL https://get.pnpm.io/install.sh | sh -
 
 sleep 1
 
-# Install black (python formatter)
-echo "Install black with python pip ..."
-pip install black
-
-sleep 1
-
 # Clean up
 echo "Cleaning up ..."
 paru -Rns (paru -Qdtq)
