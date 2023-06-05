@@ -31,20 +31,20 @@ scrolling:
 font:
   normal:
     family: Jetka
-    style: Medium
+    style: Book
   bold:
     family: Jetka
     style: Bold
   italic:
     family: Jetka
-    tyle: Medium Italic
+    tyle: Book Italic
   bold_italic:
     family: Jetka
     style: Bold Italic
-  size: 12
+  size: 14
   offset:
     x: 0
-    y: 5
+    y: 4
 
 shell:
   program: /bin/fish
