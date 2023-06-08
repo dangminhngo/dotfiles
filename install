@@ -82,7 +82,7 @@ paru -S --noconfirm --needed \
     rsync \
     rustup \
     sddm-git \
-    sddm-sugar-candy-git \
+    sddm-sugar-dark \
     slurp \
     socat \
     starship \
