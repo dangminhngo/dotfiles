@@ -1,0 +1,56 @@
+#!/bin/fish
+
+set bar_config $HOME/.config/eww/bar
+set locker_config $HOME/.config/eww/locker
+set wbar eww --config $bar_config
+set wlocker eww --config $locker_config
+
+function spawn-bar
+    killall -q jq
+    killall -q eww
+    eww daemon
+    set pid (pgrep eww)
+    if test -n "$pid"
+        # GTK_DEBUG=interactive eww --config "$config" --debug open bar --screen 0
+        eww --config "$bar_config" --debug open bar --screen 0
+    end
+end
+
+function toggle-bar
+    set opened ($wbar windows | grep "*bar")
+
+    if test -n "$opened"
+        $wbar close bar
+    else
+        $wbar open bar
+    end
+end
+
+function lock
+    eww daemon
+    set pid (pgrep eww)
+    if test -n "$pid"
+        # GTK_DEBUG=interactive eww --config "$config" --debug open lock --screen 0
+        $wlocker --debug open locker --screen 0
+    end
+
+end
+
+function unlock
+    set opened ($wlocker windows | grep "*locker")
+
+    if test -n "$opened"
+        $wlocker close locker
+    end
+end
+
+switch $argv[1]
+    case spawn-bar
+        spawn-bar
+    case toggle-bar
+        toggle-bar
+    case lock
+        lock
+    case unlock
+        unlock
+end

@@ -1,0 +1,76 @@
+#!/bin/fish
+
+function run-portal
+    sleep 1
+    killall -e xdg-desktop-portal-hyprland
+    killall -e xdg-desktop-portal-wlr
+    killall xdg-desktop-portal
+    /usr/lib/xdg-desktop-portal-hyprland &
+    sleep 2
+    /usr/lib/xdg-desktop-portal &
+end
+
+function import-gsettings
+    set config "$HOME/.config/gtk-3.0/settings.ini"
+    if not test -e $config
+        exit 1
+    end
+
+    set gnome_schema "org.gnome.desktop.interface"
+    set gtk_theme (grep 'gtk-theme-name' "$config" | sed 's/.*\s*=\s*//')
+    set icon_theme (grep 'gtk-icon-theme-name' "$config" | sed 's/.*\s*=\s*//')
+    set cursor_theme (grep 'gtk-cursor-theme-name' "$config" | sed 's/.*\s*=\s*//')
+    set font_name (grep 'gtk-font-name' "$config" | sed 's/.*\s*=\s*//')
+
+    gsettings set "$gnome_schema" gtk-theme "$gtk_theme"
+    gsettings set "$gnome_schema" icon-theme "$icon_theme"
+    gsettings set "$gnome_schema" cursor-theme "$cursor_theme"
+    gsettings set "$gnome_schema" font-name "$font_name"
+    gsettings set org.gnome.desktop.wm.preferences button-layout ""
+end
+
+function spawn-idle
+    swayidle -w \
+        timeout 300 '~/.dotfiles/scripts/widgets lock' \
+        timeout 600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' \
+        && sleep 5 && hyprpaper
+end
+
+function toggle-idle
+    set idle_state (pgrep swayidle)
+
+    if test -n "$idle_state"
+        $bar update idle_icon=
+        pkill -SIGTERM swayidle
+    else
+        $bar update idle_icon=
+        spawn &
+    end
+end
+
+
+function toggle-nightlight
+    set bar eww --config ~/.config/eww/bar
+    set pid (pgrep wlsunset)
+
+    if test -n "$pid"
+        pkill -SIGKILL wlsunset
+        $bar update nightlight_icon=""
+    else
+        wlsunset -t 4750 -T 5750 &
+        $bar update nightlight_icon=""
+    end
+end
+
+switch $argv[1]
+    case portal
+        run-portal
+    case import-gsettings
+        import-gsettings
+    case idle
+        spawn-idle
+    case toggle-idle
+        toggle-idle
+    case toggle-nightlight
+        toggle-nightlight
+end

@@ -41,7 +41,7 @@ font:
   bold_italic:
     family: Jetka
     style: Bold Italic
-  size: 14
+  size: 12.5
   offset:
     x: 0
     y: 4

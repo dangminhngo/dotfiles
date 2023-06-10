@@ -9,7 +9,7 @@ local function auth()
 	if result then
 		os.execute("dunstify -t 3000 'Welcome back, Dang Minh. Happy coding!'")
 		os.execute(locker .. " update wrong_pass=false")
-		os.execute("~/.dotfiles/scripts/locker unlock")
+		os.execute("~/.dotfiles/scripts/widgets unlock")
 	else
 		os.execute(locker .. " update wrong_pass=true")
 	end

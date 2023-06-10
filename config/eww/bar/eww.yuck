@@ -2,10 +2,10 @@
 (defvar eww "eww --config ~/.config/eww/bar")
 
 ; Workspaces
-(deflisten workspaces :initial "[]" "~/.dotfiles/scripts/get-workspaces")
-(deflisten current_workspace :initial "1" "~/.dotfiles/scripts/get-active-workspace")
+(deflisten workspaces :initial "[]" "~/.dotfiles/scripts/workspaces get")
+(deflisten current_workspace :initial "1" "~/.dotfiles/scripts/workspaces get-active")
 (defwidget workspaces []
-  (eventbox :onscroll "~/.dotfiles/scripts/change-active-workspace {} ${current_workspace}" :class "workspaces-widget"
+  (eventbox :onscroll "~/.dotfiles/scripts/workspaces change-active {} ${current_workspace}" :class "workspaces-widget"
     (box :class "workspaces" :space-evenly true
       (for workspace in workspaces
         (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
@@ -28,17 +28,6 @@
     (button :class "time" :onclick "~/.dotfiles/scripts/launch-calendar" "${time}")
   )
 )
-
-; @link https://github.com/hyprwm/Hyprland/issues/1348
-;; Applications Launcher
-;(defwidget launcher []
-;  (box :space-evenly "false" (button :class "launcher" :onclick "~/.dotfiles/scripts/launcher" :tooltip "Applications" ""))
-;)
-
-;; Power Menu
-;(defwidget power []
-;  (box :space-evenly "false" (button :class "power" :onclick "~/.dotfiles/scripts/powermenu" :tooltip "Quit" ""))
-;)
 
 ; System Guard (CPU, Memory, Disk, Temperature, Network)
 ;; CPU
@@ -89,15 +78,6 @@
   )
 )
 
-;; Recents zathura docs
-;(defpoll recent_count :interval "60s"
-;  `~/.dotfiles/scripts/zathura count_recent`
-;)
-
-;(defwidget zathura []
-;  (box :space-evenly "false" (button :class "zathura" :onclick "~/.dotfiles/scripts/zathura" :tooltip "Recent documents (${recent_count} files)" ""))
-;)
-
 ; Recording
 (defvar rec false)
 
@@ -143,14 +123,14 @@
 (defvar nightlight_icon "")
 
 (defwidget nightlight []
-  (box :space-evenly "false" (button :class "nightlight" :onclick "~/.dotfiles/scripts/nightlight" :tooltip "Nightlight" "${nightlight_icon}"))
+  (box :space-evenly "false" (button :class "nightlight" :onclick "~/.dotfiles/scripts/util toggle-nightlight" :tooltip "Nightlight" "${nightlight_icon}"))
 )
 
 ; Idle Inhibitor
 (defvar idle_icon "")
 
 (defwidget idle_inhibitor []
-  (box :space-evenly "false" (button :class "idle-inhibitor" :onclick "~/.dotfiles/scripts/idle toggle" :tooltip "Idle Inhibitor" "${idle_icon}"))
+  (box :space-evenly "false" (button :class "idle-inhibitor" :onclick "~/.dotfiles/scripts/util toggle-idle" :tooltip "Idle Inhibitor" "${idle_icon}"))
 )
 
 ; Right System Icons
