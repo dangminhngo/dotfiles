@@ -82,7 +82,6 @@ paru -S --noconfirm --needed \
     rsync \
     rustup \
     sddm-git \
-    sddm-sugar-dark \
     slurp \
     socat \
     starship \
@@ -108,26 +107,28 @@ paru -S --noconfirm --needed \
 sleep 1
 
 # Enable systemd services
-echo "Enabling services ..."
+echo "Enabling services..."
 sudo systemctl enable sddm.service
 
 # SDDM
-echo "Configuring SDDM.."
+echo "Configuring SDDM and installing Sugar Candy from github source..."
+sudo git clone https://github.com/Kangie/sddm-sugar-candy.git /usr/share/sddm/themes/sugar-candy
+paru -S qt5-graphicaleffects qt5-quickcontrols2 qt5-svg
 sudo rsync --recursive ./system/sddm.conf.d /etc/
-sudo rsync ./config/sugar-candy/theme.conf /usr/share/sddm/themes/sugar-candy/
+sudo rsync ./config/sddm/theme.conf /usr/share/sddm/themes/sugar-candy/
 
 sleep 1
 
 echo "Creating default user directories..."
 xdg-user-dirs-update
 
-echo "Copying libraries ..."
+echo "Copying libraries..."
 sudo cp ./libs/liblua_pam.so /usr/lib/lua/5.4/
 
 sleep 1
 
 # Fonts
-echo "Downloading & copying fonts to directories ..."
+echo "Downloading & copying fonts to directories..."
 rm -rf ~/.local/share/{themes,fonts}
 mkdir -p ~/.local/share/{themes,fonts}
 git clone https://github.com/dangminhngo/fonts.git
@@ -137,7 +138,7 @@ rm -rf fonts
 fc-cache -r
 
 # Run Docker with current user privileges
-echo "Running docker post installation ..."
+echo "Running docker post installation..."
 sudo usermod -aG docker $USER
 
 sleep 1
@@ -157,7 +158,7 @@ sudo rm -rf /usr/share/icons/default
 sleep 1
 
 # Install GTK themes
-echo "Installing GTK themes ..."
+echo "Installing GTK themes..."
 git clone https://github.com/dangminhngo/gtktheme-generator.git
 cp -R gtktheme-generator/themes/Proxima ~/.local/share/themes/
 rm -rf gtktheme-generator
@@ -165,24 +166,24 @@ rm -rf gtktheme-generator
 sleep 1
 
 # Copy login background wallpaper to its location
-echo "Copying greeting wallpaper to sddm theme config directory ..."
+echo "Copying greeting wallpaper to sddm theme config directory..."
 sudo rsync ./wallpapers/greeting.jpg /usr/share/sddm/themes/sugar-candy/
 
 sleep 1
 
 # Install NodeJS
-echo "Installing Node.js ..."
+echo "Installing Node.js..."
 fnm install v18
 
 sleep 1
 # Install PNPM
-echo "Installing pnpm ..."
+echo "Installing pnpm..."
 curl -fsSL https://get.pnpm.io/install.sh | sh -
 
 sleep 1
 
 # Clean up
-echo "Cleaning up ..."
+echo "Cleaning up..."
 paru -Rns (paru -Qdtq)
 
 sleep 1
