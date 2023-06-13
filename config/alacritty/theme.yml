@@ -8,10 +8,10 @@ colors:
     bright_foreground: '#DBE5EB'
   cursor:
     text: '#10181d'
-    cursor: '#a4c76f'
+    cursor: '#abc2d0'
   vi_mode_cursor:
     text: '#10181d'
-    cursor: '#a4c76f'
+    cursor: '#abc2d0'
   search:
     matches:
       foreground: '#1D2C35'
