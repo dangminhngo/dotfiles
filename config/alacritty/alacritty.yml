@@ -31,17 +31,17 @@ scrolling:
 font:
   normal:
     family: Jetka
-    style: Book
+    style: Regular
   bold:
     family: Jetka
     style: Bold
   italic:
     family: Jetka
-    tyle: Book Italic
+    tyle: Regular Italic
   bold_italic:
     family: Jetka
     style: Bold Italic
-  size: 12.5
+  size: 14
   offset:
     x: 0
     y: 4
