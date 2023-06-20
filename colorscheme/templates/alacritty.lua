@@ -20,10 +20,10 @@ colors:
     bright_foreground: '${fg0}'
   cursor:
     text: '${bg}'
-    cursor: '${fg}'
+    cursor: '${fg0}'
   vi_mode_cursor:
     text: '${bg}'
-    cursor: '${fg}'
+    cursor: '${fg0}'
   search:
     matches:
       foreground: '${bg3}'

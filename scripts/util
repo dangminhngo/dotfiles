@@ -32,8 +32,7 @@ end
 function spawn-idle
     swayidle -w \
         timeout 300 '~/.dotfiles/scripts/widgets lock' \
-        timeout 600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' \
-        && sleep 5 && hyprpaper
+        timeout 600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on'
 end
 
 function toggle-idle
