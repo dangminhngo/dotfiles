@@ -48,7 +48,7 @@ paru -S --noconfirm --needed \
     firefox-developer-edition \
     fish \
     fnm-bin \
-    hyprland-git \
+    hyprland \
     hyprpaper-git \
     git \
     glfw-wayland \
