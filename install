@@ -67,6 +67,7 @@ paru -S --noconfirm --needed \
     luacheck \
     man \
     neovim \
+    net-tools \
     pamixer \
     papirus-icon-theme \
     pdfjs \
