@@ -61,6 +61,12 @@ function toggle-nightlight
     end
 end
 
+function fix-xwayland-app-scaling
+    systemctl --user start xsettingsd.service
+    echo "Xft.dpi: 64" | xrdb -merge
+    xprop -root -format _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 1
+end
+
 switch $argv[1]
     case portal
         run-portal
@@ -72,4 +78,6 @@ switch $argv[1]
         toggle-idle
     case toggle-nightlight
         toggle-nightlight
+    case fix-xwayland-app-scaling
+        fix-xwayland-app-scaling
 end

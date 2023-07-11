@@ -14,6 +14,7 @@
 !/config/imv
 !/config/rofi
 !/config/sddm
+!/config/xsettingsd
 !/config/zathura
 !/config/chrome-flags.conf
 !/config/chromium-flags.conf

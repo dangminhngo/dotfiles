@@ -100,8 +100,10 @@ paru -S --noconfirm --needed \
     wlsunset \
     wl-clipboard \
     wireplumber \
-    xorg-xwayland \
     xorg-xlsclients \
+    xorg-xrdb \
+    xorg-xwayland \
+    xsettingsd \
     zathura \
     zathura-pdf-poppler
 
