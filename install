@@ -65,6 +65,7 @@ paru -S --noconfirm --needed \
     lf \
     libnotify \
     luacheck \
+    ly \
     man \
     neovim \
     net-tools \
@@ -82,7 +83,6 @@ paru -S --noconfirm --needed \
     rofi-lbonn-wayland-git \
     rsync \
     rustup \
-    sddm-git \
     slurp \
     socat \
     starship \
@@ -109,16 +109,7 @@ sleep 1
 
 # Enable systemd services
 echo "Enabling services..."
-sudo systemctl enable sddm.service
-
-# SDDM
-echo "Configuring SDDM and installing Sugar Candy from github source..."
-sudo git clone https://github.com/Kangie/sddm-sugar-candy.git /usr/share/sddm/themes/sugar-candy
-paru -S qt5-graphicaleffects qt5-quickcontrols2 qt5-svg
-sudo rsync --recursive ./system/sddm.conf.d /etc/
-sudo rsync ./config/sddm/theme.conf /usr/share/sddm/themes/sugar-candy/
-
-sleep 1
+sudo systemctl enable ly.service
 
 echo "Creating default user directories..."
 xdg-user-dirs-update
@@ -163,12 +154,6 @@ echo "Installing GTK themes..."
 git clone https://github.com/dangminhngo/gtktheme-generator.git
 cp -R gtktheme-generator/themes/Proxima ~/.local/share/themes/
 rm -rf gtktheme-generator
-
-sleep 1
-
-# Copy login background wallpaper to its location
-echo "Copying greeting wallpaper to sddm theme config directory..."
-sudo rsync ./wallpapers/greeting.jpg /usr/share/sddm/themes/sugar-candy/
 
 sleep 1
 
