@@ -5,7 +5,7 @@
 (deflisten workspaces :initial "[]" "~/.dotfiles/scripts/workspaces get")
 (deflisten current_workspace :initial "1" "~/.dotfiles/scripts/workspaces get-active")
 (defwidget workspaces []
-  (eventbox :onscroll "~/.dotfiles/scripts/workspaces change-active {} ${current_workspace}" :class "workspaces-widget"
+  (eventbox :onscroll "~/.dotfiles/scripts/workspaces change-active {} ${current_workspace}" :class "workspaces"
     (box :class "workspaces" :space-evenly true
       (for workspace in workspaces
         (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
@@ -73,7 +73,7 @@
 ;)
 
 (defwidget sysguard []
-  (box :space-evenly false :spacing 4
+  (box :space-evenly false :spacing 8
     (cpu) (memory) (disk) (temp)
   )
 )
@@ -98,9 +98,9 @@
 
 (defwidget volume []
   (eventbox :onhover "${eww} update vol=true" :onhoverlost "${eww} update vol=false"
-    (box :orientation "h" :space-evenly "false" :spacing 2
+    (box :orientation "h" :space-evenly "false" :spacing 8
       (revealer :transition "slideleft" :reveal vol :duration "500ms"
-        (box :class "volreveal" :space-evenly false :spacing 4
+        (box :class "volreveal" :space-evenly false :spacing 8
           (label :class "volpercentage" :text "${vol_percentage}%")
           (scale :class "volbar" :orientation "h" :tooltip "Volume: ${vol_percentage}%" :max 101 :min 0 :onchange "~/.dotfiles/scripts/sysinfo set_vol {}"  :value vol_percentage)
         )
@@ -135,7 +135,7 @@
 
 ; Right System Icons
 (defwidget rightsys []
-  (box :space-evenly false :spacing 4 (recording_indicator) (volume) (network) (idle_inhibitor) (nightlight) (clock :time "${time}"))
+  (box :space-evenly false :spacing 8 (recording_indicator) (volume) (network) (idle_inhibitor) (nightlight) (clock :time "${time}"))
 )
 
 ; Left System Icons
