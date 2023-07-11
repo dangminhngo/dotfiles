@@ -94,7 +94,7 @@
   `~/.dotfiles/scripts/sysinfo get_vol`
 )
 
-(defvar vol_icon "")
+(defvar vol_icon "")
 
 (defwidget volume []
   (eventbox :onhover "${eww} update vol=true" :onhoverlost "${eww} update vol=false"

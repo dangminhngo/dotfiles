@@ -12,9 +12,9 @@ function set_vol
     $bar update vol_percentage=$percentage
 
     if test $percentage -eq 0
-        $bar update vol_icon=""
+        $bar update vol_icon=""
     else
-        $bar update vol_icon=""
+        $bar update vol_icon=""
     end
 end
 
