@@ -49,7 +49,6 @@ paru -S --noconfirm --needed \
     fish \
     fnm-bin \
     hyprland \
-    hyprpaper-git \
     git \
     glfw-wayland \
     go \
@@ -86,8 +85,9 @@ paru -S --noconfirm --needed \
     slurp \
     socat \
     starship \
-    swayidle \
     stylua \
+    swayidle \
+    swww \
     tree \
     ttf-roboto \
     unzip \
