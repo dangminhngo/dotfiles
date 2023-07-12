@@ -6,6 +6,7 @@ local fish_template = require("colorscheme.templates.fish")
 local hyprland_template = require("colorscheme.templates.hyprland")
 local imv_template = require("colorscheme.templates.imv")
 local rofi_template = require("colorscheme.templates.rofi")
+local sddm_sugarcandy_template = require("colorscheme.templates.sddm-sugarcandy")
 local zathura_template = require("colorscheme.templates.zathura")
 
 return {
@@ -17,5 +18,6 @@ return {
 	hyprland = hyprland_template,
 	imv = imv_template,
 	rofi = rofi_template,
+	sddm_sugarcandy = sddm_sugarcandy_template,
 	zathura = zathura_template,
 }

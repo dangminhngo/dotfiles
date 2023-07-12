@@ -111,7 +111,17 @@ sleep 1
 
 # Enable systemd services
 echo "Enabling services..."
-sudo systemctl enable ly.service
+sudo systemctl enable sddm.service
+
+sleep 1
+
+# SDDM
+echo "Configuring SDDM and installing Sugar Candy from github source..."
+sudo git clone https://github.com/Kangie/sddm-sugar-candy.git /usr/share/sddm/themes/sugar-candy
+paru -S qt5-graphicaleffects qt5-quickcontrols2 qt5-svg
+sudo rsync --recursive ./system/sddm.conf.d /etc/
+sudo rsync ./config/sddm-sugarcandy/theme.conf /usr/share/sddm/themes/sugar-candy/
+sudo rsync ./wallpapers/greeting.jpg /usr/share/sddm/themes/sugar-candy/
 
 echo "Creating default user directories..."
 xdg-user-dirs-update
