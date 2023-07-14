@@ -47,7 +47,6 @@ paru -S --noconfirm --needed \
     fd \
     firefox-developer-edition \
     fish \
-    fnm-bin \
     hyprland \
     git \
     glfw-wayland \
@@ -171,6 +170,7 @@ sleep 1
 
 # Install NodeJS
 echo "Installing Node.js..."
+curl -fsSL https://fnm.vercel.app/install | bash
 fnm install v18
 
 sleep 1

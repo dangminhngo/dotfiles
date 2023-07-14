@@ -16,7 +16,8 @@ set -U fish_greeting
 set -Ux PNPM_HOME $HOME/.local/share/pnpm
 
 # Add paths
-fish_add_path -g ~/.local/bin $PNPM_HOME
+fish_add_path -g ~/.local/bin $PNPM_HOME $HOME/.local/share/fnm
+fnm env | source
 
 set -Ux GDK_SCALE 2
 set -Ux XCURSOR_SIZE 32
