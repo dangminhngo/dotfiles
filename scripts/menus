@@ -15,101 +15,31 @@ function colorpicker
 
     # Variables passed to dmenu
     set options "$hex_opt\n$rgb_opt\n$hsl_opt"
-
-    set opt (echo -e $options | rofi -dmenu -p "grim & ImageMagick" -theme $theme)
+    set opt (echo -e "$options" | rofi -dmenu -p "hyprpicker" -theme $theme)
 
     if test -z $opt
         exit 0
     end
 
-    set outputs (grim -g (slurp -p) -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:-)[2]
-    set hex (echo $outputs | awk '{print $3}')
-    set rgb_val (echo $outputs | awk '{print $2}')
-    set rgb_val (string split "," (string replace -a -r "(\(|\))" "" $rgb_val))
-    set rgb "rgb($rgb_val[1], $rgb_val[2], $rgb_val[3])"
-
-    ### RGB to HSL
-    function max_num
-        set -l max $argv[1]
-
-        for x in $argv
-            if test $x -gt $max
-                set max $x
-            end
-        end
-
-        echo $max
-    end
-
-    function min_num
-        set -l min $argv[1]
-
-        for x in $argv
-            if test $x -lt $min
-                set min $x
-            end
-        end
-
-        echo $min
-    end
-
-    function convert_rgb_to_hsl
-        # Make r, g, b fractions of 1
-        set -l r (math $argv[1] / 255)
-        set -l g (math $argv[2] / 255)
-        set -l b (math $argv[3] / 255)
-
-        # Find greatest and smallest channel values
-        set -l min (min_num $r $g $b)
-        set -l max (max_num $r $g $b)
-        set -l delta (math $max - $min)
-        set -l h 0
-        set -l s 0
-        set -l l (math "($max + $min) / 2")
-
-        # Calculate H (hue)
-        # no difference
-        if test $delta -eq 0
-            set h 0
-        else if test $max -eq $r
-            set h (math "(($g - $b) / $delta) % 6")
-        else if test $max -eq $g
-            set h (math "($b - $r) / $delta + 2")
-        else
-            set h (math "($r - $g) / $delta + 4")
-        end
-
-        set h (math round "$h * 60")
-
-        if test $h -lt 0
-            set h (math "$h + 360")
-        end
-
-        # Calculate S (saturation)
-        if test $delta -eq 0
-            set s 0
-        else
-            set -l denominator (math abs "2 * $l - 1")
-            set s (math "$delta / (1 - $denominator)")
-        end
-
-        set s (math floor (math "$s * 100"))
-        set l (math floor (math "$l * 100"))
-
-        echo "hsl($h, $s%, $l%)"
-    end
-
+    sleep 1
     switch $opt
         case $hex_opt
+            set output (hyprpicker)
+            set hex (string lower $output)
             wl-copy $hex
-            notify-send "$hex copied"
+            notify-send "$hex copied to your system clipboard"
         case $rgb_opt
+            set output (hyprpicker -f rgb)
+            set values (string split ' ' $output)
+            set rgb "rgb($values[1], $values[2], $values[3])"
             wl-copy $rgb
-            notify-send "$rgb copied"
+            notify-send "$rgb copied to your system clipboard"
         case $hsl_opt
-            set hsl (convert_rgb_to_hsl $rgb_val)
+            set output (hyprpicker -f hsl)
+            set values (string split ' ' $output)
+            set hsl "hsl($values[1], $values[2], $values[3])"
             wl-copy $hsl
-            notify-send "$hsl copied"
+            notify-send "$hsl copied to your system clipboard"
     end
 end
 
