@@ -310,7 +310,7 @@
     default_icon = ~/.config/dunst/icons/notification.svg
 
     [urgency_normal]
-    background = "#18232B"
+    background = "#0E161A"
     foreground = "#abc2d0"
     frame_color = "#a4c76f"
     timeout = 10
@@ -318,7 +318,7 @@
     default_icon = ~/.config/dunst/icons/notification.svg
 
     [urgency_critical]
-    background = "#18232B"
+    background = "#0E161A"
     foreground = "#abc2d0"
     frame_color = "#f15a5d"
     timeout = 0

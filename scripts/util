@@ -31,8 +31,9 @@ end
 
 function spawn-idle
     swayidle -w \
-        timeout 300 '~/.dotfiles/scripts/widgets lock' \
-        timeout 600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on'
+        timeout 150 '~/.dotfiles/scripts/widgets lock' \
+        timeout 300 'hyprctl dispatch dpms off' \
+        resume 'hyprctl dispatch dpms on && ~/.dotfiles/scripts/widgets lock && hyprctl dispatch workspace 1 && ~/.dotfiles/scripts/widgets spawn-bar'
 end
 
 function toggle-idle

@@ -11,7 +11,7 @@
 
 configuration {
   show-icons:                     false;
-  font:                           "Jetka Medium 11";
+  font:                           "Jetka Medium 12";
   disable-history:                false;
   sidebar-mode:                   false;
 }
@@ -46,7 +46,7 @@ prompt {
 
 textbox-prompt-colon {
   expand:                         false;
-  str:                            "Color Picker";
+  str:                            "Colorpicker";
   background-color:               @cyan;
   text-color:                     @bg0;
   padding:                        5px;
@@ -93,7 +93,7 @@ element {
 element-text {
   background-color:               inherit;
   text-color:                     inherit;
-  font:                           "Material Icons Round 28";
+  font:                           "Jetka 30";
   expand:                         true;
   horizontal-align:               0.5;
   vertical-align:                 0.5;

@@ -14,13 +14,12 @@
 }
 
 .bar-wrapper {
-  padding: 0px 4px 4px 4px;
-  background-color: transparent;
+  padding: 2px 0px 2px 0px;
   color: $accent;
+  background-color: $dark;
 }
 
 .workspaces {
-  background-color: $dark;
   border-radius: 8px;
 }
 
@@ -48,7 +47,6 @@
   font-family: Jetka;
   font-size: 18px;
   font-weight: 800;
-  background-color: $dark;
   border-radius: 8px;
 }
 
@@ -64,14 +62,12 @@
   font-size: 18px;
   color: $teal;
   border-radius: 8px;
-  background-color: $dark;
 }
 
 .volreveal {
   padding: 2px 8px;
   border-radius: 8px;
   color: $teal;
-  background-color: $bg0;
 }
 
 scale trough {
@@ -104,7 +100,6 @@ scale trough {
   font-family: Material Icons Round;
   font-size: 20px;
   border-radius: 8px;
-  background-color: $dark;
 }
 
 .cpu {
@@ -140,7 +135,6 @@ scale trough {
   font-size: 18px;
   color: $red;
   border-radius: 8px;
-  background-color: $dark;
 }
 
 .recording-label {
@@ -156,7 +150,6 @@ scale trough {
   font-family: Material Icons Round;
   font-size: 18px;
   border-radius: 8px;
-  background-color: $dark;
 }
 
 .network {

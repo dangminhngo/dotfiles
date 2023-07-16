@@ -3,6 +3,7 @@ local btop_template = require("colorscheme.templates.btop")
 local dunst_template = require("colorscheme.templates.dunst")
 local eww_template = require("colorscheme.templates.eww")
 local fish_template = require("colorscheme.templates.fish")
+local foot_template = require("colorscheme.templates.foot")
 local hyprland_template = require("colorscheme.templates.hyprland")
 local imv_template = require("colorscheme.templates.imv")
 local rofi_template = require("colorscheme.templates.rofi")
@@ -15,6 +16,7 @@ return {
 	dunst = dunst_template,
 	eww = eww_template,
 	fish = fish_template,
+	foot = foot_template,
 	hyprland = hyprland_template,
 	imv = imv_template,
 	rofi = rofi_template,

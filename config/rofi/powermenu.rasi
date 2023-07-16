@@ -11,7 +11,7 @@
 
 configuration {
   show-icons:                     false;
-  font:                           "Jetka Medium 11";
+  font:                           "Jetka Medium 12";
   disable-history:                false;
   sidebar-mode:                   false;
 }

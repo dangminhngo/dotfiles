@@ -9,9 +9,9 @@ function colorpicker
     killall -q rofi
 
     # Options
-    set hex_opt ""
-    set rgb_opt ""
-    set hsl_opt ""
+    set hex_opt HEX
+    set rgb_opt RGB
+    set hsl_opt HSL
 
     # Variables passed to dmenu
     set options "$hex_opt\n$rgb_opt\n$hsl_opt"

@@ -322,7 +322,7 @@ _dunst_template.gen = function(schema)
     default_icon = ~/.config/dunst/icons/notification.svg
 
     [urgency_normal]
-    background = "${bg2}"
+    background = "${bg0}"
     foreground = "${fg}"
     frame_color = "${accent}"
     timeout = 10
@@ -330,7 +330,7 @@ _dunst_template.gen = function(schema)
     default_icon = ~/.config/dunst/icons/notification.svg
 
     [urgency_critical]
-    background = "${bg2}"
+    background = "${bg0}"
     foreground = "${fg}"
     frame_color = "${red}"
     timeout = 0
