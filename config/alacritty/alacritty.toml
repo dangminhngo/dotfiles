@@ -1,0 +1,46 @@
+import = ["/home/dminh/.config/alacritty/theme.toml"]
+
+[font]
+size = 13
+
+[font.bold]
+family = "Jetka"
+style = "Bold"
+
+[font.bold_italic]
+family = "Jetka"
+style = "Bold Italic"
+
+[font.italic]
+family = "Jetka"
+style = "Regular Italic"
+
+[font.normal]
+family = "Jetka"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[mouse]
+hide_when_typing = true
+
+[scrolling]
+history = 2000
+multiplier = 3
+
+[shell]
+program = "/bin/fish"
+
+[window]
+dynamic_title = true
+title = "alacritty"
+
+[window.class]
+general = "alacritty"
+instance = "alacritty"
+
+[window.padding]
+x = 0
+y = 0
