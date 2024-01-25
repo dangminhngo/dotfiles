@@ -11,8 +11,8 @@ function run-portal
 end
 
 function import-gsettings
-    set config "$HOME/.config/gtk-3.0/settings.ini"
-    if not test -e $config
+    set GTK_CONFIG "$HOME/.config/gtk-3.0/settings.ini"
+    if not test -e $GTK_CONFIG
         exit 1
     end
 
@@ -31,34 +31,35 @@ end
 
 function spawn-idle
     swayidle -w \
-        timeout 150 '~/.dotfiles/scripts/widgets lock' \
+        timeout 150 swaylock \
         timeout 300 'hyprctl dispatch dpms off' \
         resume 'hyprctl dispatch dpms on && ~/.dotfiles/scripts/widgets lock && hyprctl dispatch workspace 1 && ~/.dotfiles/scripts/widgets spawn-bar'
 end
 
 function toggle-idle
+    set STATUSBAR eww --config ~/.config/eww
     set idle_state (pgrep swayidle)
 
     if test -n "$idle_state"
-        $bar update idle_icon=
+        $STATUSBAR update idle_icon=
         pkill -SIGTERM swayidle
     else
-        $bar update idle_icon=
+        $STATUSBAR update idle_icon=
         spawn &
     end
 end
 
 
 function toggle-nightlight
-    set bar eww --config ~/.config/eww/bar
+    set STATUSBAR eww --config ~/.config/eww
     set pid (pgrep wlsunset)
 
     if test -n "$pid"
         pkill -SIGKILL wlsunset
-        $bar update nightlight_icon=""
+        $STATUSBAR update nightlight_icon=""
     else
         wlsunset -t 4750 -T 5750 &
-        $bar update nightlight_icon=""
+        $STATUSBAR update nightlight_icon=""
     end
 end
 

@@ -1,6 +1,6 @@
 #!/bin/fish
 
-set bar eww --config ~/.config/eww/bar
+set STATUSBAR eww --config ~/.config/eww
 
 function get_vol
     pamixer --get-volume
@@ -9,12 +9,12 @@ end
 set percentage $argv[2]
 function set_vol
     pamixer --set-volume $percentage
-    $bar update vol_percentage=$percentage
+    $STATUSBAR update vol_percentage=$percentage
 
     if test $percentage -eq 0
-        $bar update vol_icon=""
+        $STATUSBAR update vol_icon=""
     else
-        $bar update vol_icon=""
+        $STATUSBAR update vol_icon=""
     end
 end
 

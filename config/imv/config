@@ -18,7 +18,7 @@ overlay = true
 overlay_text_color = #E2EAEE
 overlay_background_color = #18232B
 overlay_background_alpha = ff
-overlay_font = Jetka:11
+overlay_font = Jetka Nerd Font Extended:11
 overlay_position_bottom = false
 
 # bindings

@@ -15,6 +15,7 @@
 !/config/imv
 !/config/rofi
 !/config/sddm-sugarcandy
+!/config/swaylock
 !/config/xsettingsd
 !/config/zathura
 !/config/chrome-flags.conf

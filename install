@@ -135,7 +135,7 @@ echo "Downloading & copying fonts to directories..."
 rm -rf ~/.local/share/{themes,fonts}
 mkdir -p ~/.local/share/{themes,fonts}
 git clone https://github.com/dangminhngo/fonts.git
-sudo rsync fonts/Jetka/patched/* ~/.local/share/fonts/
+sudo rsync fonts/Jetka Nerd Font Extended/patched/* ~/.local/share/fonts/
 rsync fonts/Others/* ~/.local/share/fonts/
 rm -rf fonts
 fc-cache -r

@@ -111,7 +111,7 @@ function powermenu
         case $logout
             hyprctl dispatch exit 0
         case $lock
-            ~/.dotfiles/scripts/widgets lock
+            swaylock
         case $suspend
             systemctl suspend
     end

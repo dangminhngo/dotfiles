@@ -6,7 +6,7 @@
 
 .tooltip {
   background-color: $bg;
-  color: $accent;
+  color: $fg2;
 }
 
 .bar {
@@ -14,7 +14,6 @@
 }
 
 .bar-wrapper {
-  padding: 2px 0px 2px 0px;
   color: $accent;
   background-color: $dark;
 }
@@ -24,7 +23,7 @@
 }
 
 .workspace-entry {
-  padding: 2px 12px;
+  padding: 0px 12px;
   font-family: Material Icons Round;
   color: $bg2;
   font-size: 16px;
@@ -44,20 +43,20 @@
 }
 
 .clock {
-  font-family: Jetka;
+  font-family: Jetka Nerd Font Extended;
   font-size: 18px;
   font-weight: 800;
   border-radius: 8px;
 }
 
 .time {
-  padding: 2px 12px;
+  padding: 0px 12px;
   color: $fg0;
   border-radius: 8px;
 }
 
 .volume {
-  padding: 2px 12px;
+  padding: 0px 12px;
   font-family: Material Icons Round;
   font-size: 18px;
   color: $teal;
@@ -65,7 +64,7 @@
 }
 
 .volreveal {
-  padding: 2px 8px;
+  padding: 0px 8px;
   border-radius: 8px;
   color: $teal;
 }
@@ -85,7 +84,7 @@ scale trough {
 
 .volpercentage {
   padding-top: 1px;
-  font-family: Jetka;
+  font-family: Jetka Nerd Font Extended;
   font-size: 16px;
   font-weight: 800;
   color: $teal;
@@ -96,7 +95,7 @@ scale trough {
 .disk,
 .temp,
 .net {
-  padding: 2px 12px;
+  padding: 0px 8px;
   font-family: Material Icons Round;
   font-size: 20px;
   border-radius: 8px;
@@ -124,13 +123,13 @@ scale trough {
 
 .sg-label {
   padding-left: 2px;
-  font-family: Jetka;
+  font-family: Jetka Nerd Font Extended;
   font-size: 14px;
   font-weight: 800;
 }
 
 .recording {
-  padding: 2px 8px;
+  padding: 0px 8px;
   font-family: Material Icons Round;
   font-size: 18px;
   color: $red;
@@ -138,7 +137,7 @@ scale trough {
 }
 
 .recording-label {
-  font-family: Jetka;
+  font-family: Jetka Nerd Font Extended;
   font-size: 14px;
   font-weight: 800;
 }
@@ -146,7 +145,7 @@ scale trough {
 .network,
 .nightlight,
 .idle-inhibitor {
-  padding: 2px 12px;
+  padding: 0px 8px;
   font-family: Material Icons Round;
   font-size: 18px;
   border-radius: 8px;
