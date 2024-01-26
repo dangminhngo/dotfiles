@@ -88,35 +88,30 @@
 )
 
 ; Volume
-(defvar vol false)
+(defvar volbar false)
 
-(defpoll vol_percentage :interval "5s"
-  `~/.dotfiles/scripts/sysinfo get_vol`
+(defpoll vol_icon :interval "5s"
+  `~/.dotfiles/scripts/util volume`
 )
 
-(defvar vol_icon "")
+(defvar vol "0")
 
 (defwidget volume []
-  (eventbox :onhover "${eww} update vol=true" :onhoverlost "${eww} update vol=false"
+  (eventbox :onscroll "~/.dotfiles/scripts/util volume_{}" 
     (box :orientation "h" :space-evenly "false" :spacing 8
-      (revealer :transition "slideleft" :reveal vol :duration "500ms"
-        (box :class "volreveal" :space-evenly false :spacing 8
-          (label :class "volpercentage" :text "${vol_percentage}%")
-          (scale :class "volbar" :orientation "h" :tooltip "Volume: ${vol_percentage}%" :max 101 :min 0 :onchange "~/.dotfiles/scripts/sysinfo set_vol {}"  :value vol_percentage)
-        )
-      )
-      (button :class "volume" :onclick "pavucontrol" "${vol_icon}")
+      (button :class "volume" :tooltip "Volume: ${vol}%" :onclick "pavucontrol" "${vol_icon}")
     )
   )
 )
 
 ; Network
-(defpoll network_status_icon :interval "30s"
-  `~/.dotfiles/scripts/sysinfo get_network_icon`
+(defpoll network_icon :interval "10s"
+  `~/.dotfiles/scripts/util network`
 )
+(defvar network_tooltip "Connecting")
 
 (defwidget network []
-  (box :space-evenly "false" (button :class "network" :onclick "alacritty -e nmtui" :tooltip "Network" "${network_status_icon}"))
+  (box :space-evenly "false" (button :class "network" :tooltip "${network_tooltip}" "${network_icon}"))
 )
 
 ; Nightlight

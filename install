@@ -34,11 +34,10 @@ paru -S --noconfirm --needed \
     alacritty \
     base-devel \
     btop \
-    breeze-snow-cursor-theme \
+    breeze-snow-cursor \
     calc \
     clang \
     curl \
-    chromium \
     docker \
     docker-compose \
     docker-machine \
@@ -48,6 +47,7 @@ paru -S --noconfirm --needed \
     firefox-developer-edition \
     fish \
     hyprland \
+    hyprpaper \
     git \
     glfw-wayland \
     go \
@@ -63,7 +63,6 @@ paru -S --noconfirm --needed \
     lf \
     libnotify \
     luacheck \
-    ly \
     man \
     neovim \
     net-tools \
@@ -81,12 +80,14 @@ paru -S --noconfirm --needed \
     rofi-lbonn-wayland-git \
     rsync \
     rustup \
+    sddm \
+    sddm-sugar-candy-git \
     slurp \
     socat \
     starship \
     stylua \
     swayidle \
-    swww \
+    swaylock-effects-git \
     tree \
     ttf-roboto \
     unzip \
@@ -102,7 +103,6 @@ paru -S --noconfirm --needed \
     xorg-xlsclients \
     xorg-xrdb \
     xorg-xwayland \
-    xsettingsd \
     zathura \
     zathura-pdf-poppler
 
@@ -115,18 +115,9 @@ sudo systemctl enable sddm.service
 sleep 1
 
 # SDDM
-echo "Configuring SDDM and installing Sugar Candy from github source..."
-sudo git clone https://github.com/Kangie/sddm-sugar-candy.git /usr/share/sddm/themes/sugar-candy
-paru -S qt5-graphicaleffects qt5-quickcontrols2 qt5-svg
-sudo rsync --recursive ./system/sddm.conf.d /etc/
-sudo rsync ./config/sddm-sugarcandy/theme.conf /usr/share/sddm/themes/sugar-candy/
-sudo rsync ./wallpapers/greeting.jpg /usr/share/sddm/themes/sugar-candy/
 
 echo "Creating default user directories..."
 xdg-user-dirs-update
-
-echo "Copying libraries..."
-sudo cp ./libs/liblua_pam.so /usr/lib/lua/5.4/
 
 sleep 1
 
@@ -135,8 +126,8 @@ echo "Downloading & copying fonts to directories..."
 rm -rf ~/.local/share/{themes,fonts}
 mkdir -p ~/.local/share/{themes,fonts}
 git clone https://github.com/dangminhngo/fonts.git
-sudo rsync fonts/Jetka Nerd Font Extended/patched/* ~/.local/share/fonts/
-rsync fonts/Others/* ~/.local/share/fonts/
+sudo cp -R fonts/jetka-nerd-font ~/.local/share/fonts/
+rsync fonts/others/* ~/.local/share/fonts/
 rm -rf fonts
 fc-cache -r
 
@@ -171,7 +162,7 @@ sleep 1
 # Install NodeJS
 echo "Installing Node.js..."
 curl -fsSL https://fnm.vercel.app/install | bash
-fnm install v18
+fnm install v20
 
 sleep 1
 # Install PNPM

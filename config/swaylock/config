@@ -1,7 +1,7 @@
 ignore-empty-password
 disable-caps-lock-text
 image=$HOME/.dotfiles/wallpapers/lockscreen.png
-font=Technology
+font=Titan One
 font-size=192
 
 text-ver-color=00000000
@@ -25,12 +25,13 @@ caps-lock-bs-hl-color=00000000
 caps-lock-key-hl-color=00000000
 separator-color=00000000
 
+text-color=#ffffff
+
 scaling=fill
 indicator
 clock
 timestr=%H:%M
 datestr= %A, %B %d
-indicator-x-position=280
-indicator-y-position=1000
+indicator-x-position=380
+indicator-y-position=780
 indicator-radius=300
-text-color=#ffffff

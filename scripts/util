@@ -31,9 +31,8 @@ end
 
 function spawn-idle
     swayidle -w \
-        timeout 150 swaylock \
-        timeout 300 'hyprctl dispatch dpms off' \
-        resume 'hyprctl dispatch dpms on && ~/.dotfiles/scripts/widgets lock && hyprctl dispatch workspace 1 && ~/.dotfiles/scripts/widgets spawn-bar'
+        timeout 120 swaylock \
+        timeout 180 'hyprctl dispatch dpms off'
 end
 
 function toggle-idle
@@ -45,7 +44,7 @@ function toggle-idle
         pkill -SIGTERM swayidle
     else
         $STATUSBAR update idle_icon=
-        spawn &
+        spawn-idle &
     end
 end
 
@@ -69,6 +68,113 @@ function fix-xwayland-app-scaling
     xprop -root -format _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 1
 end
 
+set STATUSBAR eww --config ~/.config/eww
+
+function update_vol
+    set VOL (pamixer --get-volume)
+    $STATUSBAR update vol="$VOL"
+end
+
+
+function get_vol_icon
+    set MUTE (pamixer --get-mute)
+    set VOL (pamixer --get-volume)
+
+    if test "$MUTE" = true
+        echo "󰝟"
+        $STATUSBAR update $vol_icon="󰝟"
+        return
+    end
+
+    if test $VOL -gt 66
+        echo "󰕾"
+        $STATUSBAR update $vol_icon="󰕾"
+        return
+    else if test $VOL -gt 33
+        echo "󰖀"
+        $STATUSBAR update $vol_icon="󰖀"
+        return
+    else
+        echo "󰕿"
+        $STATUSBAR update $vol_icon="󰕿"
+        return
+    end
+end
+
+
+function set_vol
+    set percentage $argv[2]
+    pamixer --set-volume $percentage
+    volume
+end
+
+function toggle_mute
+    pamixer --toggle-mute
+    update_vol_icon
+end
+
+function increase_vol
+    pamixer -i 5
+    update_vol_icon
+    update_vol
+end
+
+function decrease_vol
+    pamixer -d 5
+    update_vol_icon
+    update_vol
+end
+
+function get_network_icon
+    set TYPE (nmcli d | head -n 2 | tail -n 1 | awk '{print $2}')
+
+    if test $TYPE = ethernet
+        echo "󰈀"
+        return
+    end
+
+    if test $TYPE = wifi
+        set SIGNAL_STRENGTH (string match -r "\d+" (cat /proc/net/wireless | tail -n 1 | awk '{print $3}'))
+        set PERCENTAGE (math $SIGNAL_STRENGTH / 70)
+
+        if test $PERCENTAGE -gt 0.75
+            echo "󰤨 "
+            return
+        else if test $PERCENTAGE -gt 0.5
+            echo "󰤥 "
+            return
+        else if test $PERCENTAGE -gt 0.25
+            echo "󰤢 "
+            return
+        else if test $PERCENTAGE -gt 0
+            echo "󰤟 "
+            return
+        else
+            echo "󰤯 "
+            return
+        end
+    end
+
+    echo "󰲛"
+end
+
+function update_network_tooltip
+    set TYPE (nmcli d | head -n 2 | tail -n 1 | awk '{print $2}')
+
+    if test $TYPE = ethernet
+        $STATUSBAR update network_tooltip="Ethernet"
+        return
+    end
+
+    if test $TYPE = wifi
+        set SSID (nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d: -f2)
+        $STATUSBAR update network_tooltip="Wifi: $SSID"
+        return
+    end
+
+    $STATUSBAR update network_tooltip="Disconnected"
+end
+
 switch $argv[1]
     case portal
         run-portal
@@ -82,4 +188,14 @@ switch $argv[1]
         toggle-nightlight
     case fix-xwayland-app-scaling
         fix-xwayland-app-scaling
+    case volume
+        get_vol_icon
+        update_vol
+    case network
+        get_network_icon
+        update_network_tooltip
+    case volume_up
+        increase_vol
+    case volume_down
+        decrease_vol
 end
