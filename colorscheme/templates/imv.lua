@@ -1,4 +1,4 @@
-local util = require("colorscheme.lib.util")
+local helpers = require("colorscheme.lib.helpers")
 
 local _imv_template = {}
 
@@ -8,7 +8,7 @@ _imv_template.path = "imv"
 _imv_template.filename = "config"
 
 _imv_template.gen = function(schema)
-	local template = util.template(
+	local template = helpers.template(
 		[[
 # ▪  • ▌ ▄ ·.  ▌ ▐·
 # ██ ·██ ▐███▪▪█·█▌

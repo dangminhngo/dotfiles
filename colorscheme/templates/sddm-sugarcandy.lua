@@ -1,4 +1,4 @@
-local util = require("colorscheme.lib.util")
+local helpers = require("colorscheme.lib.helpers")
 
 local _sddm_template = {}
 
@@ -8,10 +8,10 @@ _sddm_template.path = "sddm-sugarcandy"
 _sddm_template.filename = "theme.conf"
 
 _sddm_template.gen = function(schema)
-	local template = util.template(
+	local template = helpers.template(
 		[[[General]
 
-Background="greeting.png"
+Background="Backgrounds/greeting.png"
 ## Path relative to the theme root directory. Most standard image file formats are allowed including support for transparency. (e.g. background.jpeg/illustration.GIF/Foto.png/undraw.svgz)
 
 DimBackgroundImage="0.0"
@@ -29,10 +29,10 @@ ScreenHeight="1080"
 ## [Blur Settings]
 
 FullBlur="false"
-PartialBlur="false"
+PartialBlur="true"
 ## Enable or disable the blur effect; if HaveFormBackground is set to true then PartialBlur will trigger the BackgroundColor of the form element to be partially transparent and blend with the blur.
 
-BlurRadius="0"
+BlurRadius="8"
 ## Set the strength of the blur effect. Anything above 100 is pretty strong and might slow down the rendering time. 0 is like setting false for any blur.
 
 
@@ -42,7 +42,7 @@ BlurRadius="0"
 HaveFormBackground="false"
 ## Have a full opacity background color behind the form that takes slightly more than 1/3 of screen estate;  if PartialBlur is set to true then HaveFormBackground will trigger the BackgroundColor of the form element to be partially transparent and blend with the blur.
 
-FormPosition="center"
+FormPosition="left"
 ## Position of the form which takes roughly 1/3 of screen estate. Can be left, center or right.
 
 BackgroundImageHAlignment="center"
@@ -51,7 +51,7 @@ BackgroundImageHAlignment="center"
 BackgroundImageVAlignment="center"
 ## As before but for the vertical position of the background picture relative to its visible area.
 
-MainColor="${white}"
+MainColor="${fg}"
 ## Used for all elements when not focused/hovered etc. Usually the best effect is achieved by having this be either white or a very dark grey like #444 (not black for smoother antialias)
 ## Colors can be HEX or Qt names (e.g. red/salmon/blanchedalmond). See https://doc.qt.io/qt-5/qml-color.html
 
@@ -60,8 +60,8 @@ AccentColor="${accent}"
 
 BackgroundColor="${bg}"
 ## Used for the user and session selection background as well as for ScreenPadding and FormBackground when either is true. If PartialBlur and FormBackground are both enabled this color will blend with the blur effect.
-OverrideLoginButtonTextColor="${bg}"
 
+OverrideLoginButtonTextColor=""
 ## The text of the login button may become difficult to read depending on your color choices. Use this option to set it independently for legibility.
 
 InterfaceShadowSize="6"
@@ -70,7 +70,7 @@ InterfaceShadowSize="6"
 InterfaceShadowOpacity="0.6"
 ## Double between 0 and 1. Alpha channel of the shadow behind the user and session selection background. Decrease or increase if it looks bad on your background.
 
-RoundCorners="4"
+RoundCorners="8"
 ## Integer in pixels. Radius of the input fields and the login button. Empty for square. Can cause bad antialiasing of the fields.
 
 ScreenPadding="0"
@@ -127,25 +127,24 @@ DateFormat="dddd, d of MMMM"
 
 ## [Translations]
 
-HeaderText="Let's build something's matter"
+HeaderText="The Arch Jet Landing!"
 ## Header can be empty to not display any greeting at all. Keep it short.
 
 ## SDDM may lack proper translation for every element. Suger defaults to SDDM translations. Please help translate SDDM as much as possible for your language: https://github.com/sddm/sddm/wiki/Localization. These are in order as they appear on screen.
 
-TranslatePlaceholderUsername="Who are you?"
-TranslatePlaceholderPassword="Type your password here"
-TranslateShowPassword="Show me the code"
-TranslateLogin="Launch"
-TranslateLoginFailedWarning="Oops! Wrong password. Don't try to access my ArchJet bro."
-TranslateCapslockWarning="Hmm. CAPSLOCK is on. Do you really need it?"
+TranslatePlaceholderUsername=""
+TranslatePlaceholderPassword=""
+TranslateShowPassword=""
+TranslateLogin=""
+TranslateLoginFailedWarning=""
+TranslateCapslockWarning=""
 TranslateSession=""
 TranslateSuspend=""
 TranslateHibernate=""
 TranslateReboot=""
 TranslateShutdown=""
 TranslateVirtualKeyboardButton=""
-## These don't necessarily need to translate anything. You can enter whatever you want here.
-    ]],
+## These don't necessarily need to translate anything. You can enter whatever you want here.]],
 		schema
 	)
 

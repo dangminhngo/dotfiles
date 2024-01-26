@@ -1,4 +1,4 @@
-local util = require("colorscheme.lib.util")
+local helpers = require("colorscheme.lib.helpers")
 
 local _zathura_template = {}
 
@@ -8,7 +8,7 @@ _zathura_template.path = "zathura"
 _zathura_template.filename = "theme"
 
 _zathura_template.gen = function(schema)
-	local template = util.template(
+	local template = helpers.template(
 		[[
 set default-fg "${fg}"
 set default-bg "${bg}"

@@ -1,12 +1,12 @@
-# Proxima colorscheme for Fish
+# Crux Alpha Green colorscheme for Fish
 # ~/.config/fish/conf.d/theme.fish
 
 # --> special
-set -l fg abc2d0
-set -l sel 243642
+set -l fg c5d5df
+set -l sel 1e2e37
 
 # --> palette
-set -l red f15a5d
+set -l red e46769
 set -l green a4c76f
 set -l yellow eace60
 set -l orange e39d5f
@@ -14,7 +14,7 @@ set -l blue 619af5
 set -l magenta 9d78d1
 set -l pink d983d7
 set -l cyan 42b8e6
-set -l gray 45677D
+set -l gray 42667a
 
 # Syntax Highlighting
 set -g fish_color_normal $fg

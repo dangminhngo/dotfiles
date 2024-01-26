@@ -1,4 +1,4 @@
-local util = require("colorscheme.lib.util")
+local helpers = require("colorscheme.lib.helpers")
 
 local _eww_template = {}
 
@@ -8,7 +8,7 @@ _eww_template.path = "eww"
 _eww_template.filename = "palette.scss"
 
 _eww_template.gen = function(schema)
-	local template = util.template(
+	local template = helpers.template(
 		[[
 /* ${theme} colorscheme for eww */
 /* ~/.config/eww/palette.scss */

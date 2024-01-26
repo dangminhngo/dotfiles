@@ -1,4 +1,4 @@
-local util = require("colorscheme.lib.util")
+local helpers = require("colorscheme.lib.helpers")
 
 local _btop_template = {}
 
@@ -8,7 +8,7 @@ _btop_template.path = "btop/themes"
 _btop_template.filename = "theme.theme"
 
 _btop_template.gen = function(schema)
-	local template = util.template(
+	local template = helpers.template(
 		[[
 # ${theme} colorscheme for btop
 # ~/.config/btop/themes/theme.theme

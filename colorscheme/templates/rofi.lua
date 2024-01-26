@@ -1,4 +1,4 @@
-local util = require("colorscheme.lib.util")
+local helpers = require("colorscheme.lib.helpers")
 
 local _rofi_template = {}
 
@@ -8,7 +8,7 @@ _rofi_template.path = "rofi"
 _rofi_template.filename = "theme.rasi"
 
 _rofi_template.gen = function(schema)
-	local template = util.template(
+	local template = helpers.template(
 		[[
 /* ${theme} colorscheme for Rofi */
 /* ~/.config/rofi/theme.rasi */

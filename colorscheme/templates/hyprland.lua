@@ -1,4 +1,4 @@
-local util = require("colorscheme.lib.util")
+local helpers = require("colorscheme.lib.helpers")
 
 local _hyprland_template = {}
 
@@ -8,8 +8,8 @@ _hyprland_template.path = "hypr"
 _hyprland_template.filename = "palette.conf"
 
 _hyprland_template.gen = function(schema)
-	local sch = util.remove_hashtag_from_schema(schema)
-	local template = util.template(
+	local sch = helpers.remove_hashtag_from_schema(schema)
+	local template = helpers.template(
 		[[
 # ${theme} colorscheme for hyprland.conf
 

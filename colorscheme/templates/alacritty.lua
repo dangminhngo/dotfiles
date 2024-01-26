@@ -1,70 +1,79 @@
-local util = require("colorscheme.lib.util")
+local helpers = require("colorscheme.lib.helpers")
 
 local _alacritty_template = {}
 
 _alacritty_template.name = "alacritty"
 
 _alacritty_template.path = "alacritty"
-_alacritty_template.filename = "theme.yml"
+_alacritty_template.filename = "theme.toml"
 
 _alacritty_template.gen = function(schema)
-	local template = util.template(
+	local template = helpers.template(
 		[[
 # ${theme} for Alacritty
-# ~/.config/alacritty/theme.yml
-colors:
-  primary:
-    background: '${bg0}'
-    foreground: '${fg}'
-    dim_foreground: '${fg3}'
-    bright_foreground: '${fg0}'
-  cursor:
-    text: '${bg}'
-    cursor: '${fg0}'
-  vi_mode_cursor:
-    text: '${bg}'
-    cursor: '${fg0}'
-  search:
-    matches:
-      foreground: '${bg3}'
-      background: '${magenta}'
-    focused_match:
-      foreground: '${magenta}'
-      background: '${bg3}'
-  hints:
-    start:
-      foreground: '${bg3}'
-      background: '${yellow}'
-    end:
-      foreground: '${yellow}'
-      background: '${bg3}'
-  line_indicator:
-    foreground: None
-    background: None
-  footer_bar:
-    foreground: '${bg3}'
-    background: '${magenta}'
-  selection:
-    text: '${fg}'
-    background: '${bg4}'
-  normal:
-    black: '${black}'
-    red: '${red}'
-    green: '${green}'
-    yellow: '${yellow}'
-    blue: '${blue}'
-    magenta: '${magenta}'
-    cyan: '${cyan}'
-    white: '${fg}'
-  bright:
-    black: '${black}'
-    red: '${red}'
-    green: '${green}'
-    yellow: '${yellow}'
-    blue: '${blue}'
-    magenta: '${magenta}'
-    cyan: '${cyan}'
-    white: '${fg}']],
+# ~/.config/alacritty/theme.toml
+[colors.bright]
+black = "${black}"
+blue = "${blue}"
+cyan = "${cyan}"
+green = "${green}"
+magenta = "${magenta}"
+red = "${red}"
+white = "${white}"
+yellow = "${yellow}"
+
+[colors.cursor]
+cursor = "${accent}"
+text = "${bg}"
+
+[colors.footer_bar]
+background = "${fg2}"
+foreground = "${bg0}"
+
+[colors.hints.end]
+background = "${bg0}"
+foreground = "${fg3}"
+
+[colors.hints.start]
+background = "${fg2}"
+foreground = "${bg0}"
+
+[colors.line_indicator]
+background = "None"
+foreground = "None"
+
+[colors.normal]
+black = "${black}"
+blue = "${blue}"
+cyan = "${cyan}"
+green = "${green}"
+magenta = "${magenta}"
+red = "${red}"
+white = "${white}"
+yellow = "${yellow}"
+
+[colors.primary]
+background = "${bg0}"
+bright_foreground = "${fg0}"
+dim_foreground = "${fg2}"
+foreground = "${fg}"
+
+[colors.search.focused_match]
+background = "${accent}"
+foreground = "${bg}"
+
+[colors.search.matches]
+background = "${red}"
+foreground = "${white}"
+
+[colors.selection]
+background = "${bg2}"
+text = "${fg}"
+
+[colors.vi_mode_cursor]
+cursor = "${white}"
+text = "${bg}"
+    ]],
 		schema
 	)
 

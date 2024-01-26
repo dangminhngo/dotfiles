@@ -1,4 +1,4 @@
-local util = require("colorscheme.lib.util")
+local helpers = require("colorscheme.lib.helpers")
 
 local _fish_template = {}
 
@@ -8,8 +8,8 @@ _fish_template.path = "fish/conf.d"
 _fish_template.filename = "theme.fish"
 
 _fish_template.gen = function(schema)
-	local sch = util.remove_hashtag_from_schema(schema)
-	local template = util.template(
+	local sch = helpers.remove_hashtag_from_schema(schema)
+	local template = helpers.template(
 		[[
 # ${theme} colorscheme for Fish
 # ~/.config/fish/conf.d/theme.fish

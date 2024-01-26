@@ -7,16 +7,16 @@
 # Github: @dangminhngo
 # Email: dangminhngo.dev@gmail.com
 
-# Proxima for imv
+# Crux Alpha Green for imv
 # ~/.config/imv/config
 
 # styling
 [options]
-background = #10181d
+background = #0d1418
 fullscreen = false
 overlay = true
-overlay_text_color = #E2EAEE
-overlay_background_color = #18232B
+overlay_text_color = #eaf0f3
+overlay_background_color = #10191e
 overlay_background_alpha = ff
 overlay_font = Jetka Nerd Font Extended:11
 overlay_position_bottom = false

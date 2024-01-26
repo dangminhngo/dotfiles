@@ -131,6 +131,10 @@ rsync fonts/others/* ~/.local/share/fonts/
 rm -rf fonts
 fc-cache -r
 
+# Wallpapers
+echo "Copying wallpapers to their locations..."
+sudo cp ./wallpapers/greeting.png /usr/share/sddm/themes/sugar-candy/Backgrounds/
+
 # Run Docker with current user privileges
 echo "Running docker post installation..."
 sudo usermod -aG docker $USER
