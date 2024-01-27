@@ -14,7 +14,7 @@ style_root = "bold green"
 show_always = true
 
 [directory]
-style = "bold blue"
+style = "bold green"
 truncation_length = 0
 truncate_to_repo = true
 truncation_symbol = ""
@@ -40,17 +40,17 @@ charging_symbol = "󰂄 "
 discharging_symbol = "󰂃 "
 disabled = true
 
-[[battery.display]]  # "bold red" style when capacity is between 0% and 10%
+[[battery.display]] # "bold red" style when capacity is between 0% and 10%
 threshold = 15
 style = "bold red"
 disabled = true
 
-[[battery.display]]  # "bold yellow" style when capacity is between 10% and 30%
+[[battery.display]] # "bold yellow" style when capacity is between 10% and 30%
 threshold = 50
 style = "bold yellow"
 disabled = true
 
-[[battery.display]]  # "bold green" style when capacity is between 10% and 30%
+[[battery.display]] # "bold green" style when capacity is between 10% and 30%
 threshold = 80
 style = "bold green"
 disabled = true
@@ -64,7 +64,7 @@ disabled = true
 
 # Prompt: param 2
 [character]
-success_symbol = " [](bold green)"
+success_symbol = " [](bold yellow)"
 error_symbol = " [󰄾](bold red)"
 
 [aws]
