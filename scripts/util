@@ -35,8 +35,10 @@ function spawn-idle
         timeout 180 'hyprctl dispatch dpms off'
 end
 
+
+set STATUSBAR eww --config ~/.config/eww
+
 function toggle-idle
-    set STATUSBAR eww --config ~/.config/eww
     set idle_state (pgrep swayidle)
 
     if test -n "$idle_state"
@@ -50,15 +52,14 @@ end
 
 
 function toggle-nightlight
-    set STATUSBAR eww --config ~/.config/eww
     set pid (pgrep wlsunset)
 
     if test -n "$pid"
-        pkill -SIGKILL wlsunset
         $STATUSBAR update nightlight_icon=""
+        pkill -SIGKILL wlsunset
     else
-        wlsunset -t 4750 -T 5750 &
         $STATUSBAR update nightlight_icon=""
+        wlsunset -t 4750 -T 5750 &
     end
 end
 
@@ -68,7 +69,6 @@ function fix-xwayland-app-scaling
     xprop -root -format _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 1
 end
 
-set STATUSBAR eww --config ~/.config/eww
 
 function update_vol
     set VOL (pamixer --get-volume)
@@ -129,7 +129,7 @@ function get_network_icon
     set TYPE (nmcli d | head -n 2 | tail -n 1 | awk '{print $2}')
 
     if test $TYPE = ethernet
-        echo "󰈀"
+        echo "󰈀 "
         return
     end
 
