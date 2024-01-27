@@ -31,20 +31,20 @@ tooltip {
   padding: 0px 12px;
   font-family: Material Icons Round;
   color: $bg2;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .workspace-entry.current,
 .workspace-entry.current.occupied {
   font-family: Material Icons Round;
-  font-size: 18px;
+  font-size: 20px;
   color: $accent;
 }
 
 .workspace-entry.occupied {
   font-family: Material Icons Round;
-  font-size: 16px;
-  color: $blue;
+  font-size: 14px;
+  color: $orange;
 }
 
 .clock {
