@@ -1,7 +1,8 @@
 return {
   {
-    "dangminhngo/crux.nvim",
-    lazy = true,
-    priority = 100,
+    dir = "~/crux.nvim",
+    -- "dangminhngo/crux.nvim",
+    -- lazy = true,
+    -- priority = 100,
   },
 }

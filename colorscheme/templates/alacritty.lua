@@ -23,7 +23,7 @@ white = "${white}"
 yellow = "${yellow}"
 
 [colors.cursor]
-cursor = "${accent}"
+cursor = "${fg}"
 text = "${bg}"
 
 [colors.footer_bar]

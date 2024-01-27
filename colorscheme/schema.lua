@@ -1,17 +1,17 @@
 local color = require("colorscheme.color")
 
 local builtin = {
-	fg = "#c5d5df",
-	bg = "#0d1418",
-	red = "#e46769",
-	green = "#a4c76f",
-	yellow = "#eace60",
-	blue = "#619af5",
-	magenta = "#9d78d1",
-	cyan = "#42b8e6",
-	teal = "#5fd7aa",
-	orange = "#e39d5f",
-	pink = "#d983d7",
+	fg = "#cfc7c2",
+	bg = "#242b2f",
+	red = "#e67e80",
+	green = "#a7c080",
+	yellow = "#dbbc7f",
+	blue = "#6c86db",
+	magenta = "#b495d3",
+	cyan = "#76b4cc",
+	teal = "#76cca1",
+	orange = "#e69875",
+	pink = "#d699b6",
 }
 
 return {
@@ -33,9 +33,9 @@ return {
 		-- Backgrounds & Foregrounds
 		dark = color.rel_darken(builtin.bg, 0.32),
 		bg0 = color.rel_darken(builtin.bg, 0.16),
-		bg2 = color.rel_lighten(builtin.bg, 0.02),
-		bg3 = color.rel_lighten(builtin.bg, 0.06),
-		bg4 = color.rel_lighten(builtin.bg, 0.1),
+		bg2 = color.rel_lighten(builtin.bg, 0.04),
+		bg3 = color.rel_lighten(builtin.bg, 0.08),
+		bg4 = color.rel_lighten(builtin.bg, 0.12),
 		fg0 = color.rel_lighten(builtin.fg, 0.64),
 		fg2 = color.rel_darken(builtin.fg, 0.16),
 		fg3 = color.rel_darken(builtin.fg, 0.32),

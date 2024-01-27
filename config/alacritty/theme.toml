@@ -1,64 +1,64 @@
 # Crux Alpha Green for Alacritty
 # ~/.config/alacritty/theme.toml
 [colors.bright]
-black = "#2b424f"
-blue = "#619af5"
-cyan = "#42b8e6"
-green = "#a4c76f"
-magenta = "#9d78d1"
-red = "#e46769"
-white = "#eaf0f3"
-yellow = "#eace60"
+black = "#45535b"
+blue = "#6c86db"
+cyan = "#76b4cc"
+green = "#a7c080"
+magenta = "#b495d3"
+red = "#e67e80"
+white = "#eeebe9"
+yellow = "#dbbc7f"
 
 [colors.cursor]
-cursor = "#a4c76f"
-text = "#0d1418"
+cursor = "#cfc7c2"
+text = "#242b2f"
 
 [colors.footer_bar]
-background = "#9ab6c7"
-foreground = "#0b1114"
+background = "#b3a69e"
+foreground = "#1e2427"
 
 [colors.hints.end]
-background = "#0b1114"
-foreground = "#6e96af"
+background = "#1e2427"
+foreground = "#96857a"
 
 [colors.hints.start]
-background = "#9ab6c7"
-foreground = "#0b1114"
+background = "#b3a69e"
+foreground = "#1e2427"
 
 [colors.line_indicator]
 background = "None"
 foreground = "None"
 
 [colors.normal]
-black = "#2b424f"
-blue = "#619af5"
-cyan = "#42b8e6"
-green = "#a4c76f"
-magenta = "#9d78d1"
-red = "#e46769"
-white = "#eaf0f3"
-yellow = "#eace60"
+black = "#45535b"
+blue = "#6c86db"
+cyan = "#76b4cc"
+green = "#a7c080"
+magenta = "#b495d3"
+red = "#e67e80"
+white = "#eeebe9"
+yellow = "#dbbc7f"
 
 [colors.primary]
-background = "#0b1114"
-bright_foreground = "#eaf0f3"
-dim_foreground = "#9ab6c7"
-foreground = "#c5d5df"
+background = "#1e2427"
+bright_foreground = "#eeebe9"
+dim_foreground = "#b3a69e"
+foreground = "#cfc7c2"
 
 [colors.search.focused_match]
-background = "#a4c76f"
-foreground = "#0d1418"
+background = "#a7c080"
+foreground = "#242b2f"
 
 [colors.search.matches]
-background = "#e46769"
-foreground = "#eaf0f3"
+background = "#e67e80"
+foreground = "#eeebe9"
 
 [colors.selection]
-background = "#10191e"
-text = "#c5d5df"
+background = "#2b3439"
+text = "#cfc7c2"
 
 [colors.vi_mode_cursor]
-cursor = "#eaf0f3"
-text = "#0d1418"
-    
+cursor = "#eeebe9"
+text = "#242b2f"
+
