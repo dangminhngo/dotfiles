@@ -19,6 +19,7 @@
 !/config/rofi
 !/config/sddm-sugarcandy
 !/config/swaylock
+!/config/tmux
 !/config/xsettingsd
 !/config/zathura
 !/config/chrome-flags.conf

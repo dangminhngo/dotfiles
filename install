@@ -88,6 +88,7 @@ paru -S --noconfirm --needed \
     stylua \
     swayidle \
     swaylock-effects-git \
+    tmux \
     tree \
     ttf-roboto \
     unzip \
