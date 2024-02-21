@@ -10,7 +10,7 @@
  */
 
 configuration {
-  font:                           "Jetka Nerd Font Extended Medium 12";
+  font:                           "JetkaSemi Nerd Font Extended 12";
   show-icons:                     true;
   icon-theme:                     "Papirus-Dark";
   display-drun:                   "Applications";

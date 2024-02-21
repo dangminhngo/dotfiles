@@ -10,7 +10,7 @@
  */
 
 configuration {
-  font:                           "Jetka Nerd Font Extended Medium 11";
+  font:                           "JetkaSemi Nerd Font Extended 11";
   show-icons:                     true;
   icon-theme:                     "Papirus-Dark";
   display-window:                 "Windows";

@@ -1,4 +1,4 @@
-@import "../palette.scss";
+@import "./palette.scss";
 
 * {
   all: unset;
@@ -37,7 +37,7 @@ tooltip {
 .workspace-entry.current,
 .workspace-entry.current.occupied {
   font-family: Material Icons Round;
-  font-size: 18px;
+  font-size: 20px;
   color: $accent;
 }
 
@@ -48,7 +48,7 @@ tooltip {
 }
 
 .clock {
-  font-family: Jetka Nerd Font Extended;
+  font-family: JetkaSemi Nerd Font Extended;
   font-size: 18px;
   font-weight: 800;
   border-radius: 8px;
@@ -101,7 +101,7 @@ tooltip {
 
 .sg-label {
   padding-left: 2px;
-  font-family: Jetka Nerd Font Extended;
+  font-family: JetkaSemi Nerd Font Extended;
   font-size: 14px;
   font-weight: 800;
 }
@@ -115,7 +115,7 @@ tooltip {
 }
 
 .recording-label {
-  font-family: Jetka Nerd Font Extended;
+  font-family: JetkaSemi Nerd Font Extended;
   font-size: 14px;
   font-weight: 800;
 }

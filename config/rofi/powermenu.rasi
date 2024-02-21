@@ -11,7 +11,7 @@
 
 configuration {
   show-icons:                     false;
-  font:                           "Jetka Nerd Font Extended Medium 12";
+  font:                           "JetkaSemi Nerd Font Extended 12";
   disable-history:                false;
   sidebar-mode:                   false;
 }

@@ -13,12 +13,12 @@ sleep 1
 # Install Paru
 if which paru
 else
-    echo "Installing paru ..."
-    git clone https://aur.archlinux.org/paru.git
-    pushd paru
-    makepkg -si --noconfirm
-    popd
-    rm -rf paru
+echo "Installing paru ..."
+git clone https://aur.archlinux.org/paru.git
+pushd paru
+makepkg -si --noconfirm
+popd
+rm -rf paru
 end
 
 sleep 1
@@ -128,6 +128,7 @@ rm -rf ~/.local/share/{themes,fonts}
 mkdir -p ~/.local/share/{themes,fonts}
 git clone https://github.com/dangminhngo/fonts.git
 sudo cp -R fonts/jetka-nerd-font ~/.local/share/fonts/
+sudo cp -R fonts/material-icons ~/.local/share/fonts/
 rsync fonts/others/* ~/.local/share/fonts/
 rm -rf fonts
 fc-cache -r
@@ -143,12 +144,15 @@ sudo usermod -aG docker $USER
 sleep 1
 
 echo "Copying configurations..."
+# Copy binaries to /usr/bin/
+sudo rsync ./bin/* /usr/bin/
 # Copy common configs
 rm -rf ~/.config
 ln -s ~/.dotfiles/config ~/.config
 # Copy common system configs
 rsync ./system/.gitconfig ~/
 sudo rsync --recursive ./system/sddm.conf.d /etc/
+sudo rsync ./config/sddm-sugarcandy/theme.conf /usr/share/sddm/themes/sugar-candy/
 sudo rsync --recursive ./system/reflector /etc/xdg/
 rsync --recursive ./system/.icons ~/
 
@@ -168,7 +172,6 @@ sleep 1
 # Install NodeJS
 echo "Installing Node.js..."
 curl -fsSL https://fnm.vercel.app/install | bash
-fnm install v20
 
 sleep 1
 # Install PNPM
