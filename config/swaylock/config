@@ -2,7 +2,7 @@ ignore-empty-password
 disable-caps-lock-text
 image=$HOME/.dotfiles/wallpapers/lockscreen.png
 font=Titan One
-font-size=192
+font-size=128
 
 text-ver-color=00000000
 text-wrong-color=00000000
@@ -32,6 +32,6 @@ indicator
 clock
 timestr=%H:%M
 datestr= %A, %B %d
-indicator-x-position=380
-indicator-y-position=780
-indicator-radius=300
+indicator-x-position=1600
+indicator-y-position=800
+indicator-radius=192
