@@ -11,7 +11,7 @@
 
 configuration {
   show-icons:                     false;
-  font:                           "JetkaSemi Nerd Font Extended 12";
+  font:                           "Jetka Nerd Font 12";
   disable-history:                false;
   sidebar-mode:                   false;
 }
@@ -93,7 +93,7 @@ element {
 element-text {
   background-color:               inherit;
   text-color:                     inherit;
-  font:                           "Jetka Nerd Font Extended 30";
+  font:                           "Jetka Nerd Font 30";
   expand:                         true;
   horizontal-align:               0.5;
   vertical-align:                 0.5;

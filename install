@@ -13,12 +13,12 @@ sleep 1
 # Install Paru
 if which paru
 else
-echo "Installing paru ..."
-git clone https://aur.archlinux.org/paru.git
-pushd paru
-makepkg -si --noconfirm
-popd
-rm -rf paru
+    echo "Installing paru ..."
+    git clone https://aur.archlinux.org/paru.git
+    pushd paru
+    makepkg -si --noconfirm
+    popd
+    rm -rf paru
 end
 
 sleep 1
@@ -49,7 +49,7 @@ paru -S --noconfirm --needed \
     hyprland \
     hyprpaper \
     git \
-    glfw-wayland \
+    glfw \
     go \
     golangci-lint \
     grim \

@@ -9,8 +9,9 @@ tooltip {
   background-color: $bg4;
   color: $fg0;
   border-radius: 4px;
-  font-family: JetkaMediumSemi Nerd Font Extended;
+  font-family: Jetka Nerd Font;
   font-size: 14px;
+  font-weight: 500;
 }
 
 .bar {
@@ -48,7 +49,7 @@ tooltip {
 }
 
 .clock {
-  font-family: JetkaSemi Nerd Font Extended;
+  font-family: Jetka Nerd Font;
   font-size: 18px;
   font-weight: 800;
   border-radius: 8px;
@@ -101,7 +102,7 @@ tooltip {
 
 .sg-label {
   padding-left: 2px;
-  font-family: JetkaSemi Nerd Font Extended;
+  font-family: Jetka Nerd Font;
   font-size: 14px;
   font-weight: 800;
 }
@@ -115,7 +116,7 @@ tooltip {
 }
 
 .recording-label {
-  font-family: JetkaSemi Nerd Font Extended;
+  font-family: Jetka Nerd Font;
   font-size: 14px;
   font-weight: 800;
 }

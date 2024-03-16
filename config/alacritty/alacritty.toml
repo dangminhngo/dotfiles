@@ -4,19 +4,19 @@ import = ["/home/dminh/.config/alacritty/theme.toml"]
 size = 13
 
 [font.bold]
-family = "JetkaBoldSemi Nerd Font Extended"
-style = "Regular"
+family = "Jetka Nerd Font"
+style = "Bold"
 
 [font.bold_italic]
-family = "JetkaBoldSemi Nerd Font Extended"
-style = "Italic"
+family = "Jetka Nerd Font"
+style = "Bold Italic"
 
 [font.italic]
-family = "JetkaSemi Nerd Font Extended"
+family = "Jetka Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "JetkaSemi Nerd Font Extended"
+family = "Jetka Nerd Font"
 style = "Regular"
 
 [font.offset]
