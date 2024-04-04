@@ -6,7 +6,7 @@ function M.setup()
   -- autocmds can be loaded lazily when not opening a file
   local lazy_autocmds = vim.fn.argc(-1) == 0
   if lazy_autocmds then
-    require("config.autocmds")
+    require("cruxvim.config.autocmds")
   end
 
   local group = vim.api.nvim_create_augroup("CruxVim", { clear = true })
@@ -15,10 +15,10 @@ function M.setup()
     pattern = "VeryLazy",
     callback = function()
       if lazy_autocmds then
-        require("config.autocmds")
+        require("cruxvim.config.autocmds")
       end
 
-      require("config.keymaps")
+      require("cruxvim.config.keymaps")
     end,
   })
 end

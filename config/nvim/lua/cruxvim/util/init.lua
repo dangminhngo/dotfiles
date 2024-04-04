@@ -1,5 +1,9 @@
 local M = {}
 
+M.inject = require("cruxvim.util.inject")
+M.notify = require("cruxvim.util.notify")
+M.ui = require("cruxvim.util.ui")
+
 ---@param plugin string
 function M.has(plugin)
   return require("lazy.core.config").spec.plugins[plugin] ~= nil

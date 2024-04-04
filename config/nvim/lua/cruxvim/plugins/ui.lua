@@ -34,6 +34,160 @@ return {
     end,
   },
 
+  -- statusline
+  {
+    "nvim-lualine/lualine.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.g.lualine_laststatus = vim.o.laststatus
+      if vim.fn.argc(-1) > 0 then
+        -- set an empty statusline till lualine loads
+        vim.o.statusline = " "
+      else
+        -- hide the statusline on the starter page
+        vim.o.laststatus = 0
+      end
+    end,
+    opts = function()
+      -- PERF: we don't need this lualine require madness 🤷
+      local lualine_require = require("lualine_require")
+      lualine_require.require = require
+
+      local icons = require("cruxvim.config.defaults").icons
+
+      vim.o.laststatus = vim.g.lualine_laststatus
+
+      return {
+        options = {
+          theme = "auto",
+          globalstatus = true,
+          section_separators = { left = "▞", right = "▚" },
+          disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
+        },
+        sections = {
+          lualine_a = { "mode" },
+          lualine_b = {
+            { "filetype", icon_only = true, separator = "", padding = { left = 2, right = -1 } },
+            { "filename", padding = { left = 0, right = 2 } },
+          },
+          lualine_c = {
+            {
+              "diagnostics",
+              symbols = {
+                error = icons.diagnostics.Error,
+                warn = icons.diagnostics.Warn,
+                info = icons.diagnostics.Info,
+                hint = icons.diagnostics.Hint,
+              },
+            },
+          },
+          lualine_x = {
+            -- stylua: ignore
+            {
+              function() return require("noice").api.status.command.get() end,
+              cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
+              color = CruxVim.ui.fg("Statement"),
+            },
+            -- stylua: ignore
+            {
+              function() return require("noice").api.status.mode.get() end,
+              cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
+              color = CruxVim.ui.fg("Constant"),
+            },
+            -- stylua: ignore
+            {
+              function() return "  " .. require("dap").status() end,
+              cond = function () return package.loaded["dap"] and require("dap").status() ~= "" end,
+              color = CruxVim.ui.fg("Debug"),
+            },
+            {
+              require("lazy.status").updates,
+              cond = require("lazy.status").has_updates,
+              color = CruxVim.ui.fg("Special"),
+            },
+            {
+              "diff",
+              symbols = {
+                added = icons.git.added,
+                modified = icons.git.modified,
+                removed = icons.git.removed,
+              },
+              source = function()
+                local gitsigns = vim.b.gitsigns_status_dict
+                if gitsigns then
+                  return {
+                    added = gitsigns.added,
+                    modified = gitsigns.changed,
+                    removed = gitsigns.removed,
+                  }
+                end
+              end,
+            },
+          },
+          lualine_y = {
+            { "progress", separator = " ", padding = { left = 1, right = 0 } },
+            { "location", padding = { left = 0, right = 1 } },
+          },
+          lualine_z = {
+            "branch",
+          },
+        },
+        extensions = { "neo-tree", "lazy" },
+      }
+    end,
+  },
+
+  -- dashboard
+  {
+    "nvimdev/dashboard-nvim",
+    event = "VimEnter",
+    opts = function()
+      local logo = [[
+
+░█████╗░██████╗░██╗░░░██╗██╗░░██╗██╗░░░██╗██╗███╗░░░███╗
+██╔══██╗██╔══██╗██║░░░██║╚██╗██╔╝██║░░░██║██║████╗░████║
+██║░░╚═╝██████╔╝██║░░░██║░╚███╔╝░╚██╗░██╔╝██║██╔████╔██║
+██║░░██╗██╔══██╗██║░░░██║░██╔██╗░░╚████╔╝░██║██║╚██╔╝██║
+╚█████╔╝██║░░██║╚██████╔╝██╔╝╚██╗░░╚██╔╝░░██║██║░╚═╝░██║
+░╚════╝░╚═╝░░╚═╝░╚═════╝░╚═╝░░╚═╝░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝
+
+      ]]
+      logo = string.rep("\n", 8) .. logo .. "\n\n"
+
+      local opts = {
+        theme = "doom",
+        hide = {
+          statusline = false,
+          winbar = false,
+          tabline = false,
+        },
+        config = {
+          header = vim.split(logo, "\n"),
+          -- stylua: ignore
+          center = {
+            -- { action = CruxVim.telescope("files"),                                 desc = " Find File",       icon = " ", key = "f" },
+            { action = "ene | startinsert",                                        desc = " New File",        icon = "󰈔 ", key = "n" },
+            { action = "Telescope oldfiles",                                       desc = " Recent Files",    icon = "󱋡 ", key = "r" },
+            { action = "Telescope live_grep",                                      desc = " Find Text",       icon = "󰘎 ", key = "g" },
+            { action = 'lua require("persistence").load()',                        desc = " Restore Session", icon = "󰁯 ", key = "s" },
+            { action = "Lazy",                                                     desc = " Lazy",            icon = "󰒲 ", key = "l" },
+            { action = "qa",                                                       desc = " Quit",            icon = "󰿅 ", key = "q" },
+          },
+          footer = function()
+            local stats = require("lazy").stats()
+            local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+            return {
+              " ",
+              "󱐋󱐋󱐋 CruxVim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms",
+            }
+          end,
+        },
+      }
+
+      return opts
+    end,
+  },
+
   -- indent guides for Neovim
   {
     "lukas-reineke/indent-blankline.nvim",
