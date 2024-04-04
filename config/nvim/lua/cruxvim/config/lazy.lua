@@ -20,6 +20,15 @@ require("lazy").setup({
     { import = "cruxvim.plugins.extras.coding.dap" },
     { import = "cruxvim.plugins.extras.format.prettier" },
     { import = "cruxvim.plugins.extras.lint.eslint" },
+
+    { import = "cruxvim.plugins.extras.lang.docker" },
+    { import = "cruxvim.plugins.extras.lang.json" },
+    { import = "cruxvim.plugins.extras.lang.markdown" },
+    { import = "cruxvim.plugins.extras.lang.python" },
+    { import = "cruxvim.plugins.extras.lang.rust" },
+    { import = "cruxvim.plugins.extras.lang.tailwind" },
+    { import = "cruxvim.plugins.extras.lang.typescript" },
+    { import = "cruxvim.plugins.extras.lang.yaml" },
   },
   defaults = {
     lazy = false,
