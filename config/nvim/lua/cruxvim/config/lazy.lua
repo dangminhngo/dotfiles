@@ -15,6 +15,11 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     { import = "cruxvim.plugins" },
+    -- extras plugins go here
+    { import = "cruxvim.plugins.extras.coding.copilot" },
+    { import = "cruxvim.plugins.extras.coding.dap" },
+    { import = "cruxvim.plugins.extras.format.prettier" },
+    { import = "cruxvim.plugins.extras.lint.eslint" },
   },
   defaults = {
     lazy = false,
