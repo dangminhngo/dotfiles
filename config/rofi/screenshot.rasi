@@ -20,7 +20,7 @@ configuration {
 
 * {
   background-color:               @bg0;
-  text-color:                     @gray;
+  text-color:                     @fg3;
 }
 
 window {
@@ -57,7 +57,7 @@ inputbar {
   children:                       [ textbox-prompt-colon, prompt ];
   spacing:                        12px;
   background-color:               @bg0;
-  text-color:                     @gray;
+  text-color:                     @fg3;
   expand:                         false;
   border:                         0px;
   border-radius:                  0px;
@@ -85,7 +85,7 @@ mainbox {
 
 element {
   background-color:               @bg;
-  text-color:                     @gray;
+  text-color:                     @fg3;
   orientation:                    vertical;
   border-radius:                  4px;
 }

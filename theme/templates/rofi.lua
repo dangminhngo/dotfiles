@@ -1,14 +1,14 @@
-local helpers = require("colorscheme.lib.helpers")
+local util = require("theme.util")
 
-local _rofi_template = {}
+local M = {}
 
-_rofi_template.name = "rofi"
+M.name = "rofi"
 
-_rofi_template.path = "rofi"
-_rofi_template.filename = "theme.rasi"
+M.path = "rofi"
+M.filename = "theme.rasi"
 
-_rofi_template.gen = function(schema)
-	local template = helpers.template(
+M.gen = function(schema)
+	local template = util.template(
 		[[
 /* ${theme} colorscheme for Rofi */
 /* ~/.config/rofi/theme.rasi */
@@ -16,13 +16,11 @@ _rofi_template.gen = function(schema)
 * {
   none:     #00000000;
   accent:   ${accent};
-  dark:     ${dark};
+  bgd:      ${bgd};
   bg0:      ${bg0};
   bg:       ${bg};
   bg2:      ${bg2};
   bg3:      ${bg3};
-  bg4:      ${bg4};
-  fg0:      ${fg0};
   fg:       ${fg};
   fg2:      ${fg2};
   fg3:      ${fg3};
@@ -34,10 +32,9 @@ _rofi_template.gen = function(schema)
   teal:     ${teal};
   cyan:     ${cyan};
   blue:     ${blue};
+  purple:   ${purple};
   magenta:  ${magenta};
-  pink:     ${pink};
   white:    ${white};
-  gray:     ${gray};
 }]],
 		schema
 	)
@@ -45,4 +42,4 @@ _rofi_template.gen = function(schema)
 	return template
 end
 
-return _rofi_template
+return M

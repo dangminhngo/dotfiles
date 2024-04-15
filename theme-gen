@@ -1,8 +1,8 @@
 #!/bin/lua
-local schema = require("colorscheme.schema")
-local templates = require("colorscheme.templates")
+local schema = require("theme.schema")
+local templates = require("theme.templates")
 
-local config_dir = arg[1]
+local config_dir = arg[1] or "./config"
 os.execute("mkdir -p " .. config_dir)
 
 for _, tpl in pairs(templates) do
@@ -15,8 +15,8 @@ for _, tpl in pairs(templates) do
     io.output(file)
     io.write(template_content)
     io.close(file)
-    print("Generate template for '" .. tpl.name .. "' ... Success")
+    print("Generate theme for '" .. tpl.name .. "' ... Success")
   else
-    print("Generate template for '" .. tpl.name .. "' ... Failed")
+    print("Generate theme for '" .. tpl.name .. "' ... Failed")
   end
 end

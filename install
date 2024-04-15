@@ -152,7 +152,7 @@ ln -s ~/.dotfiles/config ~/.config
 # Copy common system configs
 rsync ./system/.gitconfig ~/
 sudo rsync --recursive ./system/sddm.conf.d /etc/
-sudo rsync ./config/sddm-sugarcandy/theme.conf /usr/share/sddm/themes/sugar-candy/
+sudo rsync ./config/sugar-candy/theme.conf /usr/share/sddm/themes/sugar-candy/
 sudo rsync --recursive ./system/reflector /etc/xdg/
 rsync --recursive ./system/.icons ~/
 
@@ -164,7 +164,7 @@ sleep 1
 # Install GTK themes
 echo "Installing GTK themes..."
 git clone https://github.com/dangminhngo/gtktheme-generator.git
-cp -R gtktheme-generator/themes/Crux-Forest-Green ~/.local/share/themes/
+cp -R gtktheme-generator/themes/Crux-Midnight ~/.local/share/themes/
 rm -rf gtktheme-generator
 
 sleep 1

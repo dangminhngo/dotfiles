@@ -1,21 +1,21 @@
-local helpers = require("colorscheme.lib.helpers")
+local util = require("theme.util")
 
-local _zathura_template = {}
+local M = {}
 
-_zathura_template.name = "zathura"
+M.name = "zathura"
 
-_zathura_template.path = "zathura"
-_zathura_template.filename = "theme"
+M.path = "zathura"
+M.filename = "theme"
 
-_zathura_template.gen = function(schema)
-	local template = helpers.template(
+M.gen = function(schema)
+	local template = util.template(
 		[[
 set default-fg "${fg}"
 set default-bg "${bg}"
 
 set completion-bg "${bg}"
 set completion-fg "${fg}"
-set completion-highlight-bg "${bg4}"
+set completion-highlight-bg "${bg3}"
 set completion-highlight-fg "${fg}"
 set completion-group-bg "${bg}"
 set completion-group-fg "${accent}"
@@ -44,7 +44,7 @@ set index-active-bg "${bg}"
 set render-loading-bg "${bg}"
 set render-loading-fg "${fg}"
 
-set highlight-color "${bg4}"
+set highlight-color "${bg3}"
 set highlight-fg "${accent}"
 set highlight-active-color "${accent}"]],
 		schema
@@ -53,4 +53,4 @@ set highlight-active-color "${accent}"]],
 	return template
 end
 
-return _zathura_template
+return M

@@ -7,16 +7,16 @@
 # Github: @dangminhngo
 # Email: dangminhngo.dev@gmail.com
 
-# Crux Alpha Green for imv
+# Crux Midnight for imv
 # ~/.config/imv/config
 
 # styling
 [options]
-background = #242b2f
+background = #1a1b26
 fullscreen = false
 overlay = true
-overlay_text_color = #eeebe9
-overlay_background_color = #2b3439
+overlay_text_color = #c0c8e9
+overlay_background_color = #23242e
 overlay_background_alpha = ff
 overlay_font = Jetka Nerd Font Extended:11
 overlay_position_bottom = false

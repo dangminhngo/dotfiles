@@ -1,29 +1,26 @@
-/* Crux Alpha Green colorscheme for Rofi */
+/* Crux Midnight colorscheme for Rofi */
 /* ~/.config/rofi/theme.rasi */
 
 * {
   none:     #00000000;
-  accent:   #a7c080;
-  dark:     #181d20;
-  bg0:      #1e2427;
-  bg:       #242b2f;
-  bg2:      #2b3439;
-  bg3:      #333d42;
-  bg4:      #3a464c;
-  fg0:      #eeebe9;
-  fg:       #cfc7c2;
-  fg2:      #b3a69e;
-  fg3:      #96857a;
-  black:    #45535b;
-  red:      #e67e80;
+  accent:   #8696f7;
+  bgd:      #14141d;
+  bg0:      #161720;
+  bg:       #1a1b26;
+  bg2:      #23242e;
+  bg3:      #31323c;
+  fg:       #c0c8e9;
+  fg2:      #a3aac6;
+  fg3:      #868ca3;
+  black:    #5f5f67;
+  red:      #e66c6e;
   orange:   #e69875;
-  yellow:   #dbbc7f;
-  green:    #a7c080;
-  teal:     #76cca1;
-  cyan:     #76b4cc;
-  blue:     #6c86db;
-  magenta:  #b495d3;
-  pink:     #d699b6;
-  white:    #eeebe9;
-  gray:     #5f727c;
+  yellow:   #d9c574;
+  green:    #b3d57d;
+  teal:     #7cd398;
+  cyan:     #7adbce;
+  blue:     #8696f7;
+  purple:   #ac81d7;
+  magenta:  #d699b6;
+  white:    #c0c8e9;
 }

@@ -1,14 +1,14 @@
-local helpers = require("colorscheme.lib.helpers")
+local util = require("theme.util")
 
-local _dunst_template = {}
+local M = {}
 
-_dunst_template.name = "dunst"
+M.name = "dunst"
 
-_dunst_template.path = "dunst"
-_dunst_template.filename = "dunstrc"
+M.path = "dunst"
+M.filename = "dunstrc"
 
-_dunst_template.gen = function(schema)
-	local template = helpers.template(
+M.gen = function(schema)
+	local template = util.template(
 		[[
 #
 # ██████╗░██╗░░░██╗███╗░░██╗░██████╗████████╗
@@ -466,4 +466,4 @@ _dunst_template.gen = function(schema)
 	return template
 end
 
-return _dunst_template
+return M

@@ -1,15 +1,15 @@
-local helpers = require("colorscheme.lib.helpers")
+local util = require("theme.util")
 
-local _foot_template = {}
+local M = {}
 
-_foot_template.name = "foot"
+M.name = "foot"
 
-_foot_template.path = "foot"
-_foot_template.filename = "theme.ini"
+M.path = "foot"
+M.filename = "theme.ini"
 
-_foot_template.gen = function(schema)
-	local sch = helpers.remove_hashtag_from_schema(schema)
-	local template = helpers.template(
+M.gen = function(schema)
+	local sch = util.remove_hashtag_from_schema(schema)
+	local template = util.template(
 		[[# ${theme} colorscheme for foot
 # ~/.config/foot/theme.ini
 [cursor]
@@ -31,7 +31,7 @@ regular1=${red}  # red
 regular2=${green}  # green
 regular3=${yellow}  # yellow
 regular4=${blue}  # blue
-regular5=${magenta}  # magenta
+regular5=${purple}  # purple
 regular6=${cyan}  # cyan
 regular7=${white}  # white
 
@@ -41,7 +41,7 @@ bright1=${red}   # bright red
 bright2=${green}   # bright green
 bright3=${yellow}   # bright yellow
 bright4=${blue}   # bright blue
-bright5=${magenta}   # bright magenta
+bright5=${purple}   # bright purple
 bright6=${cyan}   # bright cyan
 bright7=${white}   # bright white
 
@@ -56,4 +56,4 @@ urls=${blue}
 	return template
 end
 
-return _foot_template
+return M

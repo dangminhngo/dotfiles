@@ -1,14 +1,14 @@
-local helpers = require("colorscheme.lib.helpers")
+local util = require("theme.util")
 
-local _btop_template = {}
+local M = {}
 
-_btop_template.name = "btop"
+M.name = "btop"
 
-_btop_template.path = "btop/themes"
-_btop_template.filename = "theme.theme"
+M.path = "btop/themes"
+M.filename = "theme.theme"
 
-_btop_template.gen = function(schema)
-	local template = helpers.template(
+M.gen = function(schema)
+	local template = util.template(
 		[[
 # ${theme} colorscheme for btop
 # ~/.config/btop/themes/theme.theme
@@ -31,7 +31,7 @@ theme[title]="${fg}"
 theme[hi_fg]="${red}"
 
 # Background color of selected items
-theme[selected_bg]="${bg4}"
+theme[selected_bg]="${bg3}"
 
 # Foreground color of selected items
 theme[selected_fg]="${yellow}"
@@ -46,19 +46,19 @@ theme[graph_text]="${fg}"
 theme[proc_misc]="${accent}"
 
 # Cpu box outline color
-theme[cpu_box]=${bg4}""
+theme[cpu_box]=${bg3}""
 
 # Memory/disks box outline color
-theme[mem_box]="${bg4}"
+theme[mem_box]="${bg3}"
 
 # Net up/down box outline color
-theme[net_box]="${bg4}"
+theme[net_box]="${bg3}"
 
 # Processes box outline color
-theme[proc_box]="${bg4}"
+theme[proc_box]="${bg3}"
 
 # Box divider line and small boxes line color
-theme[div_line]="${bg4}"
+theme[div_line]="${bg3}"
 
 # Temperature graph colors
 theme[temp_start]="${green}"
@@ -110,4 +110,4 @@ theme[process_end]="${red}"]],
 	return template
 end
 
-return _btop_template
+return M

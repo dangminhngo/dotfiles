@@ -1,4 +1,15 @@
-[General]
+local util = require("theme.util")
+
+local M = {}
+
+M.name = "sugar-candy"
+
+M.path = "sugar-candy"
+M.filename = "theme.conf"
+
+M.gen = function(schema)
+	local template = util.template(
+		[[[General]
 
 Background="Backgrounds/greeting.png"
 ## Path relative to the theme root directory. Most standard image file formats are allowed including support for transparency. (e.g. background.jpeg/illustration.GIF/Foto.png/undraw.svgz)
@@ -40,14 +51,14 @@ BackgroundImageHAlignment="center"
 BackgroundImageVAlignment="center"
 ## As before but for the vertical position of the background picture relative to its visible area.
 
-MainColor="#cfc7c2"
+MainColor="${fg}"
 ## Used for all elements when not focused/hovered etc. Usually the best effect is achieved by having this be either white or a very dark grey like #444 (not black for smoother antialias)
 ## Colors can be HEX or Qt names (e.g. red/salmon/blanchedalmond). See https://doc.qt.io/qt-5/qml-color.html
 
-AccentColor="#a7c080"
+AccentColor="${accent}"
 ## Used for elements in focus/hover/pressed. Should be contrasting to the background and the MainColor to achieve the best effect.
 
-BackgroundColor="#242b2f"
+BackgroundColor="${bg}"
 ## Used for the user and session selection background as well as for ScreenPadding and FormBackground when either is true. If PartialBlur and FormBackground are both enabled this color will blend with the blur effect.
 
 OverrideLoginButtonTextColor=""
@@ -133,4 +144,11 @@ TranslateHibernate=""
 TranslateReboot=""
 TranslateShutdown=""
 TranslateVirtualKeyboardButton=""
-## These don't necessarily need to translate anything. You can enter whatever you want here.
+## These don't necessarily need to translate anything. You can enter whatever you want here.]],
+		schema
+	)
+
+	return template
+end
+
+return M

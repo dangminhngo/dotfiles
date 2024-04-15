@@ -6,8 +6,8 @@
 
 tooltip {
   padding: 0px 10px;
-  background-color: $bg4;
-  color: $fg0;
+  background-color: $bg3;
+  color: $fg;
   border-radius: 4px;
   font-family: Jetka Nerd Font;
   font-size: 14px;
@@ -20,7 +20,7 @@ tooltip {
 
 .bar-wrapper {
   color: $accent;
-  background-color: $dark;
+  background-color: $bgd;
   opacity: 0.9;
 }
 
@@ -29,10 +29,10 @@ tooltip {
 }
 
 .workspace-entry {
-  padding: 0px 12px;
+  padding: 0px 10px;
   font-family: Material Icons Round;
-  color: $bg2;
-  font-size: 16px;
+  color: $bg3;
+  font-size: 14px;
 }
 
 .workspace-entry.current,
@@ -57,7 +57,7 @@ tooltip {
 
 .time {
   padding: 0px 12px;
-  color: $fg0;
+  color: $fg;
   border-radius: 8px;
 }
 
@@ -81,19 +81,19 @@ tooltip {
 }
 
 .cpu {
-  color: $yellow;
+  color: $green;
 }
 
 .memory {
-  color: $pink;
-}
-
-.disk {
   color: $blue;
 }
 
+.disk {
+  color: $purple;
+}
+
 .temp {
-  color: $red;
+  color: $fg;
 }
 
 // .net {
@@ -139,5 +139,5 @@ tooltip {
 }
 
 .idle-inhibitor {
-  color: $magenta;
+  color: $purple;
 }

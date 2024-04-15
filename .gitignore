@@ -17,7 +17,7 @@
 /config/nvim/lazyvim.json
 /config/nvim/lazy-lock.json
 !/config/rofi
-!/config/sddm-sugarcandy
+!/config/sugar-candy
 !/config/swaylock
 !/config/tmux
 !/config/xsettingsd

@@ -1,26 +1,24 @@
-local helpers = require("colorscheme.lib.helpers")
+local util = require("theme.util")
 
-local _eww_template = {}
+local M = {}
 
-_eww_template.name = "eww"
+M.name = "eww"
 
-_eww_template.path = "eww"
-_eww_template.filename = "palette.scss"
+M.path = "eww"
+M.filename = "palette.scss"
 
-_eww_template.gen = function(schema)
-	local template = helpers.template(
+M.gen = function(schema)
+	local template = util.template(
 		[[
 /* ${theme} colorscheme for eww */
 /* ~/.config/eww/palette.scss */
 
 $accent:   ${accent};
-$dark:     ${dark};
+$bgd:      ${bgd};
 $bg0:      ${bg0};
 $bg:       ${bg};
 $bg2:      ${bg2};
 $bg3:      ${bg3};
-$bg4:      ${bg4};
-$fg0:      ${fg0};
 $fg:       ${fg};
 $fg2:      ${fg2};
 $fg3:      ${fg3};
@@ -32,14 +30,14 @@ $green:    ${green};
 $teal:     ${teal};
 $cyan:     ${cyan};
 $blue:     ${blue};
+$purple:   ${purple};
 $magenta:  ${magenta};
-$pink:     ${pink};
 $white:    ${white};
-$gray:     ${gray};]],
+]],
 		schema
 	)
 
 	return template
 end
 
-return _eww_template
+return M

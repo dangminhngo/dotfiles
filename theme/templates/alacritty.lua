@@ -1,14 +1,14 @@
-local helpers = require("colorscheme.lib.helpers")
+local util = require("theme.util")
 
-local _alacritty_template = {}
+local M = {}
 
-_alacritty_template.name = "alacritty"
+M.name = "alacritty"
 
-_alacritty_template.path = "alacritty"
-_alacritty_template.filename = "theme.toml"
+M.path = "alacritty"
+M.filename = "theme.toml"
 
-_alacritty_template.gen = function(schema)
-	local template = helpers.template(
+M.gen = function(schema)
+	local template = util.template(
 		[[
 # ${theme} for Alacritty
 # ~/.config/alacritty/theme.toml
@@ -54,7 +54,7 @@ yellow = "${yellow}"
 
 [colors.primary]
 background = "${bg0}"
-bright_foreground = "${fg0}"
+bright_foreground = "${fg}"
 dim_foreground = "${fg2}"
 foreground = "${fg}"
 
@@ -80,4 +80,4 @@ text = "${bg}"
 	return template
 end
 
-return _alacritty_template
+return M
