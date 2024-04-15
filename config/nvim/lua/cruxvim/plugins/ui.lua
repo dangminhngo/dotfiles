@@ -60,9 +60,9 @@ return {
       return {
         options = {
           theme = "auto",
-          globalstatus = true,
+          globalstatus = false,
           section_separators = { left = "▞", right = "▚" },
-          disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
+          disabled_filetypes = { statusline = { "dashboard", "alpha", "starter", "neo-tree" } },
         },
         sections = {
           lualine_a = { "mode" },
@@ -96,7 +96,7 @@ return {
             },
             -- stylua: ignore
             {
-              function() return "  " .. require("dap").status() end,
+              function() return "󰠭 " .. require("dap").status() end,
               cond = function () return package.loaded["dap"] and require("dap").status() ~= "" end,
               color = CruxVim.ui.fg("Debug"),
             },
@@ -125,11 +125,15 @@ return {
             },
           },
           lualine_y = {
-            { "progress", separator = " ", padding = { left = 1, right = 0 } },
-            { "location", padding = { left = 0, right = 1 } },
+            { "progress", separator = " ", padding = { left = 2, right = 0 } },
+            { "location", padding = { left = 0, right = 2 } },
           },
           lualine_z = {
-            "branch",
+            {
+              "b:gitsigns_head",
+              icon = "󰘬",
+              color = { gui = "bold" },
+            },
           },
         },
         extensions = { "neo-tree", "lazy" },
@@ -205,7 +209,7 @@ return {
           local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
           local pad_footer = string.rep(" ", 8)
           starter.config.footer = pad_footer
-            .. "🚀  Neovim loaded "
+            .. "🚀  CruxVim loaded "
             .. stats.loaded
             .. "/"
             .. stats.count

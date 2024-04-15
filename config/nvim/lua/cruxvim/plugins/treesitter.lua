@@ -137,6 +137,15 @@ return {
     },
   },
 
+  -- TS rainbow
+  {
+    "HiPhish/rainbow-delimiters.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("rainbow-delimiters.setup").setup({})
+    end,
+  },
+
   -- Automatically add closing tags for HTML and JSX
   {
     "windwp/nvim-ts-autotag",

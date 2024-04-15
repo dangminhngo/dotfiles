@@ -1,10 +1,12 @@
 return {
   {
-    "folke/tokyonight.nvim",
+    dir = "~/repos/crux.nvim",
     lazy = false,
     priority = 1000,
-    config = function()
-      vim.cmd([[colorscheme tokyonight-night]])
+    opts = {},
+    config = function(_, opts)
+      require("crux").setup(opts)
+      vim.cmd([[colorscheme crux]])
     end,
   },
 }

@@ -18,9 +18,9 @@ M.icons = {
     Info = "󰇐 ",
   },
   git = {
-    added = "󰐕 ",
+    added = "+",
     modified = "󰆕 ",
-    removed = "󰍴 ",
+    removed = "-",
   },
   kinds = {
     Array = "󰛡 ",

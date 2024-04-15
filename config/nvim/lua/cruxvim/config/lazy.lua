@@ -16,25 +16,28 @@ require("lazy").setup({
   spec = {
     { import = "cruxvim.plugins" },
     -- extras plugins go here
-    { import = "cruxvim.plugins.extras.coding.copilot" },
-    { import = "cruxvim.plugins.extras.coding.dap" },
+    { import = "cruxvim.plugins.extras.ui.mini-hipatterns" },
+    -- { import = "cruxvim.plugins.extras.coding.copilot" },
+    -- { import = "cruxvim.plugins.extras.coding.dap" },
     { import = "cruxvim.plugins.extras.format.prettier" },
     { import = "cruxvim.plugins.extras.lint.eslint" },
 
     { import = "cruxvim.plugins.extras.lang.docker" },
     { import = "cruxvim.plugins.extras.lang.json" },
     { import = "cruxvim.plugins.extras.lang.markdown" },
+    { import = "cruxvim.plugins.extras.lang.prisma" },
     { import = "cruxvim.plugins.extras.lang.python" },
     { import = "cruxvim.plugins.extras.lang.rust" },
     { import = "cruxvim.plugins.extras.lang.tailwind" },
     { import = "cruxvim.plugins.extras.lang.typescript" },
+    { import = "cruxvim.plugins.extras.lang.vue" },
     { import = "cruxvim.plugins.extras.lang.yaml" },
   },
   defaults = {
     lazy = false,
     version = false,
   },
-  install = { colorscheme = { "tokyonight" } },
+  install = { colorscheme = { "crux" } },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {
