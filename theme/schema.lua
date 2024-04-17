@@ -2,17 +2,17 @@ local clr = require("theme.color")
 
 local p = {
 	none = "NONE",
-	bg = "#1a1b26",
-	fg = "#c0c8e9",
+	bg = "#1c1d28",
+	fg = "#b3bde4",
 	red = "#e66c6e",
 	orange = "#e69875",
 	yellow = "#d9c574",
 	green = "#b3d57d",
 	teal = "#7cd398",
-	blue = "#8696f7",
+	blue = "#6d80ed",
 	cyan = "#7adbce",
-	magenta = "#d699b6",
-	purple = "#ac81d7",
+	magenta = "#cd84a7",
+	purple = "#9e6cd0",
 }
 
 return {

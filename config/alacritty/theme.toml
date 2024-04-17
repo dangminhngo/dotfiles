@@ -1,64 +1,64 @@
 # Crux Midnight for Alacritty
 # ~/.config/alacritty/theme.toml
 [colors.bright]
-black = "#5f5f67"
-blue = "#8696f7"
+black = "#606169"
+blue = "#6d80ed"
 cyan = "#7adbce"
 green = "#b3d57d"
-magenta = "#d699b6"
+magenta = "#cd84a7"
 red = "#e66c6e"
-white = "#c0c8e9"
+white = "#b3bde4"
 yellow = "#d9c574"
 
 [colors.cursor]
-cursor = "#c0c8e9"
-text = "#1a1b26"
+cursor = "#b3bde4"
+text = "#1c1d28"
 
 [colors.footer_bar]
-background = "#a3aac6"
-foreground = "#161720"
+background = "#98a1c2"
+foreground = "#181922"
 
 [colors.hints.end]
-background = "#161720"
-foreground = "#868ca3"
+background = "#181922"
+foreground = "#7d84a0"
 
 [colors.hints.start]
-background = "#a3aac6"
-foreground = "#161720"
+background = "#98a1c2"
+foreground = "#181922"
 
 [colors.line_indicator]
 background = "None"
 foreground = "None"
 
 [colors.normal]
-black = "#5f5f67"
-blue = "#8696f7"
+black = "#606169"
+blue = "#6d80ed"
 cyan = "#7adbce"
 green = "#b3d57d"
-magenta = "#d699b6"
+magenta = "#cd84a7"
 red = "#e66c6e"
-white = "#c0c8e9"
+white = "#b3bde4"
 yellow = "#d9c574"
 
 [colors.primary]
-background = "#161720"
-bright_foreground = "#c0c8e9"
-dim_foreground = "#a3aac6"
-foreground = "#c0c8e9"
+background = "#181922"
+bright_foreground = "#b3bde4"
+dim_foreground = "#98a1c2"
+foreground = "#b3bde4"
 
 [colors.search.focused_match]
-background = "#8696f7"
-foreground = "#1a1b26"
+background = "#6d80ed"
+foreground = "#1c1d28"
 
 [colors.search.matches]
 background = "#e66c6e"
-foreground = "#c0c8e9"
+foreground = "#b3bde4"
 
 [colors.selection]
-background = "#23242e"
-text = "#c0c8e9"
+background = "#252530"
+text = "#b3bde4"
 
 [colors.vi_mode_cursor]
-cursor = "#c0c8e9"
-text = "#1a1b26"
+cursor = "#b3bde4"
+text = "#1c1d28"
     

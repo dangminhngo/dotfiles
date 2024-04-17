@@ -12,11 +12,11 @@
 
 # styling
 [options]
-background = #1a1b26
+background = #1c1d28
 fullscreen = false
 overlay = true
-overlay_text_color = #c0c8e9
-overlay_background_color = #23242e
+overlay_text_color = #b3bde4
+overlay_background_color = #252530
 overlay_background_alpha = ff
 overlay_font = Jetka Nerd Font Extended:11
 overlay_position_bottom = false
