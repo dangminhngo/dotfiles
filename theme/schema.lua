@@ -57,7 +57,7 @@ return {
 		purple0 = clr.darken(p.purple, 0.95),
 		purple2 = clr.lighten(p.purple, 0.8),
 		comment = clr.lighten(p.bg, 0.75),
-		black = clr.lighten(p.bg, 0.7),
+		black = clr.lighten(p.bg, 0.65),
 		white = p.fg,
 	},
 }

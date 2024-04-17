@@ -1,7 +1,7 @@
 # Crux Midnight for Alacritty
 # ~/.config/alacritty/theme.toml
 [colors.bright]
-black = "#606169"
+black = "#6b6c73"
 blue = "#6d80ed"
 cyan = "#7adbce"
 green = "#b3d57d"
@@ -31,7 +31,7 @@ background = "None"
 foreground = "None"
 
 [colors.normal]
-black = "#606169"
+black = "#6b6c73"
 blue = "#6d80ed"
 cyan = "#7adbce"
 green = "#b3d57d"
