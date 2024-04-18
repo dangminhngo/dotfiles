@@ -57,7 +57,7 @@ return {
     opts = function()
       ---@class ConformOpts
       local opts = {
-        -- LazyVim will use these options when formatting with the conform.nvim formatter
+        -- CruxVim will use these options when formatting with the conform.nvim formatter
         format = {
           timeout_ms = 3000,
           async = false, -- not recommended to change

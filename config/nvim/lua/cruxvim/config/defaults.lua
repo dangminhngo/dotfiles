@@ -122,6 +122,30 @@ M.override_webdev_icons = {
       cterm_color = "56",
       name = "EslintrcCjs",
     },
+    [".eslintrc.mjs"] = {
+      icon = "󰱺",
+      color = "#4b32c3",
+      cterm_color = "56",
+      name = "EslintrcCjs",
+    },
+    ["eslint.config.js"] = {
+      icon = "󰱺",
+      color = "#4b32c3",
+      cterm_color = "56",
+      name = "EslintrcCjs",
+    },
+    ["eslint.config.cjs"] = {
+      icon = "󰱺",
+      color = "#4b32c3",
+      cterm_color = "56",
+      name = "EslintrcCjs",
+    },
+    ["eslint.config.mjs"] = {
+      icon = "󰱺",
+      color = "#4b32c3",
+      cterm_color = "56",
+      name = "EslintrcCjs",
+    },
     [".eslintrc.yaml"] = {
       icon = "󰱺",
       color = "#4b32c3",
