@@ -33,8 +33,8 @@ echo "Installing necessary packages ..."
 paru -S --noconfirm --needed \
     alacritty \
     base-devel \
+    bibata-cursor-theme \
     btop \
-    breeze-snow-cursor \
     calc \
     clang \
     curl \
@@ -42,7 +42,6 @@ paru -S --noconfirm --needed \
     docker-compose \
     docker-machine \
     dunst \
-    eww-wayland \
     fd \
     firefox-developer-edition \
     fish \
@@ -71,7 +70,6 @@ paru -S --noconfirm --needed \
     pdfjs \
     pipewire \
     polkit-kde-agent \
-    python-adblock \
     python-pip \
     qt5-wayland \
     qt6-wayland \
