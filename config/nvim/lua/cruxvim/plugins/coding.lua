@@ -44,6 +44,8 @@ return {
             cmp.abort()
             fallback()
           end,
+          ["<Tab>"] = cmp.config.disable,
+          ["<S-Tab>"] = cmp.config.disable,
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp" },

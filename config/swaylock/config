@@ -32,6 +32,6 @@ indicator
 clock
 timestr=%H:%M
 datestr= %A, %B %d
-indicator-x-position=1600
-indicator-y-position=800
+indicator-x-position=960
+indicator-y-position=540
 indicator-radius=192
