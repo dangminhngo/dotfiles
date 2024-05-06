@@ -19,7 +19,7 @@ return {
 	theme = "Crux Midnight",
 	palette = {
 		-- Accent color
-		accent = p.blue,
+		accent = p.green,
 		fg = p.fg,
 		bg = p.bg,
 		red = p.red,

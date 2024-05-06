@@ -1,7 +1,7 @@
 return {
   {
-    -- dir = "~/repos/crux.nvim",
-    "crux-theme/crux.nvim",
+    dir = "~/repos/crux.nvim",
+    -- "crux-theme/crux.nvim",
     lazy = false,
     priority = 1000,
     opts = {},

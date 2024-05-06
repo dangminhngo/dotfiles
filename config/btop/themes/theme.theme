@@ -31,7 +31,7 @@ theme[inactive_fg]="#7d84a0"
 theme[graph_text]="#b3bde4"
 
 # Misc colors for processes box including mini cpu graphs, details memory graph and details status text
-theme[proc_misc]="#6d80ed"
+theme[proc_misc]="#b3d57d"
 
 # Cpu box outline color
 theme[cpu_box]=#33343d""

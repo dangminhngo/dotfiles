@@ -81,19 +81,19 @@ tooltip {
 }
 
 .cpu {
-  color: $green;
+  color: $yellow;
 }
 
 .memory {
-  color: $blue;
+  color: $teal;
 }
 
 .disk {
-  color: $purple;
+  color: $orange;
 }
 
 .temp {
-  color: $fg;
+  color: $magenta;
 }
 
 // .net {
@@ -135,9 +135,9 @@ tooltip {
 }
 
 .nightlight {
-  color: $orange;
+  color: $yellow;
 }
 
 .idle-inhibitor {
-  color: $purple;
+  color: $magenta;
 }

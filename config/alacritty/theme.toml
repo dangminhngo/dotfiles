@@ -47,7 +47,7 @@ dim_foreground = "#98a1c2"
 foreground = "#b3bde4"
 
 [colors.search.focused_match]
-background = "#6d80ed"
+background = "#b3d57d"
 foreground = "#1c1d28"
 
 [colors.search.matches]
