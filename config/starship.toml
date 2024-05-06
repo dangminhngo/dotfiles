@@ -64,7 +64,7 @@ disabled = true
 
 # Prompt: param 2
 [character]
-success_symbol = " [](bold yellow)"
+success_symbol = " [](bold cyan)"
 error_symbol = " [󰄾](bold red)"
 
 [aws]
