@@ -47,6 +47,7 @@ paru -S --noconfirm --needed \
     fish \
     hyprland \
     hyprpaper \
+    hyprpicker \
     git \
     glfw \
     go \
