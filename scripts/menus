@@ -49,19 +49,16 @@ end
 function docs
     set theme ~/.config/rofi/documents.rasi
     killall -q rofi
-    set zathura_history (cat ~/.local/share/zathura/history | grep -Po "\[\K[^\]]*" | grep "/home/")
+    set docs_path (xdg-user-dir DOCUMENTS)
+    set files (ls $docs_path)
 
-    if test -z "$zathura_history"
-        set history "You have read no documents"
-    end
-
-    set opt (printf "%s\n" $zathura_history | rofi -dmenu -p "zathura" -theme $theme)
+    set opt (printf "%s\n" $files | rofi -dmenu -p "zathura" -theme $theme)
 
     if test -z $opt
         exit 0
     end
 
-    zathura $opt
+    zathura "$docs_path/$opt"
     exit 0
 end
 

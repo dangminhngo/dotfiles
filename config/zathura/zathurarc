@@ -22,7 +22,7 @@ map R rotate
 map <C-m> change_mode
 map <C-p> print
 map <C-j> zoom in
-map <C-k> zoom out 
+map <C-k> zoom out
 map <C-i> recolor
 
 # OPTIONS
