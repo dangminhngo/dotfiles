@@ -108,7 +108,7 @@ function powermenu
         case $logout
             hyprctl dispatch exit 0
         case $lock
-            swaylock
+            hyprlock
         case $suspend
             systemctl suspend
     end

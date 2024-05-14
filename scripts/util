@@ -29,15 +29,6 @@ function import-gsettings
     gsettings set org.gnome.desktop.wm.preferences button-layout ""
 end
 
-function spawn-idle
-    swayidle -w \
-        timeout 120 swaylock \
-        timeout 180 'hyprctl dispatch dpms off' \
-        resume 'hyprctl dispatch dpms on' \
-        before-sleep swaylock
-end
-
-
 set STATUSBAR eww --config ~/.config/eww
 
 function toggle-idle
@@ -45,10 +36,8 @@ function toggle-idle
 
     if test -n "$idle_state"
         $STATUSBAR update idle_icon=
-        pkill -SIGTERM swayidle
     else
         $STATUSBAR update idle_icon=
-        spawn-idle &
     end
 end
 
@@ -182,8 +171,6 @@ switch $argv[1]
         run-portal
     case import-gsettings
         import-gsettings
-    case idle
-        spawn-idle
     case toggle-idle
         toggle-idle
     case toggle-nightlight
