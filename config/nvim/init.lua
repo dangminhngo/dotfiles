@@ -1,1 +1,1 @@
-require("cruxvim.config.lazy")
+require("configs.lazy")

@@ -13,9 +13,7 @@
 !/config/gtk-4.0
 !/config/hypr
 !/config/imv
-!/config/nvim
-/config/nvim/lazyvim.json
-/config/nvim/lazy-lock.json
+/config/nvim
 !/config/rofi
 !/config/sugar-candy
 !/config/swaylock

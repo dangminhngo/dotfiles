@@ -42,3 +42,6 @@ set zoom-min 50
 
 # colorscheme 
 include theme
+
+# database backend
+set database "sqlite"
