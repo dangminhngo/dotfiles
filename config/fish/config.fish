@@ -31,3 +31,7 @@ alias ll "ls -la"
 alias ga "git add -A"
 alias gp "git push"
 alias n nvim
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH

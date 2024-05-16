@@ -4,7 +4,6 @@
 !/config/btop
 /config/btop/btop.log
 !/config/dunst
-!/config/eww
 !/config/fish
 /config/fish/completions
 /config/fish/fish_variables

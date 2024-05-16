@@ -1,0 +1,47 @@
+@import url("palette.css");
+
+* {
+  all: unset;
+}
+
+.bar {
+  background-color: @bg0;
+  color: @fg;
+}
+
+.bar-box {
+  padding: 7px 16px;
+}
+
+.clock {
+  background-color: @bg2;
+}
+
+.workspaces {
+}
+
+.workspace-box {
+}
+
+.workspace-button {
+  min-width: 20px;
+  min-height: 20px;
+  border-radius: 100%;
+  background-color: @bg3;
+  color: @black;
+}
+
+.workspace-button.active {
+  background-color: @accent;
+  color: @bg;
+}
+
+.workspace-button.occupied.active {
+  background-color: @accent;
+  color: @bg;
+}
+
+.workspace-button.occupied {
+  background-color: @blue;
+  color: @bg;
+}

@@ -1,0 +1,23 @@
+/* Crux Midnight colorscheme for eww */
+/* ~/.config/eww/palette.css */
+
+@define-color accent   #b3d57d;
+@define-color bgd      #15161e;
+@define-color bg0      #181922;
+@define-color bg       #1c1d28;
+@define-color bg2      #252530;
+@define-color bg3      #33343d;
+@define-color fg       #b3bde4;
+@define-color fg2      #98a1c2;
+@define-color fg3      #7d84a0;
+@define-color black    #6b6c73;
+@define-color red      #e66c6e;
+@define-color orange   #e69875;
+@define-color yellow   #d9c574;
+@define-color green    #b3d57d;
+@define-color teal     #7cd398;
+@define-color cyan     #7adbce;
+@define-color blue     #6d80ed;
+@define-color purple   #9e6cd0;
+@define-color magenta  #cd84a7;
+@define-color white    #b3bde4;

@@ -1,8 +1,8 @@
 local templates = {
+	"ags",
 	"alacritty",
 	"btop",
 	"dunst",
-	"eww",
 	"fish",
 	"hyprland",
 	"imv",
