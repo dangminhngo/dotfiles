@@ -14,7 +14,7 @@ set -l blue 6d80ed
 set -l purple 9e6cd0
 set -l magenta cd84a7
 set -l cyan 7adbce
-set -l black 6b6c73
+set -l black 55565e
 
 # Syntax Highlighting
 set -g fish_color_normal $fg

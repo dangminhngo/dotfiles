@@ -38,11 +38,11 @@ paru -S --noconfirm --needed \
     breeze-snow-cursor-theme \
     calc \
     clang \
+    cliphist \
     curl \
     docker \
     docker-compose \
     docker-machine \
-    dunst \
     fd \
     firefox-developer-edition \
     fish \

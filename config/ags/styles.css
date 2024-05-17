@@ -4,28 +4,43 @@
   all: unset;
 }
 
-.bar {
+tooltip {
+  border-radius: 4px;
+  padding: 2px 8px;
   background-color: @bg0;
+  color: @fg2;
+  font-family: Jetka Nerd Font;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.bar {
+  background-color: @bgd;
   color: @fg;
+  font-size: 14px;
+  font-family: Jetka Nerd Font;
+  font-weight: 500;
 }
 
 .bar-box {
-  padding: 7px 16px;
+  padding: 0px 16px;
 }
 
 .clock {
-  background-color: @bg2;
+  font-size: 18px;
+  font-weight: 800;
 }
 
 .workspaces {
 }
 
 .workspace-box {
+  padding: 9px 0px;
 }
 
 .workspace-button {
-  min-width: 20px;
-  min-height: 20px;
+  min-width: 16px;
+  min-height: 16px;
   border-radius: 100%;
   background-color: @bg3;
   color: @black;
@@ -44,4 +59,42 @@
 .workspace-button.occupied {
   background-color: @blue;
   color: @bg;
+}
+
+.volume.active {
+  color: @teal;
+}
+
+.volume trough highlight {
+  border-radius: 8px;
+  background-color: @teal;
+  min-height: 8px;
+}
+
+.volume trough {
+  border-radius: 8px;
+  background-color: @bg3;
+}
+
+.active-client {
+  font-weight: 600;
+}
+
+.volume,
+.nightlight,
+.bluetooth,
+.network {
+  color: @black;
+}
+
+.nightlight.active {
+  color: @orange;
+}
+
+.network.active {
+  color: @magenta;
+}
+
+.bluetooth.active {
+  color: @blue;
 }

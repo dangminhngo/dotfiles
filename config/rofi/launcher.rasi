@@ -23,7 +23,7 @@ configuration {
 
 window {
   transparency:                   "real";
-  background-color:               @bg0;
+  background-color:               @bgd;
   text-color:                     @fg3;
   border:                         1px;
   border-color:                   @accent;
@@ -45,7 +45,7 @@ prompt {
 
 textbox-prompt-colon {
   padding:                        10px;
-  background-color:               @bg0;
+  background-color:               @bgd;
   text-color:                     @fg3;
   expand:                         false;
   str:                            " :: ";

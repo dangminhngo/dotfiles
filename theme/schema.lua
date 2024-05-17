@@ -32,8 +32,8 @@ return {
 		orange = p.orange,
 		purple = p.purple,
 		-- Backgrounds & Foregrounds
-		bgd = clr.darken(p.bg, 0.75),
-		bg0 = clr.darken(p.bg, 0.85),
+		bgd = clr.darken(p.bg, 0.5),
+		bg0 = clr.darken(p.bg, 0.8),
 		bg2 = clr.lighten(p.bg, 0.9625),
 		bg3 = clr.lighten(p.bg, 0.9),
 		fg2 = clr.darken(p.fg, 0.85),
@@ -56,8 +56,7 @@ return {
 		magenta2 = clr.lighten(p.magenta, 0.8),
 		purple0 = clr.darken(p.purple, 0.95),
 		purple2 = clr.lighten(p.purple, 0.8),
-		comment = clr.lighten(p.bg, 0.75),
-		black = clr.lighten(p.bg, 0.65),
+		black = clr.lighten(p.bg, 0.75),
 		white = p.fg,
 	},
 }
