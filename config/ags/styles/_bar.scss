@@ -74,6 +74,7 @@ window.bar {
   }
 
   .active-client {
+    font-size: 14px;
     font-weight: 600;
   }
 
@@ -102,4 +103,8 @@ window.bar {
   .revealer {
     padding: 0px 8px;
   }
+}
+
+.systray-button {
+  color: $fg3;
 }

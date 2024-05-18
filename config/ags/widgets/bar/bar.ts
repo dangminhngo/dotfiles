@@ -19,7 +19,7 @@ export default function Bar(monitor: number) {
       className: "bar-box",
       start_widget: Widget.Box({
         hexpand: true,
-        spacing: 16,
+        spacing: 24,
         children: [Workspaces(), ActiveClient()],
       }),
       center_widget: Widget.Box({

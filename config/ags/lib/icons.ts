@@ -3,6 +3,13 @@ export default {
   fallback: {
     notif: "notification-symbolic",
   },
+  clients: {
+    default: "notification-symbolic",
+    alacritty: "utilities-terminal-symbolic",
+    calc: "gnome-calculator-symbolic",
+    pavucontrol: "sound-symbolic",
+    btop: "utilities-system-monitor-symbolic",
+  },
   audio: {
     volume: {
       muted: "audio-volume-muted-symbolic",
@@ -28,5 +35,9 @@ export default {
   nightlight: {
     enabled: "night-light-symbolic",
     disabled: "night-light-disabled-symbolic",
+  },
+  systray: {
+    open: "pan-start-symbolic",
+    close: "pan-end-symbolic",
   },
 }
