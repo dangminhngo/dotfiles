@@ -1,5 +1,8 @@
 export default {
   missing: "image-missing-symbolic",
+  fallback: {
+    notif: "notification-symbolic",
+  },
   audio: {
     volume: {
       muted: "audio-volume-muted-symbolic",

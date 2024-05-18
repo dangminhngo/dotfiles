@@ -82,6 +82,7 @@ paru -S --noconfirm --needed \
     rofi-lbonn-wayland-git \
     rsync \
     rustup \
+    sass \
     sddm \
     sddm-sugar-candy-git \
     slurp \

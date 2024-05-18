@@ -21,18 +21,30 @@ export default function Volume() {
     return icon ? icons.audio.volume[iconsByVolume[icon]] : icons.audio.volume.muted
   }
 
+  function toggle() {
+    if (audio.speaker.is_muted) {
+      audio.speaker.is_muted = false
+      Utils.notify({
+        iconName: icons.audio.volume.muted,
+        summary: "Volume",
+        body: "On",
+      })
+    } else {
+      audio.speaker.is_muted = true
+      Utils.notify({
+        iconName: icons.audio.volume.high,
+        summary: "Volume",
+        body: "Muted",
+      })
+    }
+  }
+
   const icon = ToggleButton({
     name: "volume",
     child: Widget.Icon({ icon: Utils.watch(getIcon(), audio.speaker, getIcon), size: 16 }),
-    onClicked: () => sh("pavucontrol"),
-    onSecondaryClickRelease: () => (audio.speaker.is_muted = !audio.speaker.is_muted),
-    connection: [audio.speaker, () => !!!audio.speaker.is_muted],
-    tooltipText: `Volume: ${Math.floor(audio.speaker.volume * 100)}%`,
-    setup: (self) => {
-      self.hook(audio.speaker, () => {
-        self.tooltip_text = `Volume: ${Math.floor(audio.speaker.volume * 100)}%`
-      })
-    },
+    onClicked: toggle,
+    onSecondaryClickRelease: () => sh("pavucontrol"),
+    connection: [audio.speaker, () => !audio.speaker.is_muted],
   })
 
   const slider = Widget.Slider({
@@ -42,6 +54,7 @@ export default function Volume() {
     setup: (self) =>
       self.hook(audio.speaker, () => {
         self.value = audio.speaker.volume || 0
+        self.toggleClassName("active", !audio.speaker.is_muted)
       }),
   })
 

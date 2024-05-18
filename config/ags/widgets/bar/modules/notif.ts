@@ -14,16 +14,14 @@ export default function Notif() {
     child: icon,
     onClicked: () => (n.dnd = !n.dnd),
     connection: [n, () => n.dnd],
-    tooltipText: `DND: Off`,
-    setup: (self) => {
-      self.hook(n, () => {
-        if (n.dnd) {
-          self.tooltip_text = "DND: On"
-        } else {
-          self.tooltip_text =
-            n.notifications.length > 0 ? `You have ${n.notifications.length} notifications` : "DND: Off"
-        }
-      })
+    activate: (self) => {
+      self.tooltip_text = "DND: On"
+    },
+    deactivate: (self) => {
+      self.tooltip_text =
+        n.notifications.length > 0
+          ? `You have ${n.notifications.length} notification${n.notifications.length > 1 ? "s" : ""}`
+          : "DND: Off"
     },
   })
 }
