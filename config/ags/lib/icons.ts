@@ -4,7 +4,7 @@ export default {
     notif: "notification-symbolic",
   },
   clients: {
-    default: "notification-symbolic",
+    default: "new-window-symbolic",
     alacritty: "utilities-terminal-symbolic",
     calc: "gnome-calculator-symbolic",
     pavucontrol: "sound-symbolic",
