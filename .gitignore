@@ -25,6 +25,7 @@
 !/config/electron-flags.conf
 !/config/electron19-flags.conf
 !/config/starship.toml
+--help
 
 # All logs
 *.log

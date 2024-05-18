@@ -1,195 +1,108 @@
-#!/bin/fish
+#!/usr/bin/env bash
 
-# Install basic packages
-sudo pacman -S --noconfirm --needed base-devel git fish rustup
+source ./.scriptdata/functions.sh
 
-# Install rustup toolchain
-echo "Installing rustup with its stable toolchain ..."
-rustup install stable
-rustup default stable
+install_paru() {
+	# Install basic packages
+	sudo pacman -S --noconfirm --needed base-devel git fish
 
-sleep 1
+	if check_dep paru; then
+		sudo pacman -S --noconfirm --needed rustup
 
-# Install Paru
-if which paru
-else
-    echo "Installing paru ..."
-    git clone https://aur.archlinux.org/paru.git
-    pushd paru
-    makepkg -si --noconfirm
-    popd
-    rm -rf paru
-end
+		# Install rustup toolchain
+		rustup install stable
+		rustup default stable
 
-sleep 1
+		sleep 1
 
-echo "Refreshing repositories ..."
-paru -Syy --noconfirm
-paru -Sy --noconfirm archlinux-keyring
+		# Install Paru
+		git clone https://aur.archlinux.org/paru.git
+		pushd paru
+		makepkg -si --noconfirm
+		popd
+		rm -rf paru
+	fi
+}
 
-sleep 1
+install_pkgs() {
+	paru -Syy --noconfirm
+	paru -Sy --noconfirm archlinux-keyring
+	paru -S - <./.scriptdata/pkgs.txt
+}
 
-echo "Installing necessary packages ..."
-paru -S --noconfirm --needed \
-    alacritty \
-    aylurs-gtk-shell \
-    base-devel \
-    btop \
-    breeze-snow-cursor-theme \
-    calc \
-    clang \
-    cliphist \
-    curl \
-    docker \
-    docker-compose \
-    docker-machine \
-    fd \
-    firefox-developer-edition \
-    fish \
-    hyprland \
-    hyprpaper \
-    hyprpicker-git \
-    hyprlock-git \
-    hypridle-git \
-    git \
-    glfw \
-    go \
-    golangci-lint \
-    grim \
-    gtk-layer-shell \
-    gtk3 \
-    gtk4 \
-    imagemagick \
-    imv \
-    jq \
-    lazygit \
-    lf \
-    libnotify \
-    luacheck \
-    man \
-    neovim \
-    net-tools \
-    pamixer \
-    papirus-icon-theme \
-    pdfjs \
-    pipewire \
-    polkit-kde-agent \
-    python-pip \
-    qt5-wayland \
-    qt6-wayland \
-    qutebrowser \
-    ripgrep \
-    rofi-lbonn-wayland-git \
-    rsync \
-    rustup \
-    sass \
-    sddm \
-    sddm-sugar-candy-git \
-    slurp \
-    socat \
-    starship \
-    stylua \
-    tmux \
-    tree \
-    ttf-roboto \
-    unzip \
-    xdg-desktop-portal \
-    xdg-desktop-portal-gtk \
-    xdg-desktop-portal-hyprland-git \
-    xdg-utils \
-    xdg-user-dirs \
-    vscode \
-    wf-recorder \
-    wlr-randr \
-    wlsunset \
-    wl-clipboard \
-    wireplumber \
-    xorg-xlsclients \
-    xorg-xrdb \
-    xorg-xwayland \
-    zathura \
-    zathura-pdf-poppler
+enable_services() {
+	sudo systemctl enable sddm.servic
+}
 
-sleep 1
+install_assets() {
+	xdg-user-dirs-update
 
-# Enable systemd services
-echo "Enabling services..."
-sudo systemctl enable sddm.service
+	# Fonts
+	rm -rf ~/.local/share/{themes,fonts}
+	mkdir -p ~/.local/share/{themes,fonts}
+	sudo cp fonts/* ~/.local/share/fonts/
+	git clone https://github.com/dangminhngo/Jetka.git
+	cp Jetka/patched/* ~/.local/share/fonts/
+	rm -rf Jetka
+	fc-cache -r
 
-sleep 1
+	# Wallpapers
+	sudo cp ./wallpapers/greeting.png /usr/share/sddm/themes/sugar-candy/Backgrounds/
 
-# SDDM
+	# Install GTK themes
+	git clone https://github.com/dangminhngo/themix-generator.git
+	cp -R themix-generator/themes/Crux-Midnight ~/.local/share/themes/
+	rm -rf themix-generator
+}
 
-echo "Creating default user directories..."
-xdg-user-dirs-update
+config() {
+	# Backup old configs
+	mv ~/.config ~/.config.backup
+	ln -s ~/.dotfiles/config ~/.config
+	# Copy common system configs
+	sudo cp -R ./settings/sddm.conf.d /etc/
+	sudo cp ./config/sugar-candy/theme.conf /usr/share/sddm/themes/sugar-candy/
+	sudo cp -R ./system/reflector /etc/xdg/
+	cp ./settings/{.icons,.gitconfig} ~/
 
-sleep 1
+	# Remove default cursor theme
+	sudo rm -rf /usr/share/icons/default
+}
 
-# Fonts
-echo "Downloading & copying fonts to directories..."
-rm -rf ~/.local/share/{themes,fonts}
-mkdir -p ~/.local/share/{themes,fonts}
-git clone https://github.com/dangminhngo/fonts.git
-sudo cp -R fonts/patched/jetka ~/.local/share/fonts/
-sudo cp -R fonts/material-icons ~/.local/share/fonts/
-rsync fonts/others/* ~/.local/share/fonts/
-rm -rf fonts
-fc-cache -r
+install_stuff() {
+	# fnm
+	if check_dep fnm; then
+		curl -fsSL https://fnm.vercel.app/install | bash
+	fi
 
-# Wallpapers
-echo "Copying wallpapers to their locations..."
-sudo cp ./wallpapers/greeting.png /usr/share/sddm/themes/sugar-candy/Backgrounds/
+	# pnpm
+	if check_dep pnpm; then
+		curl -fsSL https://get.pnpm.io/install.sh | sh -
+	fi
 
-# Run Docker with current user privileges
-echo "Running docker post installation..."
-sudo usermod -aG docker $USER
+	# bun
+	if check_dep bun; then
+		curl -fsSL https://bun.sh/install | bash # for macOS, Linux, and WSL
+	fi
+}
 
-sleep 1
+post_install() {
+	# Run Docker with current user privileges
+	sudo usermod -aG docker $USER
+}
 
-echo "Copying configurations..."
-# Copy binaries to /usr/bin/
-sudo rsync ./bin/* /usr/bin/
-# Copy common configs
-rm -rf ~/.config
-ln -s ~/.dotfiles/config ~/.config
-# Copy common system configs
-rsync ./system/.gitconfig ~/
-sudo rsync --recursive ./system/sddm.conf.d /etc/
-sudo rsync ./config/sugar-candy/theme.conf /usr/share/sddm/themes/sugar-candy/
-sudo rsync --recursive ./system/reflector /etc/xdg/
-rsync --recursive ./system/.icons ~/
+cleanup() {
+	paru -Rns $(paru -Qdtq)
+	paru -Scc --noconfirm
+}
 
-# Remove default cursor theme
-sudo rm -rf /usr/share/icons/default
-
-sleep 1
-
-# Install GTK themes
-echo "Installing GTK themes..."
-git clone https://github.com/dangminhngo/gtktheme-generator.git
-cp -R gtktheme-generator/themes/Crux-Midnight ~/.local/share/themes/
-rm -rf gtktheme-generator
-
-sleep 1
-
-# Install NodeJS
-echo "Installing Node.js..."
-curl -fsSL https://fnm.vercel.app/install | bash
-
-sleep 1
-# Install PNPM
-echo "Installing pnpm..."
-curl -fsSL https://get.pnpm.io/install.sh | sh -
-
-sleep 1
-
-# Install Bun
-curl -fsSL https://bun.sh/install | bash # for macOS, Linux, and WSL
-
-# Clean up
-echo "Cleaning up..."
-paru -Rns (paru -Qdtq)
-
-sleep 1
+install_paru
+install_pkgs
+enable_services
+install_assets
+config
+install_stuff
+post_install
+cleanup
 
 echo "Reboot to your system and Happy coding!"
