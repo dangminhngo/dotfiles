@@ -10,7 +10,7 @@
  */
 
 configuration {
-  font:                           "Jetka Nerd Font 11";
+  font:                           "Jetka Nerd Font 12";
   show-icons:                     true;
   icon-theme:                     "Papirus-Dark";
   display-window:                 "Windows";
@@ -26,7 +26,7 @@ window {
   background-color:               @bgd;
   text-color:                     @fg3;
   border:                         1px;
-  border-color:                   @bg2;
+  border-color:                   @blue;
   border-radius:                  4px;
   width:                          600px;
   location:                       center;
@@ -38,13 +38,12 @@ prompt {
   enabled:                        true;
   padding:                        1% 0.75% 1% 0.75%;
   background-color:               @blue;
-  text-color:                     @bg;
+  text-color:                     @bg0;
   border-radius:                  4px;
-  font:                           "Jetka Nerd Font 11";
+  font:                           "Jetka Nerd Font 12";
 }
 
 textbox-prompt-colon {
-  padding:                        10px;
   background-color:               @bgd;
   text-color:                     @fg3;
   expand:                         false;
@@ -53,18 +52,19 @@ textbox-prompt-colon {
 
 entry {
   background-color:               @none;
-  text-color:                     @fg3;
-  placeholder-color:              @fg3;
+  text-color:                     @fg;
+  placeholder-color:              @black;
   expand:                         true;
   horizontal-align:               0;
-  placeholder:                    "Search...";
+  placeholder:                    "Search titles...";
   padding:                        1.15% 0.5% 1% 0.5%;
   blink:                          true;
 }
 
 inputbar {
   children:                       [ prompt, entry ];
-  background-color:               @bg;
+  spacing:                        6px;
+  background-color:               @bg0;
   text-color:                     @fg3;
   expand:                         false;
   border:                         0% 0% 0% 0%;
@@ -77,7 +77,7 @@ listview {
   padding:                        0px;
   columns:                        1;
   lines:                          6;
-  spacing:                        1%;
+  spacing:                        6px;
   cycle:                          false;
   dynamic:                        true;
   layout:                         vertical;
@@ -89,16 +89,16 @@ mainbox {
   border-radius:                  0% 0% 0% 0%;
   border-color:                   @blue;
   children:                       [ inputbar, listview ];
-  spacing:                        12px;
+  spacing:                        6px;
   padding:                        12px;
 }
 
 element {
-  background-color:               @bg;
+  background-color:               @bg0;
   text-color:                     @fg3;
   orientation:                    horizontal;
   border-radius:                  4px;
-  padding:                        10px 20px;
+  padding:                        8px 0px;
 }
 
 element-icon {
@@ -122,7 +122,4 @@ element-text {
 element selected {
   background-color:               @bg2;
   text-color:                     @blue;
-  border:                         0px 0px 4px 4px;
-  border-radius:                  4px;
-  border-color:                   @blue;
 }

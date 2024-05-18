@@ -38,7 +38,7 @@ prompt {
   enabled:                        true;
   padding:                        1% 0.75% 1% 0.75%;
   background-color:               @accent;
-  text-color:                     @bg;
+  text-color:                     @bg0;
   border-radius:                  4px;
   font:                           "Jetka Nerd Font 12";
 }
@@ -64,7 +64,7 @@ entry {
 
 inputbar {
   children:                       [ prompt, entry ];
-  background-color:               @bg;
+  background-color:               @bg0;
   text-color:                     @fg3;
   expand:                         false;
   border:                         0% 0% 0% 0%;
@@ -77,7 +77,7 @@ listview {
   padding:                        0px;
   columns:                        2;
   lines:                          12;
-  spacing:                        1%;
+  spacing:                        6px;
   cycle:                          false;
   dynamic:                        true;
   layout:                         vertical;
@@ -89,12 +89,12 @@ mainbox {
   border-radius:                  0% 0% 0% 0%;
   border-color:                   @accent;
   children:                       [ inputbar, listview ];
-  spacing:                        12px;
+  spacing:                        6px;
   padding:                        12px;
 }
 
 element {
-  background-color:               @bg;
+  background-color:               @bg0;
   text-color:                     @fg3;
   orientation:                    horizontal;
   border-radius:                  4px;
@@ -122,7 +122,4 @@ element-text {
 element selected {
   background-color:               @bg2;
   text-color:                     @accent;
-  border:                         0px 0px 2px 2px;
-  border-radius:                  4px;
-  border-color:                   @accent;
 }
