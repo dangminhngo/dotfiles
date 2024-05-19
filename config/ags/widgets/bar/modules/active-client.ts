@@ -14,7 +14,7 @@ export default function ActiveClient() {
         size: 16,
       }),
       Widget.Label({
-        label: hyprland.active.client.bind("title"),
+        label: hyprland.active.client.bind("title").as((title) => (title !== "" ? title : "Start some cool projects!")),
         maxWidthChars: 80,
         truncate: "end",
       }),

@@ -11,8 +11,9 @@ const icon = Widget.Icon({
 export default function Notif() {
   return ToggleButton({
     name: "notif",
+    className: "notifications",
     child: icon,
     onClicked: () => (n.dnd = !n.dnd),
-    connection: [n, () => n.dnd],
+    connection: [n, () => !n.dnd],
   })
 }

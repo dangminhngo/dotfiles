@@ -22,6 +22,7 @@ window.bar {
   .clock {
     font-size: 16px;
     font-weight: 800;
+    color: $fg2;
   }
 
   .workspaces {
@@ -55,27 +56,28 @@ window.bar {
   }
 
   .volume.active {
-    color: $teal;
+    color: $purple;
   }
 
   .volume trough highlight {
-    border-radius: 2px;
-    background-color: $teal;
-    min-height: 8px;
+    border-radius: 4px;
+    background-color: $purple;
+    min-height: 4px;
   }
 
   .volume trough {
-    border-radius: 8px;
-    background-color: $black;
+    border-radius: 4px;
+    background-color: $bg3;
   }
 
   .volume trough.active {
-    background-color: $bg3;
+    background-color: $bg2;
   }
 
   .active-client {
     font-size: 14px;
     font-weight: 600;
+    color: $fg2;
   }
 
   .volume,
@@ -87,15 +89,19 @@ window.bar {
   }
 
   .nightlight.active {
-    color: $orange;
+    color: $yellow;
   }
 
   .network.active {
-    color: $magenta;
+    color: $teal;
   }
 
   .bluetooth.active {
     color: $blue;
+  }
+
+  .notifications.active {
+    color: $orange;
   }
 }
 
