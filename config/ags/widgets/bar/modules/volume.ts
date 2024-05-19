@@ -25,14 +25,14 @@ export default function Volume() {
     if (audio.speaker.is_muted) {
       audio.speaker.is_muted = false
       Utils.notify({
-        iconName: icons.audio.volume.muted,
+        iconName: icons.audio.volume.high,
         summary: "Volume",
         body: "On",
       })
     } else {
       audio.speaker.is_muted = true
       Utils.notify({
-        iconName: icons.audio.volume.high,
+        iconName: icons.audio.volume.muted,
         summary: "Volume",
         body: "Muted",
       })

@@ -29,7 +29,7 @@ window {
   border:                         1px;
   border-color:                   @bg2;
   location:                       center;
-  width:                          360px;
+  width:                          480px;
   x-offset:                       0px;
   y-offset:                       0px;
 }
@@ -65,7 +65,7 @@ inputbar {
 }
 
 listview {
-  columns:                        3;
+  columns:                        4;
   lines:                          1;
   spacing:                        6px;
   cycle:                          true;
