@@ -4,6 +4,7 @@ local templates = {
 	"btop",
 	"dunst",
 	"fish",
+	"foot",
 	"hyprland",
 	"imv",
 	"rofi",

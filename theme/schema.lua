@@ -2,8 +2,8 @@ local clr = require("theme.color")
 
 local p = {
 	none = "NONE",
-	bg = "#1c1d28",
-	fg = "#b3bde4",
+	bg = "#1d2021",
+	fg = "#dad4c3",
 	red = "#e66c6e",
 	orange = "#e69875",
 	yellow = "#d9c574",

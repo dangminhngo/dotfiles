@@ -12,10 +12,10 @@ get_active_monitor() {
 
 mkdir -p ~/Videos
 if pgrep wf-recorder >/dev/null; then
-	notify-send "Recording Stopped" "Stopped" -a 'record-script.sh' &
+	notify-send --app-name="Record" --icon="camera-video-symbolic" "Recording Stopped" "Stopped" &
 	pkill wf-recorder &
 else
-	notify-send "Starting recording" 'recording_'"$(get_date)"'.mp4' -a 'record-script.sh'
+	notify-send --app-name="Record" --icon="camera-video-symbolic" "Starting recording" 'File will be saved at ~/Videos/recording_'"$(get_date)"'.mp4'
 	if [[ "$1" == "--sound" ]]; then
 		wf-recorder --pixel-format yuv420p -f '~/Videos/recording_'"$(get_date)"'.mp4' -t --geometry "$(slurp)" --audio="$(get_audio_output)" &
 		disown

@@ -8,9 +8,9 @@ export default function Network() {
     name: "network",
     onClicked: () => sh(`alacritty --title nmtui --class nmtui -e nmtui`),
     child: Widget.Icon({
-      icon: network.wired.bind("icon_name") ?? network.wired.bind("icon_name"),
+      icon: network.wired.bind("icon_name") ?? network.wifi.bind("icon_name"),
     }),
-    connection: [network, () => network.wifi.enabled || network.wired.internet === "connected"],
+    connection: [network, () => [network.wired?.internet, network.wifi?.internet].includes("connected")],
     tooltipText:
       network.wired.bind("internet").as((i) => `Wired: ${i}`) ??
       network.wifi.bind("ssid").as((ssid) => `Wifi: ${ssid}`),

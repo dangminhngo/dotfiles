@@ -22,15 +22,15 @@ colorpicker() {
 	case $opt in
 	$hex)
 		clr=$(~/.dotfiles/scripts/colorpicker.sh --hex)
-		notify-send "Colorpicker" "Color $clr copied to your clipboard"
+		notify-send --app-name="colorpicker" --icon="color-select-symbolic" "Colorpicker" "Color $clr copied to your clipboard"
 		;;
 	$rgb)
 		clr=$(~/.dotfiles/scripts/colorpicker.sh --rgb)
-		notify-send "Colorpicker" "Color $clr copied to your clipboard"
+		notify-send --app-name="colorpicker" --icon="color-select-symbolic" "Colorpicker" "Color $clr copied to your clipboard"
 		;;
 	$hsl)
 		clr=$(~/.dotfiles/scripts/colorpicker.sh --hsl)
-		notify-send "Colorpicker" "Color $clr copied to your system clipboard"
+		notify-send --app-name="colorpicker" --icon="color-select-symbolic" "Colorpicker" "Color $clr copied to your system clipboard"
 		;;
 	esac
 }
@@ -108,19 +108,16 @@ record() {
 		notify-send "A recording instance has already running"
 	else
 		theme="~/.config/rofi/record.rasi"
-		path=$(xdg-user-dir VIDEOS)/captures
-		mkdir -p $path
-
 		killall -q rofi
 
 		# Options
-		sound=""
-		fullscreen_sound=""
-		fullscreen=""
-		selection=""
+		fullscreen_sound=""
+		fullscreen=""
+		sound=""
+		selection=""
 
 		# Variables passed to dmenu
-		opts="$sound\n$fullscreen_sound\n$fullscreen\n$selection"
+		opts="$fullscreen_sound\n$fullscreen\n$sound\n$selection"
 
 		opt=$(echo -e $opts | rofi -dmenu -p "wf-recorder" -theme $theme)
 
@@ -129,14 +126,15 @@ record() {
 		fi
 
 		case $opt in
-		$sound)
-			~/.dotfiles/scripts/record.sh --sound
-			;;
+
 		$fullscreen_sound)
 			~/.dotfiles/scripts/record.sh --fullscreen-sound
 			;;
 		$fullscreen)
 			~/.dotfiles/scripts/record.sh --fullscreen
+			;;
+		$sound)
+			~/.dotfiles/scripts/record.sh --sound
 			;;
 		$selection)
 			~/.dotfiles/scripts/record.sh
@@ -147,8 +145,6 @@ record() {
 
 screenshot() {
 	theme="~/.config/rofi/screenshot.rasi"
-	path="$(xdg-user-dir PICTURES)/screenshots"
-	mkdir -p $path
 
 	killall -q rofi
 
