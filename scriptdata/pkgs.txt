@@ -18,15 +18,17 @@ firefox-developer-edition
 git
 gjs
 glfw
+gnome-bluetooth-3.0
 go
 grim
 gtk-layer-shell
 gtk3
 gtk4
+hypridle
 hyprland
+hyprlock
 hyprpaper
 hyprpicker
-hypridle
 imagemagick
 imv
 jq
@@ -53,6 +55,7 @@ rofi-lbonn-wayland-git
 rsync
 rustup
 sddm
+sddm-sugar-candy-git
 shfmt
 slurp
 socat

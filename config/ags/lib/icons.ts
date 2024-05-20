@@ -24,8 +24,8 @@ export default {
     disabled: "bluetooth-disabled-symbolic",
   },
   notif: {
-    noisy: "notification-symbolic",
-    silent: "notification-disabled-symbolic",
+    noisy: "notification-new-symbolic",
+    silent: "notification-new-disabled-symbolic",
     message: "chat-bubbles-symbolic",
   },
   trash: {
@@ -35,6 +35,10 @@ export default {
   nightlight: {
     enabled: "night-light-symbolic",
     disabled: "night-light-disabled-symbolic",
+  },
+  idle: {
+    enabled: "face-glasses-symbolic",
+    disabled: "face-glasses-symbolic",
   },
   systray: {
     open: "pan-start-symbolic",

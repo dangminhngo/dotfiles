@@ -7,12 +7,12 @@ import Systray from "./modules/systray"
 import Network from "./modules/network"
 import Bluetooth from "./modules/bluetooth"
 import Notif from "./modules/notif"
+import Idle from "./modules/idle"
 
-export default function Bar(monitor: number) {
+export default function Bar() {
   return Widget.Window({
-    monitor,
     className: "bar",
-    name: `bar${monitor}`,
+    name: "bar",
     anchor: ["bottom", "left", "right"],
     exclusivity: "exclusive",
     child: Widget.CenterBox({
@@ -30,7 +30,7 @@ export default function Bar(monitor: number) {
         hpack: "end",
         hexpand: true,
         spacing: 16,
-        children: [Systray(), Volume(), Network(), Bluetooth(), Notif(), Nightlight(), Clock()],
+        children: [Systray(), Volume(), Network(), Idle(), Bluetooth(), Notif(), Nightlight(), Clock()],
       }),
     }),
   })

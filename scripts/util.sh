@@ -5,7 +5,7 @@ reload_ags() {
 	ags -q
 	ags --clear-cache
 	ags --init
-	ags
+	ags -b hypr
 }
 
 lock() {

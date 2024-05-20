@@ -88,6 +88,10 @@ window.bar {
     color: $fg2;
   }
 
+  .idle {
+    color: $black;
+  }
+
   .nightlight.active {
     color: $yellow;
   }
@@ -102,6 +106,10 @@ window.bar {
 
   .notifications.active {
     color: $orange;
+  }
+
+  .idle.active {
+    color: $cyan;
   }
 }
 

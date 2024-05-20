@@ -5,5 +5,5 @@ import Calendar from "widgets/calendar/calendar"
 
 App.config({
   style: `${COMPILED_DIR}/styles.css`,
-  windows: [Bar(0), NotificationPopups(0), Calendar()],
+  windows: [Bar(), NotificationPopups(0), Calendar()],
 })

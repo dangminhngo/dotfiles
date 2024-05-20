@@ -24,9 +24,9 @@ fi
 
 paru -Syy --noconfirm
 paru -Sy --noconfirm archlinux-keyring
-paru -S - <./scriptdata/pkgs.txt
+paru -S --noconfirm - <./scriptdata/pkgs.txt
 
-sudo systemctl enable sddm.servic
+sudo systemctl enable sddm.service
 
 xdg-user-dirs-update
 
@@ -54,7 +54,8 @@ ln -s ~/.dotfiles/config ~/.config
 sudo cp -R ./settings/sddm.conf.d /etc/
 sudo cp ./config/sugar-candy/theme.conf /usr/share/sddm/themes/sugar-candy/
 sudo cp -R ./system/reflector /etc/xdg/
-cp ./settings/{.icons,.gitconfig} ~/
+cp ./settings/.gitconfig ~/
+cp -R ./settings/.icons ~/
 
 # Remove default cursor theme
 sudo rm -rf /usr/share/icons/default
@@ -76,6 +77,9 @@ fi
 
 # Run Docker with current user privileges
 sudo usermod -aG docker $USER
+
+# Fix ags cannot launch because it can find `bun` executable
+sudo ln -s ~/.bun/bin/bun /usr/bin/bun
 
 paru -Rns $(paru -Qdtq)
 paru -Scc --noconfirm
