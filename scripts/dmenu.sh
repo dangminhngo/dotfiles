@@ -21,16 +21,13 @@ colorpicker() {
 	sleep 1
 	case $opt in
 	$hex)
-		clr=$(~/.dotfiles/scripts/colorpicker.sh --hex)
-		notify-send --app-name="colorpicker" --icon="color-select-symbolic" "Colorpicker" "Color $clr copied to your clipboard"
+		~/.dotfiles/scripts/colorpicker.sh --hex
 		;;
 	$rgb)
-		clr=$(~/.dotfiles/scripts/colorpicker.sh --rgb)
-		notify-send --app-name="colorpicker" --icon="color-select-symbolic" "Colorpicker" "Color $clr copied to your clipboard"
+		~/.dotfiles/scripts/colorpicker.sh --rgb
 		;;
 	$hsl)
-		clr=$(~/.dotfiles/scripts/colorpicker.sh --hsl)
-		notify-send --app-name="colorpicker" --icon="color-select-symbolic" "Colorpicker" "Color $clr copied to your system clipboard"
+		~/.dotfiles/scripts/colorpicker.sh --hsl
 		;;
 	esac
 }

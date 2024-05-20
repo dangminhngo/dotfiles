@@ -1,14 +1,20 @@
 case $1 in
 --hex)
 	output=$(hyprpicker)
-	echo "$output" | xargs echo -n | wl-copy
+	clr=$(echo "$output" | xargs echo -n | tr '[:upper:]' '[:lower:]')
+	echo "$clr" | wl-copy
+	notify-send --app-name="colorpicker" --icon="color-select-symbolic" "Colorpicker" "Color $clr copied to your system clipboard"
 	;;
 --rgb)
 	output=($(hyprpicker -f rgb))
-	echo "rgb(${output[0]}, ${output[1]}, ${output[2]})" | xargs echo -n | wl-copy
+	clr=$(echo "rgb(${output[0]}, ${output[1]}, ${output[2]})" | xargs echo -n)
+	echo "$clr" | wl-copy
+	notify-send --app-name="colorpicker" --icon="color-select-symbolic" "Colorpicker" "Color $clr copied to your system clipboard"
 	;;
 --hsl)
 	output=($(hyprpicker -f hsl))
-	echo "hsl(${output[0]}, ${output[1]}, ${output[2]})" | xargs echo -n | wl-copy
+	clr=$(echo "hsl(${output[0]}, ${output[1]}, ${output[2]})" | xargs echo -n)
+	echo "$clr" | wl-copy
+	notify-send --app-name="colorpicker" --icon="color-select-symbolic" "Colorpicker" "Color $clr copied to your system clipboard"
 	;;
 esac
