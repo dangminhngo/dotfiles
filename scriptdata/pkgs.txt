@@ -14,7 +14,7 @@ docker-compose
 docker-machine
 fd
 fish
-firefox
+firefox-developer-edition
 git
 gjs
 glfw
@@ -59,7 +59,6 @@ socat
 starship
 stylua
 swappy
-thorium-browser-bin
 thunar
 thunar-archive-plugin
 tmux
