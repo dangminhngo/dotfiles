@@ -1,7 +1,6 @@
 alacritty
 aylurs-gtk-shell
 base-devel
-blender
 btop
 breeze-snow-cursor-theme
 calc
