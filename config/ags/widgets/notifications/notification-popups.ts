@@ -50,7 +50,7 @@ function PopupList() {
     hpack: "end",
     vertical: true,
     spacing: 4,
-    css: `min-width: 400px;`,
+    css: `min-width: 320px;`,
   })
 
   function remove(_: unknown, id: number) {

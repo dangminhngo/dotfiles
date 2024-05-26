@@ -7,7 +7,7 @@ import Systray from "./modules/systray"
 import Network from "./modules/network"
 import Bluetooth from "./modules/bluetooth"
 import Notif from "./modules/notif"
-import Idle from "./modules/idle"
+import IdleInhibitor from "./modules/idle-inhibitor"
 
 export default function Bar() {
   return Widget.Window({
@@ -30,7 +30,7 @@ export default function Bar() {
         hpack: "end",
         hexpand: true,
         spacing: 16,
-        children: [Systray(), Volume(), Network(), Idle(), Bluetooth(), Notif(), Nightlight(), Clock()],
+        children: [Systray(), Volume(), Network(), IdleInhibitor(), Bluetooth(), Notif(), Nightlight(), Clock()],
       }),
     }),
   })
