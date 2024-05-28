@@ -193,11 +193,6 @@ clients() {
 	exit 0
 }
 
-clipboard() {
-	theme="~/.config/rofi/clipboard.rasi"
-	cliphist list | rofi -dmenu -p "cliphist" -theme $theme | cliphist decode | wl-copy
-}
-
 case $1 in
 colorpicker) colorpicker ;;
 docs) docs ;;
@@ -205,6 +200,5 @@ launcher) launcher ;;
 record) record ;;
 screenshot) screenshot ;;
 clients) clients ;;
-clipboard) clipboard ;;
 quit) quit ;;
 esac
