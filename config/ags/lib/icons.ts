@@ -24,8 +24,8 @@ export default {
     disabled: "bluetooth-disabled-symbolic",
   },
   notif: {
-    noisy: "notification-new-symbolic",
-    silent: "notification-new-disabled-symbolic",
+    noisy: "notification-symbolic",
+    silent: "notification-disabled-symbolic",
     message: "chat-bubbles-symbolic",
   },
   trash: {

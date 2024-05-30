@@ -33,6 +33,7 @@ imagemagick
 imv
 jq
 lazygit
+libdecor
 libnotify
 luacheck
 man-db

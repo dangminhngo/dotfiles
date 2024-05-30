@@ -53,7 +53,7 @@ ln -s ~/.dotfiles/config ~/.config
 # Copy common system configs
 sudo cp -R ./settings/sddm.conf.d /etc/
 sudo cp ./config/sugar-candy/theme.conf /usr/share/sddm/themes/sugar-candy/
-sudo cp -R ./system/reflector /etc/xdg/
+sudo cp -R ./settings/reflector /etc/xdg/
 cp ./settings/.gitconfig ~/
 cp -R ./settings/.icons ~/
 
